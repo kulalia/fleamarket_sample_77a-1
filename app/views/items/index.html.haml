@@ -1,14 +1,30 @@
 .header
-  .header__headerBody
-    .header__headerBody__headerTop
-      .header__headerBody__headerTop__logo
-        %h1.APP
+  .header__body
+    .header__body--top
+      .header__body--logo
+        %h1.app
           %a(href="")
-      .header__headerBody__headerTop__search
-        %form(action="")
-    .header__headerBody__headerNav
-      .header__headerBody__headerNav__navLeft
-      .header__headerBody__headerNav__navRight
+      .header__body--search
+        .form    
+          = form_for [] do |f|
+            = f.text_field :content, class: 'form__input', placeholder: 'キーワードから探す'
+            = f.submit class: 'form__submit'
+      %ul.result      
+    .header__body--nav
+      %ul.navLeft
+        %li.category
+          %a(href="")
+          .category__tree
+            %ul.category__list
+              %li.category__list--item
+        %li.brand
+          %a(href="")
+          .brand__tree
+            %ul.brand__list
+              %li.brand__list--item
+      %ul.navRight
+        %li.login
+        %li.rigister
 .main
   %section.main__beginning
   %section.main__reason
