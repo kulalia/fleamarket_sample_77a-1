@@ -12,8 +12,8 @@
 |category|integer|null: false|
 |image|string|null: false|
 |detail|string|null: false|
-|bland|string||
-|plice|integer|null: false|
+|brand|string||
+|price|integer|null: false|
 |item_status|string|null: false|
 |shipping_region|string|null: false|
 |days_until_shipping|integer|null: false|
