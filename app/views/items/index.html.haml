@@ -6,7 +6,7 @@
           %a(href="")
       .header__body--search
         .form    
-          = form_for [] do |f|
+          = form_with url: root_path do |f|
             = f.text_field :content, class: 'form__input', placeholder: 'キーワードから探す'
             = f.submit class: 'form__submit'
       %ul.result      
