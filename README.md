@@ -21,9 +21,9 @@
 
 
 ### Association
-- has_many :images
+- has_many :images, dependent: :destroy
 - belongs_to :user
-- has_one :purchase_history
+- has_one :purchase_history, dependent: :destroy
 
 
 ## imagesテーブル
@@ -46,11 +46,11 @@
 |password|string|null: false|
 
 ### Association
-- has_many :items
-- has_many :cards
-- has_many :delivery_addresses
-- has_many :purchase_histories
-- has_one :user_profile
+- has_many :items, dependent: :destroy
+- has_many :cards, dependent: :destroy
+- has_many :delivery_addresses, dependent: :destroy
+- has_many :purchase_histories, dependent: :destroy
+- has_one :user_profile, dependent: :destroy
 
 
 
