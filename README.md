@@ -26,7 +26,7 @@
 - has_one :purchase_history, dependent: :destroy
 
 
-## imagesテーブル
+## item_imagesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -106,7 +106,7 @@
 
 
 
-## purchase_histories
+## item_purchase_histories
 
 |Column|Type|Options|
 |------|----|-------|
@@ -115,5 +115,6 @@
 |buyer|references|foreign_key: true|
 
 ### Association
-- belongs_to :user
+- belongs_to :seller, class_name: 'User'
+- belongs_to :buyer, class_name: 'User'
 - belongs_to :item
