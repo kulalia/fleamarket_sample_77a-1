@@ -1,10 +1,7 @@
 .header
   .header__body
     .header__body--top
-      .header__body--logo
-        %h1.app
-          %a(href="")
-            %img(src="/app/assets/images/logo/logo.png" alt="")
+      = image_tag 'logo/logo.png', height: 40, width: 140, class: 'header__body--logo'
       .header__body--search
         .form    
           = form_with url: root_path do |f|
