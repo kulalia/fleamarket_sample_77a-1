@@ -1,25 +1,43 @@
 .header {
   background-color: red;
-  height: 400px;
+  height: 100px;
   width: 100vw;
+  padding: 0 60px;
+  &__body{
+    background-color: yellowgreen;
+    max-width: 1040px;
+    height: 100px;
+    width: 100%;
+    min-height: 82px;
+    margin: 0 auto;
+    padding: 15px 0 0;
+    &__body--top{
+      background-color: gray;
+      position: relative;
+      display: flex;
+      align-items: center;
+      height: 50px;
+      width: 810px;
+    }
+  }
 }
 
 .main {
   background-color: blue;
-  height: 400px;
+  height: 3240px;
   width: 100vw;
 }
 
 .appbanner {
   background-color: green;
-  height: 400px;
+  height: 360px;
   width: 100vw;
 
 }
 
 .footer {
   background-color: yellow;
-  height: 400px;
+  height: 350px;
   width: 100vw;
 
 }
