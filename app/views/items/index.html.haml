@@ -1,8 +1,8 @@
 .header
   .header__body
     .header__body--top
-      = image_tag 'logo/logo.png', height: 40, width: 140, class: 'header__body--logo'
-      .header__body--search
+      = image_tag 'logo/logo.png', height: 40, width: 140, class: 'header__body--top--logo'
+      .header__body--top--search
         .form    
           = form_with url: root_path do |f|
             = f.text_field :content, class: 'form__input', placeholder: 'キーワードから探す'
@@ -12,17 +12,23 @@
       %ul.navLeft
         %li.category
           %a(href="")
-          .category__tree
-            %ul.category__list
-              %li.category__list--item
+            カテゴリー
+          -# .category__tree
+          -#   %ul.category__list
+          -#     %li.category__list--item
         %li.brand
           %a(href="")
-          .brand__tree
-            %ul.brand__list
-              %li.brand__list--item
+            ブランド
+          -# .brand__tree
+          -#   %ul.brand__list
+          -#     %li.brand__list--item
       %ul.navRight
         %li.login
+          %a(href="")
+            ログイン
         %li.rigister
+          %a(href="")
+            新規会員登録
 .main
   %section.main__beginning
   %section.main__reason
