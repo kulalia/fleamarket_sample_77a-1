@@ -64,6 +64,15 @@ li {
     cursor: pointer;
     background-color: #3CCACE;
     padding: 8px;
+    &--btn {
+      display: none;
+    }
+  }
+  &__icon {
+    height: 19px;
+    width: 19px;
+    line-height: 19px;
+    align-items: center;
   }
 }
 

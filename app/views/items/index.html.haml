@@ -5,8 +5,9 @@
       .form    
         = form_with url: root_path do |f|
           = f.text_field :content, class: 'form__input', placeholder: 'キーワードから探す'
-          = f.submit class: 'form__submit'
-          = image_tag 'icon/icon-search 1.png', height: 37, width: 36, class: 'form__icon'
+          = f.label :submit, class: 'form__submit' do
+            = f.submit  class: 'form__submit--btn'
+            = image_tag 'icon/icon-search 1.png', height: 37, width: 36, class: 'form__icon'
       %ul.result      
     .header__body--nav
       %ul.navLeft
