@@ -2,11 +2,10 @@
   .header__body
     .header__body--top
       = image_tag 'logo/logo.png', height: 40, width: 140, class: 'header__body--top--logo'
-      .header__body--top--search
-        .form    
-          = form_with url: root_path do |f|
-            = f.text_field :content, class: 'form__input', placeholder: 'キーワードから探す'
-            = f.submit class: 'form__submit'
+      .form    
+        = form_with url: root_path do |f|
+          = f.text_field :content, class: 'form__input', placeholder: 'キーワードから探す'
+          = f.submit class: 'form__submit'
       %ul.result      
     .header__body--nav
       %ul.navLeft
