@@ -37,6 +37,11 @@ li {
 
 .navLeft {
   display: flex;
+
+}
+
+.category, .brand, .login, .register {
+  text-decoration: none;
 }
 
 .navRight {
@@ -53,6 +58,7 @@ li {
     padding: 0 0 0 5px;
   }
   &__submit {
+    height: 37px;
     width: 36px;
     border: 0;
     cursor: pointer;
