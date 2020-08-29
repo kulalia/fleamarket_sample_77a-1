@@ -53,7 +53,7 @@
     </div>
   <% end %>
 
-  <%= f.fields_for :delivery_address, @delivery_address do |f| %>
+  <%= f.fields_for :delivery_addresses, @delivery_address do |f| %>
     <div class="field">
       <%= f.label :family_name %><br />
       <%= f.text_field :family_name, autofocus: true, autocomplete: "family-name" %>
