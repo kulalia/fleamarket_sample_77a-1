@@ -81,7 +81,7 @@
 
     <div class="field">
       <%= f.label :prefecture_id %><br />
-      <%= f.text_field :prefecture_id, autofocus: true, autocomplete: "address-level1" %>
+      <%= f.collection_select :prefecture_id, Prefecture.all, :id, :name, autofocus: true, autocomplete: "address-level1" %>
     </div>
 
     <div class="field">
