@@ -51,6 +51,7 @@
 - has_many :delivery_addresses, dependent: :destroy
 - has_many :purchase_histories, dependent: :destroy
 - has_one :user_profile, dependent: :destroy
+- accepts_nested_attributes_for :user_profile
 
 
 
@@ -63,9 +64,7 @@
 |first_name_kana|string|null: false|
 |family_name|string|null: false|
 |family_name_kana|string|null: false|
-|birth_year|date|null: false|
-|birth_month|date|null: false|
-|birth_day|date|null: false|
+|birthday|date|null: false|
 
 ### Association
 - belongs_to :user

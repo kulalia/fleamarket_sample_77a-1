@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :delivery_addresses, dependent: :destroy
   has_one :user_profile, dependent: :destroy
+  accepts_nested_attributes_for :user_profile
 end

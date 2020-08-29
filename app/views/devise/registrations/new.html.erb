@@ -21,6 +21,39 @@
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
+  <div class="field">
+    <%= f.label :nickname %><br />
+    <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname" %>
+  </div>
+
+  <%= f.fields_for :user_profile do |f| %>
+    <div class="field">
+      <%= f.label :family_name %><br />
+      <%= f.text_field :family_name, autofocus: true, autocomplete: "family-name" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :family_name_kana %><br />
+      <%= f.text_field :family_name_kana, autofocus: true, autocomplete: "family-name" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :first_name %><br />
+      <%= f.text_field :first_name, autofocus: true, autocomplete: "given-name" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :first_name_kana %><br />
+      <%= f.text_field :first_name_kana, autofocus: true, autocomplete: "given-name" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :birthday %><br />
+      <%= f.date_select :birthday, use_month_numbers: true, start_year: 1940, end_year: (Time.now.year - 10), default: Date.new(1989, 1, 1), autofocus: true %>
+    </div>
+
+  <% end %>
+
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
