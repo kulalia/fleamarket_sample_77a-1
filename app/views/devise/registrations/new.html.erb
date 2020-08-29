@@ -26,7 +26,7 @@
     <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname" %>
   </div>
 
-  <%= f.fields_for :user_profile do |f| %>
+  <%= f.fields_for :user_profile, @profile do |f| %>
     <div class="field">
       <%= f.label :family_name %><br />
       <%= f.text_field :family_name, autofocus: true, autocomplete: "family-name" %>
@@ -51,7 +51,58 @@
       <%= f.label :birthday %><br />
       <%= f.date_select :birthday, use_month_numbers: true, start_year: 1940, end_year: (Time.now.year - 10), default: Date.new(1989, 1, 1), autofocus: true %>
     </div>
+  <% end %>
 
+  <%= f.fields_for :delivery_address, @delivery_address do |f| %>
+    <div class="field">
+      <%= f.label :family_name %><br />
+      <%= f.text_field :family_name, autofocus: true, autocomplete: "family-name" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :family_name_kana %><br />
+      <%= f.text_field :family_name_kana, autofocus: true, autocomplete: "family-name" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :first_name %><br />
+      <%= f.text_field :first_name, autofocus: true, autocomplete: "given-name" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :first_name_kana %><br />
+      <%= f.text_field :first_name_kana, autofocus: true, autocomplete: "given-name" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :postal_code %><br />
+      <%= f.text_field :postal_code, autofocus: true, autocomplete: "postal-code" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :prefecture_id %><br />
+      <%= f.text_field :prefecture_id, autofocus: true, autocomplete: "address-level1" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :city %><br />
+      <%= f.text_field :city, autofocus: true, autocomplete: "address-level2" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :address %><br />
+      <%= f.text_field :address, autofocus: true, autocomplete: "address-level3" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :building %><br />
+      <%= f.text_field :building, autofocus: true, autocomplete: "address-level4" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :phone_number %><br />
+      <%= f.text_field :phone_number, autofocus: true, autocomplete: "tel" %>
+    </div>
   <% end %>
 
   <div class="actions">

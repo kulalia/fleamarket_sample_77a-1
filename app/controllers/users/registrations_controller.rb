@@ -9,6 +9,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def new
     @user = User.new
     @profile = @user.build_user_profile
+    @delivery_address = @user.delivery_addresses.build
   end
 
   # POST /resource
