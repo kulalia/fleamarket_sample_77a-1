@@ -1,6 +1,7 @@
 .header
   .header__body
     .header__body--top
+      %a(href="")
       = image_tag 'logo/logo.png', height: 40, width: 140, class: 'header__body--top--logo'
       .form    
         = form_with url: root_path do |f|
@@ -32,11 +33,50 @@
             新規会員登録
 .main
   %section.main__beginning
-  %section.main__reason
+    .main__beginning__hearding
+      %h2.main__beginning__heding--title
+        人生を変えるを変えるフリマアプリ
+      %p.main__beginning__hearding--text
+        FURIMAは誰でもかんたんに出品、購入できる
+        %br
+        フリマアプリです
+      .main__beginning__heading--badge
+        %a(href="").badgeApp
+          
+        %a(href="").badgeGoogle
+          = image_tag 'google-play-badge.png'
+  %section.main__reasons
+    %h2.main__reason--title
+      FURIMAが選ばれる3つの理由
+    %ul.main__reasons--reason
+      %li.reasonList
+        .reasonList__image
+        %h3.reasonList__subtitle
+          %span３分
+          ですぐに出品
+        %p.reasonList__explanation
+      %li.reasonList
+        .reasonList__image
+        %h3.reasonList__subtitle
+        %p.reasonList__explanation
+      %li.reasonList
+        .reasonList__image
+        %h3.reasonList__subtitle
+        %p.reasonList__explanation
   %section.main__mainBanner
+    .main__mainBanner__content
+      %h2.main__mainBanner__content--title
+      %p.main__mainBanner__content--text
+      .main__mainBanner__content--badge
   %section.main__advantage
+    %h2.main__advantage--title
+    %ul.main__advantage--feature
   %section.newPostList
+    %h2.newPostList--puCategory
+    .newPostList--searchBox
   %section.postList
+    %h2.postList--puBrand
+    .postList--searchBox
 .appbanner
 .footer
 .purchase

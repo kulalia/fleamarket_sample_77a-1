@@ -31,13 +31,13 @@ li {
     &--nav {
       display: flex;
       justify-content: space-between;
+      font-size: 14px;
     }
   }
 }
 
 .navLeft {
   display: flex;
-
 }
 
 .category, .brand, .login, .register {
@@ -49,7 +49,6 @@ li {
 }
 .form {
   width: 100%;
-  background-color: aquamarine;
   margin-bottom: 5px;
 
   &__input {
@@ -58,7 +57,7 @@ li {
     padding: 0 0 0 5px;
   }
   &__submit {
-    height: 37px;
+    height: 38px;
     width: 36px;
     border: 0;
     cursor: pointer;
