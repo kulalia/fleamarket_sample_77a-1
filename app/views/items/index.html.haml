@@ -1,7 +1,7 @@
 .header
   .header__body
     .header__body--top
-      %a(href="")
+      %a(href="/")
       = image_tag 'logo/logo.png', height: 40, width: 140, class: 'header__body--top--logo'
       .form    
         = form_with url: root_path do |f|
@@ -43,10 +43,10 @@
         %br
         フリマアプリです
       .badge
-        -# %a(href="").badgeApp
-        = image_tag 'app_Badge.jpeg', height: 50, wigth:180  
-        -# %a(href="").badgeGoogle
-        = image_tag 'google_badge.png', height: 50, width: 180
+        %a(href="https://www.apple.com/jp/ios/app-store/")
+        = image_tag 'app_Badge.jpeg', height: 50, wigth:180, class: 'badgeApp'  
+        %a(href="https://play.google.com/store")
+        = image_tag 'google_badge.png', height: 50, width: 180, class: 'badgeGoogle'
 
   %section.main__reasons
     %h2.main__reason--title
@@ -98,10 +98,10 @@
         %br
         ほしかったあの商品に出会えるかもしれません。
       .badge
-        -# %a(href="").badgeApp
-        = image_tag 'app_Badge.jpeg', height: 50, wigth:180  
-        -# %a(href="").badgeGoogle
-        = image_tag 'google_badge.png', height: 50, wigth:180
+        %a(href="https://www.apple.com/jp/ios/app-store/")
+        = image_tag 'app_Badge.jpeg', height: 50, wigth:180, class: 'badgeApp'  
+        %a(href="https://play.google.com/store")
+        = image_tag 'google_badge.png', height: 50, wigth:180, class: 'badgeGoogle'
 
 
   %section.main__advantage
@@ -158,10 +158,10 @@
     %p.contentText
       今すぐ無料ダウンロード!
     .badge
-      -# %a(href="").badgeApp
-      = image_tag 'app_Badge.jpeg', height: 50, wigth:180    
-      -# %a(href="").badgeGoogle
-      = image_tag 'google_badge.png', height: 50, wigth:180
+      %a(href="https://www.apple.com/jp/ios/app-store/")
+      = image_tag 'app_Badge.jpeg', height: 50, wigth:180, class: 'badgeApp'   
+      %a(href="https://play.google.com/store")
+      = image_tag 'google_badge.png', height: 50, wigth:180, class: 'badgeGoogle'
 
 .footer
   %ul.footer__contents
