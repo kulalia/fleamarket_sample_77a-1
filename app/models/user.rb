@@ -10,6 +10,6 @@ class User < ApplicationRecord
 
   validates :nickname, presence: true
   validates :email, presence: true, uniqueness: true, format: { with: /\A\S+@\S+\.\S+\z/ }
-  validates :encrypted_password, presence: true, length: { minimum: 7 }
+  validates :encrypted_password, presence: true
 
 end
