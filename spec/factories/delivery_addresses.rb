@@ -12,7 +12,7 @@ FactoryBot.define do
     city               {"大阪市中央区"}
     address            {"1-1-1"}
     building           {"マンション名101号室"}
-    phone_number       {"09000000000"}
+    phone_number       {"1234567890"}
   end
 
 end
