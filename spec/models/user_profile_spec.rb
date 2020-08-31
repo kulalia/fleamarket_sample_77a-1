@@ -43,5 +43,64 @@ describe UserProfile do
       expect(user_profile.errors[:birthday]).to include("を入力してください")
     end
 
+    context 'first_nameのバリデーションが機能していること' do
+      it "全角であれば登録できること" do
+        user = create(:user)
+        user_profile = build(:user_profile, user_id: user.id)
+        expect(user_profile).to be_valid
+      end
+
+      it "全角でなければ登録できないこと" do
+        user = create(:user)
+        user_profile = build(:user_profile, user_id: user.id, first_name: "namae")
+        user_profile.valid?
+        expect(user_profile.errors[:first_name]).to include("は不正な値です")
+      end
+    end
+
+    context 'family_nameのバリデーションが機能していること' do
+      it "全角であれば登録できること" do
+        user = create(:user)
+        user_profile = build(:user_profile, user_id: user.id)
+        expect(user_profile).to be_valid
+      end
+
+      it "全角でなければ登録できないこと" do
+        user = create(:user)
+        user_profile = build(:user_profile, user_id: user.id, family_name: "myoji")
+        user_profile.valid?
+        expect(user_profile.errors[:family_name]).to include("は不正な値です")
+      end
+    end
+
+    context 'first_name_kanaのバリデーションが機能していること' do
+      it "全角ひらがなであれば登録できること" do
+        user = create(:user)
+        user_profile = build(:user_profile, user_id: user.id)
+        expect(user_profile).to be_valid
+      end
+
+      it "全角ひらがなでなければ登録できないこと" do
+        user = create(:user)
+        user_profile = build(:user_profile, user_id: user.id, first_name_kana: "ナマエ")
+        user_profile.valid?
+        expect(user_profile.errors[:first_name_kana]).to include("は不正な値です")
+      end
+    end
+
+    context 'family_name_kanaのバリデーションが機能していること' do
+      it "全角ひらがなであれば登録できること" do
+        user = create(:user)
+        user_profile = build(:user_profile, user_id: user.id)
+        expect(user_profile).to be_valid
+      end
+
+      it "全角ひらがなでなければ登録できないこと" do
+        user = create(:user)
+        user_profile = build(:user_profile, user_id: user.id, family_name_kana: "ミョウジ")
+        user_profile.valid?
+        expect(user_profile.errors[:family_name_kana]).to include("は不正な値です")
+      end
+    end
   end
 end
