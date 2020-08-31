@@ -31,15 +31,17 @@ describe User do
       expect(user.errors[:password_confirmation]).to include("とパスワードの入力が一致しません")
     end
 
-    it "passwordが7文字以上であれば登録できること" do
-      user = build(:user, password: "0000000", password_confirmation: "0000000")
-      expect(user).to be_valid
-    end
+    context "passwordのバリデーションが機能していること" do
+      it "passwordが7文字以上であれば登録できること" do
+        user = build(:user, password: "0000000", password_confirmation: "0000000")
+        expect(user).to be_valid
+      end
 
-    it "passwordが6文字以下であれば登録できないこと" do
-      user = build(:user, password: "000000", password_confirmation: "000000")
-      user.valid?
-      expect(user.errors[:password]).to include("は7文字以上で入力してください")
+      it "passwordが6文字以下であれば登録できないこと" do
+        user = build(:user, password: "000000", password_confirmation: "000000")
+        user.valid?
+        expect(user.errors[:password]).to include("は7文字以上で入力してください")
+      end
     end
 
     context "emailのバリデーションが機能していること" do
