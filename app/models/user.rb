@@ -9,7 +9,7 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :user_profile
 
   validates :nickname, presence: true
-  validates :email, presence: true, uniqueness: true, format: { with: /\A\S+@\S+\.\S+\z/ }
+  validates :email, presence: true, uniqueness: true
   validates :encrypted_password, presence: true
 
 end

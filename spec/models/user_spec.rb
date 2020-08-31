@@ -31,13 +31,6 @@ describe User do
       expect(user.errors[:password_confirmation]).to include("とパスワードの入力が一致しません")
     end
 
-    it "重複したemailが存在する場合登録できないこと" do
-      user = create(:user)
-      another_user = build(:user, email: user.email)
-      another_user.valid?
-      expect(another_user.errors[:email]).to include("はすでに存在します")
-    end
-
     it "passwordが7文字以上であれば登録できること" do
       user = build(:user, password: "0000000", password_confirmation: "0000000")
       expect(user).to be_valid
@@ -47,6 +40,32 @@ describe User do
       user = build(:user, password: "000000", password_confirmation: "000000")
       user.valid?
       expect(user.errors[:password]).to include("は7文字以上で入力してください")
+    end
+
+    context "emailのバリデーションが機能していること" do
+      it "@とドメインがあれば登録できること" do
+        user = build(:user)
+        expect(user).to be_valid
+      end
+
+      it "@がない登録できないこと" do
+        user = build(:user, email: "test.com")
+        user.valid?
+        expect(user.errors[:email]).to include("は不正な値です")
+      end
+
+      it "ドメインがないと登録できないこと" do
+        user = build(:user, email: "test@")
+        user.valid?
+        expect(user.errors[:email]).to include("は不正な値です")
+      end
+  
+      it "重複したemailが存在する場合登録できないこと" do
+        user = create(:user)
+        another_user = build(:user, email: user.email)
+        another_user.valid?
+        expect(another_user.errors[:email]).to include("はすでに存在します")
+      end
     end
   end
 end
