@@ -1,7 +1,7 @@
 .logout {
   height: 200px;
   width: 700px;
-  background-color: white;
+  background-color: $whiteColor;
   text-align: center;
   margin: auto;
   position: relative;
@@ -11,7 +11,7 @@
     height: 40px;
     width: 300px;
     background-color: red;
-    color: white;
+    color: $whiteColor;
     border-radius: 8px;
     text-decoration: none;
     position: absolute;

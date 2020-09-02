@@ -31,62 +31,62 @@ body {
       font-size: 18px;
     }
     &__mypage-lists {
-      background-color: white;
+      background-color: $whiteColor;
       padding: 30px;
       margin-left: 100px;
       .left-content__mypage {
 
       }
       .left-content__todo-list {
-        border: 1px solid #88FFFF;
+        border: 1px solid $blueColor;
         margin-bottom: 5px;
       }
       .left-content__good-list {
-        border: 1px solid #88FFFF;
+        border: 1px solid $blueColor;
         margin-bottom: 5px;
       }
       .left-content__display {
-        border: 1px solid #88FFFF;
+        border: 1px solid $blueColor;
         margin-bottom: 5px;
       }
       .left-content__draft-list {
-        border: 1px solid #88FFFF;
+        border: 1px solid $blueColor;
         margin-bottom: 5px;
       }
       .left-content__item-display {
-        border: 1px solid #88FFFF;
+        border: 1px solid $blueColor;
         margin-bottom: 5px;
       }
       .left-content__item-trade {
-        border: 1px solid #88FFFF;
+        border: 1px solid $blueColor;
         margin-bottom: 5px;
       }
       .left-content__item-sale {
-        border: 1px solid #88FFFF;
+        border: 1px solid $blueColor;
         margin-bottom: 5px;
       }
       .left-content__item-buy {
-        border: 1px solid #88FFFF;
+        border: 1px solid $blueColor;
         margin-bottom: 5px;
       }
       .left-content__item-past {
-        border: 1px solid #88FFFF;
+        border: 1px solid $blueColor;
         margin-bottom: 5px;
       }
       .left-content__news-list {
-        border: 1px solid #88FFFF;
+        border: 1px solid $blueColor;
         margin-bottom: 5px;
       }
       .left-content__evaluation-list {
-        border: 1px solid #88FFFF;
+        border: 1px solid $blueColor;
         margin-bottom: 5px;
       }
       .left-content__guide {
-        border: 1px solid #88FFFF;
+        border: 1px solid $blueColor;
         margin-bottom: 5px;
       }
       .left-content__contact {
-        border: 1px solid #88FFFF;
+        border: 1px solid $blueColor;
         margin-bottom: 5px;
       }
     }
@@ -95,20 +95,20 @@ body {
       margin-top: 10px;
       margin-left: 100px;
       &-box {
-        background-color: white;
+        background-color: $whiteColor;
         padding: 30px;
         .left-content__profile {
         }
         .left-content__credit-card {
-          border: 1px solid #88FFFF;
+          border: 1px solid $blueColor;
           margin-bottom: 5px;
         }
         .left-content__mail {
-          border: 1px solid #88FFFF;
+          border: 1px solid $blueColor;
           margin-bottom: 5px;
         }
         .left-content__logout {
-          border: 1px solid #88FFFF;
+          border: 1px solid $blueColor;
           margin-bottom: 5px;
         }
       }  
@@ -119,12 +119,12 @@ body {
     &__user-box {
       height: 450px;
       width: 800px;
-      background-color: white;
+      background-color: $whiteColor;
       margin-top: 30px;
       &--other {
         height: 100px;
         width: 800px;
-        background-color: #00FFFF;
+        background-color: $blueColor;
         .right-content__user {
           text-align: center;
           line-height: 100px;
@@ -136,13 +136,13 @@ body {
     &__buy-box {
       height: 450px;
       width: 800px;
-      background-color: white;
+      background-color: $whiteColor;
       margin-top: 55px;
       margin-right: 100px;
       .right-content__box {
         height: 100px;
         width: 800px;
-        background-color: #00FFFF;
+        background-color: $blueColor;
         .right-content__item {
           text-align: center;
           line-height: 100px;
