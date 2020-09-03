@@ -8,7 +8,7 @@
           = f.text_field :content, class: 'form__input', placeholder: 'キーワードから探す'
           = f.label :submit, class: 'form__submit' do
             = f.submit  class: 'form__submit--btn'
-            = image_tag 'icon/icon-search 1.png', height: 37, width: 36, class: 'form__icon'
+            = image_tag 'icon/icon-search 1.png', class: 'form__icon'
       %ul.result      
     .header__body--nav
       %ul.navLeft
@@ -34,30 +34,29 @@
 
 
 .main
-  .main__beginning
+  %section.main__beginning
     .main__beginning__hearding
-      %h2.main__beginning__heding--title
-        人生を変えるを変えるフリマアプリ
+      %h2.main__beginning__hearding--title
+        人生を変えるをフリマアプリ
       %p.main__beginning__hearding--text
         FURIMAは誰でもかんたんに出品、購入できる
         %br
         フリマアプリです
       .badge
-        %a(href="https://www.apple.com/jp/ios/app-store/")
-        = image_tag 'app_Badge.jpeg', height: 50, wigth:180, class: 'badgeApp'  
-        %a(href="https://play.google.com/store")
-        = image_tag 'google_badge.png', height: 50, width: 180, class: 'badgeGoogle'
+        %a.aBadge(href="https://www.apple.com/jp/ios/app-store/")
+          = image_tag 'app_Badge.jpeg', height: 53, wigth:200, class: 'appBadge'  
+        %a.gBadge(href="https://play.google.com/store")
+          = image_tag 'google_badge.png', height: 79, width: 200, class: 'googleBadge'
 
   %section.main__reasons
-    %h2.main__reason--title
+    %h2.main__reasons--title
       FURIMAが選ばれる3つの理由
     %ul.main__reasons--reason
-
       %li.reasonList
         .reasonList__image
           %span.num
             1
-          = image_tag 'pict/pict-reason-01.jpg', height: 270, width: 270
+          = image_tag 'pict/pict-reason-01.jpg', height: 300, width: 300
         %h3.reasonList__subtitle
           %span３分
           ですぐに出品
@@ -68,7 +67,7 @@
         .reasonList__image
           %sapn.num
             2
-          = image_tag 'pict/pict-reason-02.jpg', height: 270, width: 270  
+          = image_tag 'pict/pict-reason-02.jpg', height: 300, width: 300  
         %h3.reasonList__subtitle
           %spanシンプル
           で使いやすい
@@ -77,9 +76,9 @@
 
       %li.reasonList
         .reasonList__image
-        %span.num
-          3
-          = image_tag 'pict/pict-reason-03.jpg', height: 270, width: 270
+          %span.num
+            3
+          = image_tag 'pict/pict-reason-03.jpg', height: 300, width: 300
         %h3.reasonList__subtitle
           手数料
           %span業界最安
@@ -98,10 +97,10 @@
         %br
         ほしかったあの商品に出会えるかもしれません。
       .badge
-        %a(href="https://www.apple.com/jp/ios/app-store/")
-        = image_tag 'app_Badge.jpeg', height: 50, wigth:180, class: 'badgeApp'  
-        %a(href="https://play.google.com/store")
-        = image_tag 'google_badge.png', height: 50, wigth:180, class: 'badgeGoogle'
+        %a.aBadge(href="https://www.apple.com/jp/ios/app-store/")
+          = image_tag 'app_Badge.jpeg', height: 53, wigth:200, class: 'appBadge'  
+        %a.gBadge(href="https://play.google.com/store")
+          = image_tag 'google_badge.png', height: 79, width: 200, class: 'googleBadge'
 
 
   %section.main__advantage
@@ -110,21 +109,21 @@
     .main__advantage--feature
       %section.featureBox
         %figure.featureImage
-          = image_tag 'icon/icon-01.png', height: 143, wigth:220
+          = image_tag 'icon/icon-01.png', height: 340, wigth:220
         %h3.featureTitle
           簡単に売り買いできる
         %p.featureText
           スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
       %section.featureBox
         %figure.featureImage
-          = image_tag 'icon/icon-03.png', height: 143, wigth:220
+          = image_tag 'icon/icon-03.png', height: 340, wigth:220
         %h3.featureTitle
           売上金は即日振込みに対応
         %p.featureText
           午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします!
       %section.featureBox
         %figure.featureImage
-          = image_tag 'icon/icon-04.png', height: 143, wigth:220
+          = image_tag 'icon/icon-04.png', height: 340, wigth:220
         %h3.featureTitle
           様々な支払いに対応
         %p.featureText
@@ -136,7 +135,7 @@
       ピックアップカテゴリー
     .newPostList--searchBox
       .searchBox--head
-        %a(href="")
+        %a(href="#")
           %h3.subtitle
             新規投稿商品
       .searchBox--lists
@@ -145,7 +144,7 @@
       ピックアップブランド
     .postList--searchBox
       .searchBox--head
-        %a(href="")
+        %a(href="#")
           %h3.subtitle
             アーカイバ
       .searchBox--lists
@@ -158,11 +157,10 @@
     %p.contentText
       今すぐ無料ダウンロード!
     .badge
-      %a(href="https://www.apple.com/jp/ios/app-store/")
-      = image_tag 'app_Badge.jpeg', height: 50, wigth:180, class: 'badgeApp'   
-      %a(href="https://play.google.com/store")
-      = image_tag 'google_badge.png', height: 50, wigth:180, class: 'badgeGoogle'
-
+      %a.aBadge(href="https://www.apple.com/jp/ios/app-store/")
+        = image_tag 'app_Badge.jpeg', height: 53, wigth:200, class: 'appBadge'  
+      %a.gBadge(href="https://play.google.com/store")
+        = image_tag 'google_badge.png', height: 79, width: 200, class: 'googleBadge'
 .footer
   %ul.footer__contents
     %li.contents--content
@@ -170,47 +168,47 @@
         FURIMAについて
       %ul.contentList
         %li
-          %a(href="")
+          %a(href="#")
             会社概要(運営会社)
         %li
-          %a(href="")
+          %a(href="#")
             プライバシーポリシー
         %li
-          %a(href="")
+          %a(href="#")
             FURIMA利用規約
         %li
-          %a(href="")
+          %a(href="#")
             ポイントにポイントに関する特約
     %li.contents--content
       %h2.contentTitle
         FURIMAを見る
       %ul.contentList
         %li
-          %a(href="")
+          %a(href="#")
             カテゴリー一覧
         %li  
-          %a(href="")
+          %a(href="#")
             ブランド一覧
     %li.contents--content
       %h2.contentTitle
         ヘルプ&ガイド
       %ul.contentList
         %li
-          %a(href="")
+          %a(href="#")
             FURIMAガイド
         %li
-          %a(href="")
+          %a(href="#")
             FURIMAロゴ利用ガイドライン
         %li 
-          %a(href="")
+          %a(href="#")
             お知らせ 
   .footer__whiteLogo
-    %a(href="")
+    %a(href="#")
     = image_tag 'logo/logo-white.png', height: 40, width: 140
   %p
     ©FURIMA
-%a(href="")
+%a(href="#") 
   .purchase
-    %span.exhibition
+    %span.exhibition 
       出品する
     = image_tag 'icon/icon_camera.png', height: 54, width: 54
