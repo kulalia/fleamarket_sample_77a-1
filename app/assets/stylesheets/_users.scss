@@ -9,21 +9,21 @@
 
 
 .header {
-  background-color: $grayColor;
+  background-color: $gray-color;
   height: 100px;
   width: 100%;
 }
 
 
 body {
-  background-color: $lightgrayColor;
+  background-color: $lightgray-color;
   display: flex;
   justify-content: space-around;
   margin-bottom: 200px;
   margin-top: 100px;
 
   .left-content {
-    color: $redColor;
+    color: $red-color;
     font-size: 25px;
     padding: 30px;
 
@@ -34,7 +34,7 @@ body {
     }
 
     &__mypage-lists {
-      background-color: $whiteColor;
+      background-color: $white-color;
       margin-left: 100px;
       padding: 30px;
       
@@ -42,67 +42,67 @@ body {
       }
 
       .left-content__todo-list {
-        border: 1px solid $blueColor;
+        border: 1px solid $blue-color;
         margin-bottom: 5px;
       }
 
       .left-content__good-list {
-        border: 1px solid $blueColor;
+        border: 1px solid $blue-color;
         margin-bottom: 5px;
       }
 
       .left-content__display {
-        border: 1px solid $blueColor;
+        border: 1px solid $blue-color;
         margin-bottom: 5px;
       }
 
       .left-content__draft-list {
-        border: 1px solid $blueColor;
+        border: 1px solid $blue-color;
         margin-bottom: 5px;
       }
 
       .left-content__item-display {
-        border: 1px solid $blueColor;
+        border: 1px solid $blue-color;
         margin-bottom: 5px;
       }
 
       .left-content__item-trade {
-        border: 1px solid $blueColor;
+        border: 1px solid $blue-color;
         margin-bottom: 5px;
       }
 
       .left-content__item-sale {
-        border: 1px solid $blueColor;
+        border: 1px solid $blue-color;
         margin-bottom: 5px;
       }
 
       .left-content__item-buy {
-        border: 1px solid $blueColor;
+        border: 1px solid $blue-color;
         margin-bottom: 5px;
       }
 
       .left-content__item-past {
-        border: 1px solid $blueColor;
+        border: 1px solid $blue-color;
         margin-bottom: 5px;
       }
 
       .left-content__news-list {
-        border: 1px solid $blueColor;
+        border: 1px solid $blue-color;
         margin-bottom: 5px;
       }
 
       .left-content__evaluation-list {
-        border: 1px solid $blueColor;
+        border: 1px solid $blue-color;
         margin-bottom: 5px;
       }
 
       .left-content__guide {
-        border: 1px solid $blueColor;
+        border: 1px solid $blue-color;
         margin-bottom: 5px;
       }
 
       .left-content__contact {
-        border: 1px solid $blueColor;
+        border: 1px solid $blue-color;
         margin-bottom: 5px;
       }
     }    
@@ -111,24 +111,24 @@ body {
       margin-top: 10px;
       
       &-box {
-        background-color: $whiteColor;
+        background-color: $white-color;
         padding: 30px;
 
         .left-content__profile {
         }
 
         .left-content__credit-card {
-          border: 1px solid $blueColor;
+          border: 1px solid $blue-color;
           margin-bottom: 5px;
         }
 
         .left-content__mail {
-          border: 1px solid $blueColor;
+          border: 1px solid $blue-color;
           margin-bottom: 5px;
         }
 
         .left-content__logout {
-          border: 1px solid $blueColor;
+          border: 1px solid $blue-color;
           margin-bottom: 5px;
         }
       }  
@@ -137,13 +137,13 @@ body {
 
   .right-content {
     &__user-box {
-      background-color: $whiteColor;
+      background-color: $white-color;
       height: 450px;
       margin-top: 30px;
       width: 800px;
       
       &--other {
-        background-color: $blueColor;
+        background-color: $blue-color;
         height: 100px;
         width: 800px;    
 
@@ -157,14 +157,14 @@ body {
     }
 
     &__buy-box {
-      background-color: $whiteColor;
+      background-color: $white-color;
       height: 450px;
       margin-right: 100px;
       margin-top: 55px;
       width: 800px;
       
       .right-content__box {
-        background-color: $blueColor;
+        background-color: $blue-color;
         height: 100px;
         width: 800px;
         

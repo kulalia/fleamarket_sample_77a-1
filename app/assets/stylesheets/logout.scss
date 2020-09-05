@@ -1,5 +1,5 @@
 .logout {
-  background-color: $whiteColor;
+  background-color: $white-color;
   height: 200px;
   margin: auto;
   position: relative;
@@ -7,9 +7,9 @@
   width: 700px;
   
   &__btn {
-    background-color: $redColor;
+    background-color: $red-color;
     border-radius: 8px;
-    color: $whiteColor;
+    color: $white-color;
     height: 40px;
     left: 50%;
     padding-top: 15px;
