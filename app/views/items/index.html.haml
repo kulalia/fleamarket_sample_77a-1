@@ -1,3 +1,17 @@
 %h1 Items#index
 %p Find me in app/views/items/index.html.erb
 = link_to "ログアウト", destroy_user_session_path, method: :delete
+
+.form
+  = form_for [@item] do |f|
+    = f.text_field :name, placeholder: "商品名"
+    = f.text_field :category_id, placeholder: "カテゴリー"
+    = f.text_field :detail, placeholder: "詳細"
+    = f.text_field :brand, placeholder: "ブランド(任意)"
+    = f.text_field :price, placeholder: "値段"
+    = f.text_field :item_status, placeholder: "商品の状態"
+    = f.text_field :prefecture_id, placeholder: "都道府県"
+    = f.text_field :days_until_shipping, placeholder: "発送日数"
+    = f.text_field :shipping_fee, placeholder: "送料"
+    = f.text_field :sale_or_sold, placeholder: "在庫"
+    = f.submit "送信"
