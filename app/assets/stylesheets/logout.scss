@@ -1,23 +1,22 @@
 .logout {
-  height: 200px;
-  width: 700px;
   background-color: $whiteColor;
-  text-align: center;
+  height: 200px;
   margin: auto;
   position: relative;
-
-  &__btn
-  {
-    height: 40px;
-    width: 300px;
-    background-color: red;
-    color: $whiteColor;
+  text-align: center;
+  width: 700px;
+  
+  &__btn {
+    background-color: $redColor;
     border-radius: 8px;
-    text-decoration: none;
-    position: absolute;
-    top: 50%;
+    color: $whiteColor;
+    height: 40px;
     left: 50%;
-    transform: translate(-50%,-50%);
     padding-top: 15px;
+    position: absolute;
+    text-decoration: none;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 300px;    
   }
 }

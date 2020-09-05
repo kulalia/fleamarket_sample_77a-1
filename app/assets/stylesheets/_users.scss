@@ -9,104 +9,124 @@
 
 
 .header {
+  background-color: $grayColor;
   height: 100px;
   width: 100%;
-  background-color: gray;
 }
 
 
 body {
+  background-color: $lightgrayColor;
   display: flex;
   justify-content: space-around;
-  margin-top: 100px;
   margin-bottom: 200px;
-  background-color: #EEEEEE;
+  margin-top: 100px;
+
   .left-content {
+    color: $redColor;
     font-size: 25px;
     padding: 30px;
-    color: #FF3366;
+
     .left-data {
-      text-decoration: none;
-      color: black;
+      color: #000000;
       font-size: 18px;
+      text-decoration: none;
     }
+
     &__mypage-lists {
       background-color: $whiteColor;
-      padding: 30px;
       margin-left: 100px;
+      padding: 30px;
+      
       .left-content__mypage {
-
       }
+
       .left-content__todo-list {
         border: 1px solid $blueColor;
         margin-bottom: 5px;
       }
+
       .left-content__good-list {
         border: 1px solid $blueColor;
         margin-bottom: 5px;
       }
+
       .left-content__display {
         border: 1px solid $blueColor;
         margin-bottom: 5px;
       }
+
       .left-content__draft-list {
         border: 1px solid $blueColor;
         margin-bottom: 5px;
       }
+
       .left-content__item-display {
         border: 1px solid $blueColor;
         margin-bottom: 5px;
       }
+
       .left-content__item-trade {
         border: 1px solid $blueColor;
         margin-bottom: 5px;
       }
+
       .left-content__item-sale {
         border: 1px solid $blueColor;
         margin-bottom: 5px;
       }
+
       .left-content__item-buy {
         border: 1px solid $blueColor;
         margin-bottom: 5px;
       }
+
       .left-content__item-past {
         border: 1px solid $blueColor;
         margin-bottom: 5px;
       }
+
       .left-content__news-list {
         border: 1px solid $blueColor;
         margin-bottom: 5px;
       }
+
       .left-content__evaluation-list {
         border: 1px solid $blueColor;
         margin-bottom: 5px;
       }
+
       .left-content__guide {
         border: 1px solid $blueColor;
         margin-bottom: 5px;
       }
+
       .left-content__contact {
         border: 1px solid $blueColor;
         margin-bottom: 5px;
       }
-    }
-      
+    }    
     .left-content__settings {
-      margin-top: 10px;
       margin-left: 100px;
+      margin-top: 10px;
+      
       &-box {
         background-color: $whiteColor;
         padding: 30px;
+
         .left-content__profile {
         }
+
         .left-content__credit-card {
           border: 1px solid $blueColor;
           margin-bottom: 5px;
         }
+
         .left-content__mail {
           border: 1px solid $blueColor;
           margin-bottom: 5px;
         }
+
         .left-content__logout {
           border: 1px solid $blueColor;
           margin-bottom: 5px;
@@ -117,37 +137,42 @@ body {
 
   .right-content {
     &__user-box {
-      height: 450px;
-      width: 800px;
       background-color: $whiteColor;
+      height: 450px;
       margin-top: 30px;
+      width: 800px;
+      
       &--other {
-        height: 100px;
-        width: 800px;
         background-color: $blueColor;
+        height: 100px;
+        width: 800px;    
+
         .right-content__user {
-          text-align: center;
-          line-height: 100px;
-          font-size: 18px;
           font-family: "Gill Sans",sans-serif;
+          font-size: 18px;
+          line-height: 100px;
+          text-align: center;
         }
       }
     }
+
     &__buy-box {
-      height: 450px;
-      width: 800px;
       background-color: $whiteColor;
-      margin-top: 55px;
+      height: 450px;
       margin-right: 100px;
+      margin-top: 55px;
+      width: 800px;
+      
       .right-content__box {
+        background-color: $blueColor;
         height: 100px;
         width: 800px;
-        background-color: $blueColor;
+        
         .right-content__item {
-          text-align: center;
-          line-height: 100px;
-          font-size: 18px;
           font-family: "Gill Sans",sans-serif;
+          font-size: 18px;
+          line-height: 100px;
+          text-align: center;      
         }
       }
     }

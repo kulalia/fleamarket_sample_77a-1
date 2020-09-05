@@ -2,13 +2,13 @@ $color: rgb(245,245,245);
 
 .pay {
   background-color: $whiteColor;
-  width: 600px;
-  height: 360px;
-  text-align: center;
-  padding: 30px;
   display: flex;
   flex-direction: column;
+  height: 360px;
   margin: auto;
+  padding: 30px;
+  text-align: center;
+  width: 600px;
 
   &__method {
     font-size: 26px;
@@ -17,36 +17,36 @@ $color: rgb(245,245,245);
 
   &__line {
     border: 1px $color solid;
-    margin: 30px 0 30px;
+    margin: 30px 0 ;
   }
 
   &__card {
     font-weight: bolder;
-    margin: 0 300px 30px 0 ;
+    margin: 0 300px 30px 0;
   }
 
   &__new__card {
-   text-decoration: none;
-   margin-right: 260px;
-   color: $blueColor;
+    color: $blueColor;
+    margin-right: 260px;
+    text-decoration: none;
   }
 
   &__use {
-    text-decoration: none;
+    background-color: $lightgrayColor;
+    border-radius: 8px;
+    color: $grayColor;
     font-size: 20px;
-    color: #888;
     font-weight: bolder;
-    width: 400px;
     height: 40px;
-    background-color: #ccc;
     margin: 0 auto;
     padding-top: 10px;
-    border-radius: 8px;
+    text-decoration: none;
+    width: 400px;   
   }
 
   &__of__method {
+    color: $blueColor;
     margin: 30px 0 0 250px;
     text-decoration: none;
-    color: $blueColor;
   }
 }
