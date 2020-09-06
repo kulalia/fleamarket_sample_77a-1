@@ -4,6 +4,7 @@
   background-color: #f8f8f8;
   display: flex;
   align-items: center;
+  overflow: scroll;
 
   &__loginbox {
     height: 335px;
@@ -49,6 +50,53 @@
         color: #fff;
         border: 1px solid;
       }
+
     }
   }
-}
+
+  &__signupbox {
+    height: 800px;
+    width: 800px;
+    background-color: #fff;
+    margin: 0 auto;
+    text-align: center;
+    
+    &__text {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    &__form {
+      height: 800px;
+      width: 300px;
+      margin: 0 auto;
+      // text-align: center;
+
+      .field {
+        text-align: left;
+      }
+
+      .inputbox {
+        margin: 0 auto;
+        text-align: start;
+      }
+
+      .name {
+        height: 40px;
+        width: 130px;
+      }
+
+
+    }
+
+
+    .input-text {
+      height: 40px;
+      width: 300px;
+      padding-left: 10px;
+    }
+
+
+    }
+
+  }
