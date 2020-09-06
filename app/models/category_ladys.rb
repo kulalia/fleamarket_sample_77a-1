@@ -1,4 +1,4 @@
-class Category_ladys < ActiveHash::Base
+class CategoryLadys < ActiveHash::Base
   self.data = [
     {id: 1, name: 'トップス'}, {id: 2, name: 'ジャケット/アウター'}, {id: 3, name: 'パンツ'},
     {id: 4, name: 'スカート'}, {id: 5, name: 'ワンピース'}, {id: 6, name: '靴'},
