@@ -50,6 +50,7 @@ group :development, :test do
   gem 'active_hash'
   gem 'rspec-rails'
   gem 'factory_bot_rails'
+  gem 'carrierwave', '~> 2.0'
 end
 
 group :development do
