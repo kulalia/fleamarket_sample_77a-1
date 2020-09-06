@@ -2,7 +2,8 @@ class Item < ApplicationRecord
   belongs_to :user
   has_many :images, dependent: :destroy
   has_one :purchase_history, dependent: :destroy
-
+    extend ActiveHash::Associations::ActiveRecordExtensions
+    belong_to_active_hash :category, :category_ladys, :prefecture
   validates :user_id, presence: true
   validates :name, presence: true
   validates :category_id, presence: true
