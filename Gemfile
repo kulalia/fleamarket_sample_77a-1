@@ -52,6 +52,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'carrierwave', '~> 2.0'
   gem 'fog-aws'
+  gem 'dotenv-rails'
 end
 
 group :development do
