@@ -72,19 +72,33 @@
       margin: 0 auto;
       // text-align: center;
 
+      .field-name {
+        display: flex;
+        justify-content: space-between;
+      }
+
       .field {
         text-align: left;
+        padding: 10px;
+
+        .must {
+          background-color: red;
+          color: white;
+        }
+
+        .name {
+          height: 40px;
+          width: 144px;
+        }
       }
+
 
       .inputbox {
         margin: 0 auto;
         text-align: start;
       }
 
-      .name {
-        height: 40px;
-        width: 130px;
-      }
+
 
 
     }
