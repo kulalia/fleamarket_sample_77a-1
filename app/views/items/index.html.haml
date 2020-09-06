@@ -1,35 +1,38 @@
 .header
   .header__body
     .header__body--top
-      %a(href="/")
-      = image_tag 'logo/logo.png', height: 40, width: 140, class: 'header__body--top--logo'
+      %h1.header__body--top--icons
+        %a.header__body--top--icons--icon(href="/")
+          = image_tag 'logo/logo.png', class: 'header__body--top--icons--icon--logo'
       .form    
         = form_with url: root_path do |f|
           = f.text_field :content, class: 'form__input', placeholder: 'キーワードから探す'
-          = f.label :submit, class: 'form__submit' do
-            = f.submit  class: 'form__submit--btn'
-            = image_tag 'icon/icon-search 1.png', class: 'form__icon'
+          = f.submit class: 'form__submitBtn'
+          
       %ul.result      
     .header__body--nav
       %ul.navLeft
         %li.category
-          = link_to "#" do
+          = link_to "#", class: "li" do
             カテゴリー
-          -# .category__tree
-          -#   %ul.category__list
-          -#     %li.category__list--item
+          .category__tree
+            %ul.category__tree--list
+              %li.category__tree--list--item
+                %select
+                  %option(value="1")
+                    レディース
         %li.brand
-          = link_to "#" do
+          = link_to "#", class: "li"  do
             ブランド
           -# .brand__tree
           -#   %ul.brand__list
           -#     %li.brand__list--item
       %ul.navRight
         %li.login
-          = link_to "#" do
+          = link_to "#", class: "li" do
             ログイン
         %li.register
-          = link_to "#" do
+          = link_to "#", class: "li" do
             新規会員登録
 
 
@@ -44,45 +47,43 @@
         フリマアプリです
       .badge
         %a.aBadge(href="https://www.apple.com/jp/ios/app-store/")
-          = image_tag 'app_Badge.jpeg', height: 53, wigth:200, class: 'appBadge'  
+          = image_tag 'app_Badge.jpeg', height: 53, wigth:300, class: 'appBadge'  
         %a.gBadge(href="https://play.google.com/store")
           = image_tag 'google_badge.png', height: 79, width: 200, class: 'googleBadge'
 
   %section.main__reasons
-    %h2.main__reasons--title
+    %h2.main__reasons__title
       FURIMAが選ばれる3つの理由
-    %ul.main__reasons--reason
-      %li.reasonList
-        .reasonList__image
+    %ul.main__reasons__reason
+      %li.main__reasons__reason__reasonList
+        .main__reasons__reason__reasonList--image
           %span.num
             1
           = image_tag 'pict/pict-reason-01.jpg', height: 300, width: 300
-        %h3.reasonList__subtitle
+        %h3.main__reasons__reason__reasonList--subtitle
           %span３分
           ですぐに出品
-        %p.reasonList__explanation
+        %p.main__reasons__reason__reasonList--explanation
           スマホで入力するだけで簡単に出品できる!
-
-      %li.reasonList
-        .reasonList__image
+      %li.main__reasons__reason__reasonList
+        .main__reasons__reason__reasonList--image
           %sapn.num
             2
           = image_tag 'pict/pict-reason-02.jpg', height: 300, width: 300  
-        %h3.reasonList__subtitle
+        %h3.main__reasons__reason__reasonList--subtitle
           %spanシンプル
           で使いやすい
-        %p.reasonList__explanation
+        %p.main__reasons__reason__reasonList--explanation
           めんどくさい入力は必要なく、検索も購入もスムーズ!
-
-      %li.reasonList
-        .reasonList__image
+      %li.main__reasons__reason__reasonList
+        .main__reasons__reason__reasonList--image
           %span.num
             3
           = image_tag 'pict/pict-reason-03.jpg', height: 300, width: 300
-        %h3.reasonList__subtitle
+        %h3.main__reasons__reason__reasonList--subtitle
           手数料
           %span業界最安
-        %p.reasonList__explanation
+        %p.main__reasons__reason__reasonList--explanation
           最大3%でお得に出品&購入!
 
 
@@ -104,111 +105,286 @@
 
 
   %section.main__advantage
-    %h2.main__advantage--title
+    %h2.main__advantage__title
       FURIMAの特徴
-    .main__advantage--feature
-      %section.featureBox
-        %figure.featureImage
+    .main__advantage__feature
+      %section.main__advantage__feature__box
+        %figure.main__advantage__feature__box--boxImage
           = image_tag 'icon/icon-01.png', height: 340, wigth:220
-        %h3.featureTitle
+        %h3.main__advantage__feature__box--boxTitle
           簡単に売り買いできる
-        %p.featureText
+        %p.main__advantage__feature__box--boxText
           スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
-      %section.featureBox
-        %figure.featureImage
+      %section.main__advantage__feature__box
+        %figure.main__advantage__feature__box--boxImage
           = image_tag 'icon/icon-03.png', height: 340, wigth:220
-        %h3.featureTitle
+        %h3.main__advantage__feature__box--boxTitle
           売上金は即日振込みに対応
-        %p.featureText
+        %p.main__advantage__feature__box--boxText
           午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします!
-      %section.featureBox
-        %figure.featureImage
+      %section.main__advantage__feature__box
+        %figure.main__advantage__feature__box--boxImage
           = image_tag 'icon/icon-04.png', height: 340, wigth:220
-        %h3.featureTitle
+        %h3.main__advantage__feature__box--boxTitle
           様々な支払いに対応
-        %p.featureText
+        %p.main__advantage__feature__box--boxText
           お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
 
 
-  %section.newPostList
-    %h2.newPostList--puCategory
+  %section.main__newPostList
+    %h2.main__newPostList__puCategory
       ピックアップカテゴリー
-    .newPostList--searchBox
-      .searchBox--head
+    .main__newPostList__searchBox
+      .main__newPostList__searchBox--head
         %a(href="#")
           %h3.subtitle
             新規投稿商品
-      .searchBox--lists
-  %section.postList
-    %h2.postList--puBrand
+      .main__newPostList__searchBox--lists
+        .main__newPostList__searchBox--lists--product
+          %a.a(href="#")
+            %figure.productImage
+              = image_tag 'fot.jpg', class: 'image'
+            .productBody
+              %h3.productBody--name
+                デザート
+              .productBody--date
+                %ul.productBody--date--box
+                  %li
+                    1,000円
+                  %li
+                    %i.fas.fa-star
+                      1
+                %p
+                  (税込)  
+        .main__newPostList__searchBox--lists--product
+          %a.a(href="#")
+            %figure.productImage
+              = image_tag 'yos.jpg', class: 'image'
+            .productBody
+              %h3.productBody--name
+                洋食1
+              .productBody--date
+                %ul.productBody--date--box
+                  %li
+                    1,500円
+                  %li
+                    %i.fas.fa-star
+                      4
+                %p
+                  (税込)
+        .main__newPostList__searchBox--lists--product
+          %a.a(href="#")
+            %figure.productImage
+              = image_tag 'yos0.jpg', class: 'image' 
+            .productBody
+              %h3.productBody--name
+                洋食2
+              .productBody--date
+                %ul.productBody--date--box
+                  %li
+                    1,600円
+                  %li
+                    %i.fas.fa-star
+                      3
+                %p
+                  (税込)
+        .main__newPostList__searchBox--lists--product
+          %a.a(href="#")
+            %figure.productImage
+              = image_tag 'was.jpg', class: 'image' 
+            .productBody
+              %h3.productBody--name
+                和食1
+              .productBody--date
+                %ul.productBody--date--box
+                  %li
+                    1,200円
+                  %li
+                    %i.fas.fa-star
+                      2
+                %p
+                  (税込)
+        .main__newPostList__searchBox--lists--product
+          %a.a(href="#")
+            %figure.productImage
+              = image_tag 'was0.jpg', class: 'image' 
+            .productBody
+              %h3.productBody--name
+                団子
+              .productBody--date
+                %ul.productBody--date--box
+                  %li
+                    1,300円
+                  %li
+                    %i.fas.fa-star
+                      1
+                %p
+                  (税込)
+
+  %section#post.main__newPostList
+    %h2.main__newPostList__puCategory
       ピックアップブランド
-    .postList--searchBox
-      .searchBox--head
+    .main__newPostList__searchBox
+      .main__newPostList__searchBox--head
         %a(href="#")
           %h3.subtitle
             アーカイバ
-      .searchBox--lists
+      .main__newPostList__searchBox--lists
+        .main__newPostList__searchBox--lists--product
+          %a.a(href="#")
+            %figure.productImage
+              = image_tag 'fot.jpg', class: 'image'
+            .productBody
+              %h3.productBody--name
+                デザート
+              .productBody--date
+                %ul.productBody--date--box
+                  %li
+                    1,000円
+                  %li
+                    %i.fas.fa-star
+                      1
+                %p
+                  (税込)  
+        .main__newPostList__searchBox--lists--product
+          %a.a(href="#")
+            %figure.productImage
+              = image_tag 'yos.jpg', class: 'image'
+            .productBody
+              %h3.productBody--name
+                洋食1
+              .productBody--date
+                %ul.productBody--date--box
+                  %li
+                    1,500円
+                  %li
+                    %i.fas.fa-star
+                      4
+                %p
+                  (税込)
+        .main__newPostList__searchBox--lists--product
+          %a.a(href="#")
+            %figure.productImage
+              = image_tag 'yos0.jpg', class: 'image' 
+            .productBody
+              %h3.productBody--name
+                洋食2
+              .productBody--date
+                %ul.productBody--date--box
+                  %li
+                    1,600円
+                  %li
+                    %i.fas.fa-star
+                      3
+                %p
+                  (税込)
+        .main__newPostList__searchBox--lists--product
+          %a.a(href="#")
+            %figure.productImage
+              = image_tag 'was.jpg', class: 'image' 
+            .productBody
+              %h3.productBody--name
+                和食1
+              .productBody--date
+                %ul.productBody--date--box
+                  %li
+                    1,200円
+                  %li
+                    %i.fas.fa-star
+                      2
+                %p
+                  (税込)
+        .main__newPostList__searchBox--lists--product
+          %a.a(href="#")
+            %figure.productImage
+              = image_tag 'was0.jpg', class: 'image' 
+            .productBody
+              %h3.productBody--name
+                団子
+              .productBody--date
+                %ul.productBody--date--box
+                  %li
+                    1,300円
+                  %li
+                    %i.fas.fa-star
+                      1
+                %p
+                  (税込)
+
+  -# %section.main__postList
+  -#   %h2.main__postList__puBrand
+  -#     ピックアップブランド
+  -#   .main__postList__searchBox
+  -#     .main__postList__searchBox--head
+  -#       %a(href="#")
+  -#         %h3.subtitle
+  -#           アーカイバ
+  -#     .main__postList__searchBox--lists
 
 
 %aside.appbanner
-  .bannerContent
-    %h2.contentTitle
+  .appbanner__bannerContent
+    %h2.appbanner__bannerContent--contentTitle
       だれでもかんたん、人生を変えるフリマアプリ
-    %p.contentText
+    %p.appbanner__bannerContent--contentText
       今すぐ無料ダウンロード!
-    .badge
+    .badge-a
       %a.aBadge(href="https://www.apple.com/jp/ios/app-store/")
         = image_tag 'app_Badge.jpeg', height: 53, wigth:200, class: 'appBadge'  
       %a.gBadge(href="https://play.google.com/store")
         = image_tag 'google_badge.png', height: 79, width: 200, class: 'googleBadge'
+
+
 .footer
   %ul.footer__contents
-    %li.contents--content
-      %h2.contentTitle
+    %li.footer__contents__content
+      %h2.footer__contents__content--contentTitle
         FURIMAについて
-      %ul.contentList
+      %ul.footer__contents__content--contentList
         %li
-          %a(href="#")
-            会社概要(運営会社)
+          %a.tex(href="#")
+            会社概要 (運営会社)
         %li
-          %a(href="#")
+          %a.tex(href="#")
             プライバシーポリシー
         %li
-          %a(href="#")
+          %a.tex(href="#")
             FURIMA利用規約
         %li
-          %a(href="#")
-            ポイントにポイントに関する特約
-    %li.contents--content
-      %h2.contentTitle
+          %a.tex(href="#")
+            ポイントに関する特約
+    %li.footer__contents__content
+      %h2.footer__contents__content--contentTitle
         FURIMAを見る
-      %ul.contentList
+      %ul.footer__contents__content--contentList
         %li
-          %a(href="#")
+          %a.tex(href="#")
             カテゴリー一覧
         %li  
-          %a(href="#")
+          %a.tex(href="#")
             ブランド一覧
-    %li.contents--content
-      %h2.contentTitle
+    %li.footer__contents__content
+      %h2.footer__contents__content--contentTitle
         ヘルプ&ガイド
-      %ul.contentList
+      %ul.footer__contents__content--contentList
         %li
-          %a(href="#")
+          %a.tex(href="#")
             FURIMAガイド
         %li
-          %a(href="#")
+          %a.tex(href="#")
             FURIMAロゴ利用ガイドライン
         %li 
-          %a(href="#")
+          %a.tex(href="#")
             お知らせ 
   .footer__whiteLogo
-    %a(href="#")
-    = image_tag 'logo/logo-white.png', height: 40, width: 140
+    %a(href="/")
+    = image_tag 'logo/logo-white.png', height: 45, width: 160
   %p
     ©FURIMA
-%a(href="#") 
+
+
+%a.btn(href="#") 
   .purchase
-    %span.exhibition 
+    %span.purchase--exhibition 
       出品する
     = image_tag 'icon/icon_camera.png', height: 54, width: 54
