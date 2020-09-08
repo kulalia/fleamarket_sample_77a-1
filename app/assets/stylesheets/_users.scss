@@ -1,6 +1,6 @@
 .devise {
-  height: 100vh;
-  width: 100vw;
+  min-height: 100vh;
+  width: 100%;
   background-color: #f8f8f8;
   display: flex;
   align-items: center;
@@ -39,9 +39,7 @@
         color: #3CCACE;
       }
 
-      .actions {
-        padding-top: 20px;
-      }
+
 
       
 
@@ -49,11 +47,12 @@
   }
 
   &__signupbox {
-    height: 800px;
-    width: 800px;
+    height: auto;
+    width: 720px;
     background-color: #fff;
-    margin: 0 auto;
+    margin: 100px auto;
     text-align: center;
+    padding: 40px 0;
     
     &__text {
       font-size: 24px;
@@ -61,6 +60,7 @@
     }
 
     &__form {
+      padding-top: 30px;
       width: 400px;
       margin: 0 auto;
 
@@ -125,6 +125,10 @@
     }
 
 
+    }
+
+    .actions {
+      padding-top: 20px;
     }
 
     .submitBtn {
