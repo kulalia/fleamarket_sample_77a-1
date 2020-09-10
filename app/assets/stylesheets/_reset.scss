@@ -95,7 +95,7 @@ acronym {
   border: 0;
   font-variant: normal;
 }
-// to preserve line-height and selector appearance 
+// to preserve line-height and selector appearance
 sup {
   vertical-align: text-top;
 }
@@ -110,14 +110,14 @@ input, textarea, select {
   font-weight: inherit;
 }
 
-// to enable resizing for IE 
+// to enable resizing for IE
 input,
 textarea,
 select {
   *font-size: 100%;
 }
 
-//because legend doesn't inherit in IE 
+//because legend doesn't inherit in IE
 legend {
   color: #000;
 }

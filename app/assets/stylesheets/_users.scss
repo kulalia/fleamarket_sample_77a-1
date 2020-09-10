@@ -102,7 +102,8 @@ body {
         border: 1px solid $blue-color;
         margin-bottom: 5px;
       }
-    }    
+    }
+
     &__settings {
       margin-left: 100px;
       margin-top: 10px;
@@ -110,9 +111,6 @@ body {
       &-box {
         background-color: $white-color;
         padding: 30px;
-
-        &__profile {
-        }
 
         &__credit-card {
           border: 1px solid $blue-color;
@@ -159,10 +157,12 @@ body {
       margin-right: 100px;
       margin-top: 55px;
       width: 800px;
+
       .right-content__box {
         background-color: $blue-color;
         height: 100px;
         width: 800px;
+        
         .right-content__item {
           font-family: "Gill Sans",sans-serif;
           font-size: 18px;
