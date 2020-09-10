@@ -5,6 +5,7 @@
   display: flex;
   align-items: center;
   overflow: scroll;
+  color: rgb(51, 51, 51);
 
   &__loginbox {
     height: 335px;
@@ -39,10 +40,6 @@
         color: #3CCACE;
       }
 
-
-
-      
-
     }
   }
 
@@ -52,11 +49,15 @@
     background-color: #fff;
     margin: 100px auto;
     text-align: center;
-    padding: 40px 0;
+    padding-bottom: 40px;
     
     &__text {
+      height: 100px;
       font-size: 24px;
       font-weight: bold;
+      line-height: 100px;
+      border: 2px solid;
+      border-color: #f8f8f8;
     }
 
     &__form {
@@ -71,7 +72,7 @@
 
       .field {
         text-align: left;
-        padding: 10px;
+        padding: 15px 0 10px 10px;
         font-size: 13px;
         font-weight: bold;
 
@@ -97,22 +98,31 @@
         text-align: start;
       }
 
-      .field-delivery {
-        height: 50px;
+      .field-profile {
+        height: 100px;
         margin: 0 auto;
-        line-height: 50px;
+        line-height: 100px;
+        font-weight: bold;
+        font-size: 20px;
+      }
+
+      .field-delivery {
+        height: 100px;
+        margin: 0 auto;
+        line-height: 100px;
+        font-weight: bold;
+        font-size: 20px;
       }
 
       .input-select select {
+        // -webkit-appearance: none;
+        // -moz-appearance: none;
+        // // appearance: none;
         height: 50px;
         width: 85px;
         margin-top: 8px;
+        padding: 0 10px;
       }
-
-      
-
-
-
 
     }
 
@@ -122,6 +132,19 @@
       width: 360px;
       padding-left: 10px;
       margin-top: 8px;
+      font-weight: normal;
+      font-size: 14px;
+    }
+
+    #error_explanation {
+      text-align: left;
+      padding: 30px 0;
+      color: rgb(224, 44, 44);
+      // font-weight: bold;
+    }
+
+    .field_with_errors {
+      display: contents;
     }
 
 

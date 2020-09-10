@@ -7,59 +7,61 @@
       = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
         = render "devise/shared/error_messages", resource: resource
         .field
-          = f.label :email
+          = f.label :email, "メールアドレス"
           %span{"class"=>"must"}
             = "必須"
           %br/
           = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "PC・携帯いずれも可", class: "input-text"
         .field
-          = f.label :password
+          = f.label :password, "パスワード"
           - if @minimum_password_length
             %span{"class"=>"must"}
               = "必須"
             %br/
             = f.password_field :password, autocomplete: "new-password", placeholder: "7文字以上・半角英数", class: "input-text"
         .field
-          = f.label :password_confirmation
+          = f.label :password_confirmation, "パスワード(確認用)"
           %span{"class"=>"must"}
             = "必須"
           %br/
-          = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "7文字以上・半角英数", class: "input-text"
+          = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "もう一度入力してください", class: "input-text"
         .field
-          = f.label :nickname
+          = f.label :nickname, "ニックネーム"
           %span{"class"=>"must"}
             = "必須"
           %br/
           = f.text_field :nickname, autofocus: true, autocomplete: "nickname", placeholder: "例）テスト", class: "input-text"
         = f.fields_for :user_profile, @profile do |f|
+          .field-profile
+            = "本人確認"
           .field-name
             .field
-              = f.label :family_name
+              = f.label :family_name, "お名前(全角)"
               %span{"class"=>"must"}
                 = "必須"
               %br/
               = f.text_field :family_name, autofocus: true, autocomplete: "family-name", placeholder: "例）田中", class: "input-text name"
             .field
-              = f.label :first_name
-              %span{"class"=>"must"}
-                = "必須"
+              -# = f.label :first_name
+              -# %span{"class"=>"must"}
+              -#   = "必須"
               %br/
               = f.text_field :first_name, autofocus: true, autocomplete: "given-name", placeholder: "例）太郎", class: "input-text name"
           .field-name
             .field
-              = f.label :family_name_kana
+              = f.label :family_name_kana, "お名前(かな)"
               %span{"class"=>"must"}
                 = "必須"
               %br/
               = f.text_field :family_name_kana, autofocus: true, autocomplete: "family-name", placeholder: "例）たなか", class: "input-text name"
             .field
-              = f.label :first_name_kana
-              %span{"class"=>"must"}
-                = "必須"
+              -# = f.label :first_name_kana
+              -# %span{"class"=>"must"}
+              -#   = "必須"
               %br/
               = f.text_field :first_name_kana, autofocus: true, autocomplete: "given-name", placeholder: "例）たろう", class: "input-text name"
           .field
-            = f.label :birthday
+            = f.label :birthday, "生年月日"
             %span{"class"=>"must"}
               = "必須"
             %br/
@@ -70,61 +72,61 @@
             = "配送先の情報"
           .field-name
             .field
-              = f.label :family_name
+              = f.label :family_name, "お名前(全角)"
               %span{"class"=>"must"}
                 = "必須"
               %br/
               = f.text_field :family_name, autofocus: true, autocomplete: "family-name", class: "input-text", placeholder: "例）田中", class: "input-text name"
             .field
-              = f.label :family_name_kana
+              -# = f.label :first_name
+              -# %span{"class"=>"must"}
+              -#   = "必須"
+              %br/
+              = f.text_field :first_name, autofocus: true, autocomplete: "given-name", class: "input-text", placeholder: "例）たなか", class: "input-text name"
+          .field-name
+            .field
+              = f.label :family_name_kana, "お名前(かな)"
               %span{"class"=>"must"}
                 = "必須"
               %br/
               = f.text_field :family_name_kana, autofocus: true, autocomplete: "family-name", class: "input-text", placeholder: "例）太郎", class: "input-text name"
-          .field-name
             .field
-              = f.label :first_name
-              %span{"class"=>"must"}
-                = "必須"
-              %br/
-              = f.text_field :first_name, autofocus: true, autocomplete: "given-name", class: "input-text", placeholder: "例）たなか", class: "input-text name"
-            .field
-              = f.label :first_name_kana
-              %span{"class"=>"must"}
-                = "必須"
+              -# = f.label :first_name_kana
+              -# %span{"class"=>"must"}
+              -#   = "必須"
               %br/
               = f.text_field :first_name_kana, autofocus: true, autocomplete: "given-name", class: "input-text", placeholder: "例）たろう", class: "input-text name"
           .field
-            = f.label :postal_code
+            = f.label :postal_code, "郵便番号"
             %span{"class"=>"must"}
               = "必須"
             %br/
             = f.text_field :postal_code, autofocus: true, autocomplete: "postal-code", placeholder: "ハイフンなし・半角数字7桁", class: "input-text"
           .field
-            = f.label :prefecture_id
+            = f.label :prefecture_id, "都道府県"
             %span{"class"=>"must"}
               = "必須"
             %br/
             .input-select
               = f.collection_select :prefecture_id, Prefecture.all, :id, :name, autofocus: true, autocomplete: "address-level1", prompt: "--"
           .field
-            = f.label :city
+            = f.label :city, "市区町村"
             %span{"class"=>"must"}
               = "必須"
             %br/
             = f.text_field :city, autofocus: true, autocomplete: "address-level2", placeholder: "例）大阪市中央区", class: "input-text"
           .field
-            = f.label :address
+            = f.label :address, "番地"
             %span{"class"=>"must"}
               = "必須"
             %br/
             = f.text_field :address, autofocus: true, autocomplete: "address-level3", placeholder: "例）1-1-1", class: "input-text"
           .field
-            = f.label :building
+            = f.label :building, "マンション・アパート名(任意)"
             %br/
             = f.text_field :building, autofocus: true, autocomplete: "address-level4", placeholder: "例）なんばスカイオ15F", class: "input-text"
           .field
-            = f.label :phone_number
+            = f.label :phone_number, "電話番号(任意)"
             %br/
             = f.text_field :phone_number, autofocus: true, autocomplete: "tel", placeholder: "例）09011112222", class: "input-text"
         .actions
