@@ -4,7 +4,8 @@
   margin: auto;
   position: relative;
   text-align: center;
-  width: 700px;  
+  width: 700px;
+  
   &__btn {
     background-color: $red-color;
     border-radius: 8px;
@@ -16,6 +17,6 @@
     text-decoration: none;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: 300px;    
+    width: 300px;
   }
 }

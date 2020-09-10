@@ -36,101 +36,100 @@ body {
     &__mypage-lists {
       background-color: $white-color;
       margin-left: 100px;
-      padding: 30px;     
-      .left-content__mypage {
-      }
+      padding: 30px;
 
-      .left-content__todo-list {
+      &__todo-list {
         border: 1px solid $blue-color;
         margin-bottom: 5px;
       }
 
-      .left-content__good-list {
+      &__good-list {
         border: 1px solid $blue-color;
         margin-bottom: 5px;
       }
 
-      .left-content__display {
+      &__display {
         border: 1px solid $blue-color;
         margin-bottom: 5px;
       }
 
-      .left-content__draft-list {
+      &__draft-list {
         border: 1px solid $blue-color;
         margin-bottom: 5px;
       }
 
-      .left-content__item-display {
+      &__item-display {
         border: 1px solid $blue-color;
         margin-bottom: 5px;
       }
 
-      .left-content__item-trade {
+      &__item-trade {
         border: 1px solid $blue-color;
         margin-bottom: 5px;
       }
 
-      .left-content__item-sale {
+      &__item-sale {
         border: 1px solid $blue-color;
         margin-bottom: 5px;
       }
 
-      .left-content__item-buy {
+      &__item-buy {
         border: 1px solid $blue-color;
         margin-bottom: 5px;
       }
 
-      .left-content__item-past {
+      &__item-past {
         border: 1px solid $blue-color;
         margin-bottom: 5px;
       }
 
-      .left-content__news-list {
+      &__news-list {
         border: 1px solid $blue-color;
         margin-bottom: 5px;
       }
 
-      .left-content__evaluation-list {
+      &__evaluation-list {
         border: 1px solid $blue-color;
         margin-bottom: 5px;
       }
 
-      .left-content__guide {
+      &__guide {
         border: 1px solid $blue-color;
         margin-bottom: 5px;
       }
 
-      .left-content__contact {
+      &__contact {
         border: 1px solid $blue-color;
         margin-bottom: 5px;
       }
     }    
-    .left-content__settings {
+    &__settings {
       margin-left: 100px;
-      margin-top: 10px;     
+      margin-top: 10px;
+
       &-box {
         background-color: $white-color;
         padding: 30px;
 
-        .left-content__profile {
+        &__profile {
         }
 
-        .left-content__credit-card {
+        &__credit-card {
           border: 1px solid $blue-color;
           margin-bottom: 5px;
         }
 
-        .left-content__mail {
+        &__mail {
           border: 1px solid $blue-color;
           margin-bottom: 5px;
         }
 
-        .left-content__logout {
+        &__logout {
           border: 1px solid $blue-color;
           margin-bottom: 5px;
         }
-      }  
-    }    
+      }
+    }
   }
 
   .right-content {
@@ -138,11 +137,12 @@ body {
       background-color: $white-color;
       height: 450px;
       margin-top: 30px;
-      width: 800px;     
+      width: 800px;
+
       &--other {
         background-color: $blue-color;
         height: 100px;
-        width: 800px;    
+        width: 800px;
 
         .right-content__user {
           font-family: "Gill Sans",sans-serif;
@@ -158,16 +158,16 @@ body {
       height: 450px;
       margin-right: 100px;
       margin-top: 55px;
-      width: 800px;     
+      width: 800px;
       .right-content__box {
         background-color: $blue-color;
         height: 100px;
-        width: 800px;        
+        width: 800px;
         .right-content__item {
           font-family: "Gill Sans",sans-serif;
           font-size: 18px;
           line-height: 100px;
-          text-align: center;      
+          text-align: center;
         }
       }
     }
