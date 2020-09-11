@@ -1,7 +1,12 @@
+$backgroundColor: #f8f8f8;
+$mainColor: #3CCACE;
+$mainBoxFontColor: #fff;
+$pointColor: rgb(224, 44, 44);
+
 .devise {
   min-height: 100vh;
   width: 100%;
-  background-color: #f8f8f8;
+  background-color: $backgroundColor;
   display: flex;
   align-items: center;
   overflow: scroll;
@@ -10,7 +15,7 @@
   &__loginbox {
     height: 335px;
     width: 600px;
-    background-color: #fff;
+    background-color: $mainBoxFontColor;
     margin: 0 auto;
     text-align: center;
 
@@ -37,16 +42,15 @@
       }
 
       .text {
-        color: #3CCACE;
+        color: $mainColor;
       }
-
     }
   }
 
   &__signupbox {
     height: auto;
     width: 720px;
-    background-color: #fff;
+    background-color: $mainBoxFontColor;
     margin: 100px auto;
     text-align: center;
     padding-bottom: 40px;
@@ -57,7 +61,7 @@
       font-weight: bold;
       line-height: 100px;
       border: 2px solid;
-      border-color: #f8f8f8;
+      border-color: $backgroundColor;
     }
 
     &__form {
@@ -77,8 +81,8 @@
         font-weight: bold;
 
         .must {
-          background-color: rgb(224, 44, 44);
-          color: white;
+          background-color: $pointColor;
+          color: $mainBoxFontColor;
           font-size: 12px;
           margin-left: 3px;
           padding: 3px;
@@ -91,7 +95,6 @@
           width: 160px;
         }
       }
-
 
       .inputbox {
         margin: 0 auto;
@@ -115,52 +118,42 @@
       }
 
       .input-select select {
-        // -webkit-appearance: none;
-        // -moz-appearance: none;
-        // // appearance: none;
         height: 50px;
         width: 85px;
         margin-top: 8px;
         padding: 0 10px;
       }
-
     }
 
+      .input-text {
+        height: 40px;
+        width: 360px;
+        padding-left: 10px;
+        margin-top: 8px;
+        font-weight: normal;
+        font-size: 14px;
+      }
 
-    .input-text {
-      height: 40px;
-      width: 360px;
-      padding-left: 10px;
-      margin-top: 8px;
-      font-weight: normal;
-      font-size: 14px;
-    }
+      #error_explanation {
+        text-align: left;
+        padding: 30px 0;
+        color: $pointColor;
+      }
 
-    #error_explanation {
-      text-align: left;
-      padding: 30px 0;
-      color: rgb(224, 44, 44);
-      // font-weight: bold;
-    }
+      .field_with_errors {
+        display: contents;
+      }
+  }
+      .actions {
+        padding-top: 20px;
+      }
 
-    .field_with_errors {
-      display: contents;
-    }
-
-
-    }
-
-    .actions {
-      padding-top: 20px;
-    }
-
-    .submitBtn {
-      height: 40px;
-      width: 230px;
-      background-color: #3CCACE;
-      border-radius: 100px;
-      color: #fff;
-      border: 1px solid;
-    }
-
+      .submitBtn {
+        height: 40px;
+        width: 230px;
+        background-color: $mainColor;
+        border-radius: 100px;
+        color: $mainBoxFontColor;
+        border: 1px solid;
+      }
 }
