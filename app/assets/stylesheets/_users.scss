@@ -121,6 +121,15 @@ $pointColor: rgb(224, 44, 44);
         width: 85px;
         margin-top: 8px;
         padding: 0 10px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background-image: url("icon-arrow.png");
+        background-repeat: no-repeat;
+        background-size: 15px 15px;
+        background-position: right 10px center;
+        font-weight: normal;
+        font-size: 14px;
       }
     }
 
