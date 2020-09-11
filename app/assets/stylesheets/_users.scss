@@ -5,7 +5,7 @@ $pointColor: rgb(224, 44, 44);
 $titleFontSize: 24px;
 $inputFontSize: 14px;
 
-@mixin fieldTextDesign {
+@mixin fieldTextDesign() {
   height: 100px;
   margin: 0 auto;
   line-height: 100px;
@@ -111,11 +111,11 @@ $inputFontSize: 14px;
       }
 
       .field-profile {
-        @include fieldTextDesign;
+        @include fieldTextDesign();
       }
 
       .field-delivery {
-        @include fieldTextDesign;
+        @include fieldTextDesign();
       }
 
       .input-select select {
