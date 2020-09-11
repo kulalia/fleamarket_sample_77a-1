@@ -11,8 +11,8 @@
           %br/
           = f.password_field :password, autocomplete: "current-password", placeholder: "パスワード", class: "input-text"
         - if devise_mapping.rememberable?
-          .field__remember
+          .field-remember
             = f.check_box :remember_me
             = f.label :remember_me, class: "text"
         .actions
-          = f.submit "ログインする", class: "submitBtn"
+          = f.submit "ログインする", class: "submit-btn"

@@ -30,14 +30,13 @@ $pointColor: rgb(224, 44, 44);
       width: 500px;
       margin: 0 auto;
       
-
       .input-text {
         height: 40px;
         width: 300px;
         padding-left: 10px;
       }
 
-      .field__remember {
+      .field-remember {
         padding-top: 20px;
       }
 
@@ -54,7 +53,7 @@ $pointColor: rgb(224, 44, 44);
     margin: 100px auto;
     text-align: center;
     padding-bottom: 40px;
-    
+
     &__text {
       height: 100px;
       font-size: 24px;
@@ -144,11 +143,12 @@ $pointColor: rgb(224, 44, 44);
         display: contents;
       }
   }
+
       .actions {
         padding-top: 20px;
       }
 
-      .submitBtn {
+      .submit-btn {
         height: 40px;
         width: 230px;
         background-color: $mainColor;
