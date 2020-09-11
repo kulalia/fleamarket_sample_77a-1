@@ -3,7 +3,6 @@ $mainColor: #3CCACE;
 $mainBoxFontColor: #fff;
 $pointColor: rgb(224, 44, 44);
 $titleFontSize: 24px;
-$subtitleFontSize: 20px;
 $inputFontSize: 14px;
 
 @mixin fieldTextDesign {
@@ -11,7 +10,7 @@ $inputFontSize: 14px;
   margin: 0 auto;
   line-height: 100px;
   font-weight: bold;
-  font-size: $subtitleFontSize;
+  font-size: 20px;
 }
 
 .devise {
@@ -112,11 +111,11 @@ $inputFontSize: 14px;
       }
 
       .field-profile {
-        @include fieldTextDesign
+        @include fieldTextDesign;
       }
 
       .field-delivery {
-        @include fieldTextDesign
+        @include fieldTextDesign;
       }
 
       .input-select select {
