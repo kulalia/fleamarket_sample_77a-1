@@ -2,6 +2,17 @@ $backgroundColor: #f8f8f8;
 $mainColor: #3CCACE;
 $mainBoxFontColor: #fff;
 $pointColor: rgb(224, 44, 44);
+$titleFontSize: 24px;
+$subtitleFontSize: 20px;
+$inputFontSize: 14px;
+
+@mixin fieldTextDesign {
+  height: 100px;
+  margin: 0 auto;
+  line-height: 100px;
+  font-weight: bold;
+  font-size: $subtitleFontSize;
+}
 
 .devise {
   min-height: 100vh;
@@ -21,7 +32,7 @@ $pointColor: rgb(224, 44, 44);
 
     &__text {
       padding-top: 25px;
-      font-size: 24px;
+      font-size: $titleFontSize;
       font-weight: bold;
     }
 
@@ -56,7 +67,7 @@ $pointColor: rgb(224, 44, 44);
 
     &__text {
       height: 100px;
-      font-size: 24px;
+      font-size: $titleFontSize;
       font-weight: bold;
       line-height: 100px;
       border: 2px solid;
@@ -101,19 +112,11 @@ $pointColor: rgb(224, 44, 44);
       }
 
       .field-profile {
-        height: 100px;
-        margin: 0 auto;
-        line-height: 100px;
-        font-weight: bold;
-        font-size: 20px;
+        @include fieldTextDesign
       }
 
       .field-delivery {
-        height: 100px;
-        margin: 0 auto;
-        line-height: 100px;
-        font-weight: bold;
-        font-size: 20px;
+        @include fieldTextDesign
       }
 
       .input-select select {
@@ -129,40 +132,41 @@ $pointColor: rgb(224, 44, 44);
         background-size: 15px 15px;
         background-position: right 10px center;
         font-weight: normal;
-        font-size: 14px;
+        font-size: $inputFontSize;
       }
     }
-
-      .input-text {
-        height: 40px;
-        width: 360px;
-        padding-left: 10px;
-        margin-top: 8px;
-        font-weight: normal;
-        font-size: 14px;
-      }
-
-      #error_explanation {
-        text-align: left;
-        padding: 30px 0;
-        color: $pointColor;
-      }
-
-      .field_with_errors {
-        display: contents;
-      }
   }
 
-      .actions {
-        padding-top: 20px;
-      }
+  .input-text {
+    height: 40px;
+    width: 360px;
+    padding-left: 10px;
+    margin-top: 8px;
+    font-weight: normal;
+    font-size: $inputFontSize;
+  }
 
-      .submit-btn {
-        height: 40px;
-        width: 230px;
-        background-color: $mainColor;
-        border-radius: 100px;
-        color: $mainBoxFontColor;
-        border: 1px solid;
-      }
+  #error_explanation {
+    text-align: left;
+    padding: 30px 0;
+    color: $pointColor;
+  }
+
+  .field_with_errors {
+    display: contents;
+  }
+
+
+  .actions {
+    padding-top: 20px;
+  }
+
+  .submit-btn {
+    height: 40px;
+    width: 230px;
+    background-color: $mainColor;
+    border-radius: 100px;
+    color: $mainBoxFontColor;
+    border: 1px solid;
+  }
 }
