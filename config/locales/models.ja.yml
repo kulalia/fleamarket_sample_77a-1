@@ -36,7 +36,7 @@ ja:
         family_name: 名前(全角)
         family_name_kana: 名前(かな)
         birthday: 生年月日
-      delivery_address:
+      delivery_addresses:
         first_name: 配送先の名前(全角)
         first_name_kana: 配送先の名前(かな)
         family_name: 配送先の名前(全角)
