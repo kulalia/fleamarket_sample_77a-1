@@ -8,7 +8,6 @@
         = form_with url: root_path do |f|
           = f.text_field :content, class: 'form__input', placeholder: 'キーワードから探す'
           = f.submit class: 'form__submitBtn'
-          
       %ul.result
     .header__body--nav
       %ul.navLeft
@@ -133,8 +132,8 @@
             新規投稿商品
       .main__newPostList__searchBox--lists
         = render "newPostList"
-        
-  %section#post.main__newPostList
+
+  %section.main__newPostList#post
     %h2.main__newPostList__puCategory
       ピックアップブランド
     .main__newPostList__searchBox
@@ -144,7 +143,6 @@
             アーカイバ
       .main__newPostList__searchBox--lists
         = render "newPostList"
-        
 
 %aside.appbanner
   .appbanner__bannerContent
@@ -184,7 +182,7 @@
         %li
           %a.tex(href="#")
             カテゴリー一覧
-        %li  
+        %li
           %a.tex(href="#")
             ブランド一覧
     %li.footer__contents__content
@@ -197,9 +195,9 @@
         %li
           %a.tex(href="#")
             FURIMAロゴ利用ガイドライン
-        %li 
+        %li
           %a.tex(href="#")
-            お知らせ 
+            お知らせ
   .footer__whiteLogo
     %a(href="/")
       = image_tag 'logo/logo-white.png', height: 45, width: 160
@@ -207,8 +205,9 @@
     ©FURIMA
 
 
-%a.btn(href="#") 
+%a.btn(href="#")
   .purchase
-    %span.purchase--exhibition 
+    %span.purchase--exhibition
       出品する
+
       = image_tag 'icon/icon_camera.png', height: 54, width: 54
