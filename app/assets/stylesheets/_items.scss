@@ -1,42 +1,106 @@
-.header {
-  background-color: white;
+$whiteColor: white;
+$redColor: red;
+$blackColor: black;
+
+@mixin fieldDesign {
+  background-color: $redColor;
+  width: 40px;
+  height: 20px;
+  color: $whiteColor;
+  text-align: center;
+  margin-left: 5px;
+  padding-bottom: 2px;
+  border-radius: 5px;
+}
+
+@mixin fieldDesignBlue {
+  background-color: #99CCFF;
+  width: 40px;
+  height: 20px;
+  color: $blackColor;
+  text-align: center;
+  margin-left: 5px;
+  padding-bottom: 2px;
+  border-radius: 5px;
+}
+
+@mixin btn {
+  font-size: 15px;
+  height: 80px;
+  width: 300px;
+  border-radius: 10px;
+}
+
+@mixin flexSize {
+  display: flex;
+  font-size: 15px;
+}
+
+@mixin fontWeight {
+  font-weight: bold;
+}
+
+@mixin heightWidth {
   height: 100px;
   width: 100%;
-  font-size: 20px;
-  font-weight: bold;
+}
+
+@mixin select {
+  margin-bottom: 25px;
+  width: 600px;
+  height: 40px;
+  padding-left: 10px;
+}
+
+@mixin input {
+  margin-bottom: 25px;
+  width: 587px;
+  height: 40px;
+  padding-left: 10px;
+}
+
+@mixin display {
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin borderRadius {
+  border-radius: 10px;
+}
+
+@mixin textAlign {
   text-align: center;
+}
+
+.header {
+  @include fontWeight;
+  @include heightWidth;
+  @include textAlign;
+  background-color: $whiteColor; 
+  font-size: 20px; 
   line-height: 100px;
 }
 
 .main {
   padding: 0 350px;
   .parent-box {    
-    background-color: white;
+    background-color: $whiteColor;
     .first-box {     
-      background-color: white;
+      background-color: $whiteColor;
       height: 300px; 
       padding-top: 15px;    
       border: ridge;
-      border-radius: 10px;
+      @include borderRadius;
       .image-box {
-        display: flex;
-        font-size: 15px;
+        @include flexSize;
         .image-box__sample {
-          text-align: center;
-          color: black;
-          margin-bottom: 10px;
-          margin-left: 30px;
-          font-weight: bold;
+          @include textAlign;
+          color: $blackColor;
+          margin:0 0 10px 30px;
+          @include fontWeight;
         }
         .image-box__mandatory {
-          background-color: red;
-          width: 40px;
-          height: 20px;
-          color: white;
-          text-align: center;
-          margin-left: 5px;
-          padding-bottom: 2px;
-          border-radius: 5px;
+          @include fieldDesign
         }
       }     
       .advice-box {
@@ -45,68 +109,45 @@
         padding-left: 30px;
       }
       .image-box__main {
-        background-color: #EEE;
+        background-color: lightblue;
         height: 150px;
         width: 700px;
-        margin-bottom: 35px;
-        margin-left: 30px;
+        margin:0 0 35px 30px;
       }
     }
     .second-box {
-      background-color: white;
+      background-color: $whiteColor;
       height: 300px;     
       margin-top: 20px;
-      padding-top: 15px;   
-      padding-left: 30px; 
-      padding-bottom: 30px;
+      padding: 15px 0 30px 30px;        
       border: ridge;
-      border-radius: 10px;
+      @include borderRadius;
       .item-name {
-        display: flex;
-        font-size: 15px;
+        @include flexSize;
         .item-name__sample {
-          text-align: center;
-          color: black;
+          @include textAlign;
+          color: $blackColor;
           margin-bottom: 10px;
-          font-weight: bold;
+          @include fontWeight;
         }
         .item-name__mandatory {
-          background-color: red;
-          width: 40px;
-          height: 20px;
-          color: white;
-          text-align: center;
-          margin-left: 5px;
-          padding-bottom: 2px;
-          border-radius: 5px;
+          @include fieldDesign
         }
       }
       .item-title input{
-        margin-bottom: 30px;
-        width: 587px;
-        height: 40px;
-        padding-left: 10px;
+        @include input;
       }
       .item-explanation {
-        display: flex;
-        font-size: 15px;
+        @include flexSize;
         .item-explanation__sample {
-          text-align: center;
-          color: black;
+          @include textAlign;
+          color: $blackColor;
           margin-bottom: 10px;   
-          font-weight: bold;      
+          @include fontWeight;      
         }
         .item-explanation__mandatory {
-          background-color: red;
-          width: 40px;
-          height: 20px;
-          color: white;
-          text-align: center;
-          margin-left: 5px;
-          padding-bottom: 2px;
-          border-radius: 5px;
-        }
-        
+          @include fieldDesign
+        }        
       }
       .explanation-text textarea{
         height: 180px;
@@ -114,219 +155,148 @@
       }
     }
     .third-box {
-      background-color: white;
+      background-color: $whiteColor;
       height: 330px;     
       margin-top: 20px;
-      padding-top: 15px;    
-      padding-left: 30px;
+      padding: 15px 0 0 30px;         
       border: ridge;
-      border-radius: 10px;
+      @include borderRadius;
       .third-box__title {
         margin-bottom: 10px;
         font-size: 18px;
-        font-weight: bold; 
+        @include fontWeight;
       }
       .item-category {
-        display: flex;
-        font-size: 15px;
+        @include flexSize;
         .item-category__sample {
-          text-align: center;
-          color: black;
+          @include textAlign;
+          color: $blackColor;
           margin-bottom: 10px;
-          font-weight: bold;
+          @include fontWeight;
         }
         .item-category__mandatory {
-          background-color: red;
-          width: 40px;
-          height: 20px;
-          color: white;
-          text-align: center;
-          margin-left: 5px;
-          padding-bottom: 2px;
-          border-radius: 5px;
+          @include fieldDesign
         }       
       }
       .item-category__select select{
-        margin-bottom: 25px;
-        width: 600px;
-        height: 40px;
-        padding-left: 10px;
+        @include select;
       }
       .item-brand {
-        display: flex;
-        font-size: 15px;
+        @include flexSize;
         .item-brand__sample {          
-          text-align: center;
-          color: black;
+          @include textAlign;
+          color: $blackColor;
           margin-bottom: 10px; 
-          font-weight: bold;         
+          @include fontWeight;    
         }
         .item-brand__optional {
-          background-color: #99CCFF;
-          width: 40px;
-          height: 20px;
-          color: black;
-          text-align: center;
-          margin-left: 5px;
-          padding-bottom: 2px;
-          border-radius: 5px;
+          @include fieldDesignBlue
         }
       }
       .brand-title input{
-        margin-bottom: 25px;
-        width: 587px;
-        height: 40px;
-        padding-left: 10px;
+        @include input;
       }
       .item-status {
-        display: flex;
-        font-size: 15px;
+        @include flexSize;
         .item-status__sample {
-          text-align: center;
-          color: black;
+          @include textAlign;
+          color: $blackColor;
           margin-bottom: 10px;
-          font-weight: bold; 
+          @include fontWeight;
         }
         .item-status__mandatory {
-          background-color: red;
-          width: 40px;
-          height: 20px;
-          color: white;
-          text-align: center;
-          margin-left: 5px;
-          padding-bottom: 2px;
-          border-radius: 5px;
+          @include fieldDesign
         }
       }
       .item-status__select select{
-        margin-bottom: 25px;
-        width: 600px;
-        height: 40px;
-        padding-left: 10px;
+        @include select;
       }
     }
     .fourth-box {
-      background-color: white;
+      background-color: $whiteColor;
       height: 330px;     
       margin-top: 20px;
-      padding-top: 15px;    
-      padding-left: 30px;
+      padding: 15px 0 0 30px;    
       border: ridge;
-      border-radius: 10px;
+      @include borderRadius;
       .fourth-box__title {
         margin-bottom: 10px;
         font-size: 18px;
-        font-weight: bold; 
+        @include fontWeight;
       }
       .shipping-fee {
-        display: flex;
-        font-size: 15px;
+        @include flexSize;
         .shipping-fee__sample {
-          text-align: center;
-          color: black;
+          @include textAlign;
+          color: $blackColor;
           margin-bottom: 10px;
-          font-weight: bold;
+          @include fontWeight;
         }
         .shipping-fee__mandatory {
-          background-color: red;
-          width: 40px;
-          height: 20px;
-          color: white;
-          text-align: center;
-          margin-left: 5px;
-          padding-bottom: 2px;
-          border-radius: 5px;
+          @include fieldDesign
         }       
       }
       .shipping-fee__select select{
-        margin-bottom: 25px;
-        width: 600px;
-        height: 40px;
-        padding-left: 10px;
+        @include select;
       }
       .shipping-region {
-        display: flex;
-        font-size: 15px;
+        @include flexSize;
         .shipping-region__sample {
-          text-align: center;
-          color: black;
+          @include textAlign;
+          color: $blackColor;
           margin-bottom: 10px;
-          font-weight: bold;
+          @include fontWeight;
         }
         .shipping-region__mandatory {
-          background-color: red;
-          width: 40px;
-          height: 20px;
-          color: white;
-          text-align: center;
-          margin-left: 5px;
-          padding-bottom: 2px;
-          border-radius: 5px;
+          @include fieldDesign
         }
       }
       .shipping-region__text input{
-        margin-bottom: 25px;
-        width: 587px;
-        height: 40px;
-        padding-left: 10px;
+        @include input;
       }
       .until-shipping {
-        display: flex;
-        font-size: 15px;
+        @include flexSize;
         .until-shipping__sample {
-          text-align: center;
-          color: black;
+          @include textAlign;
+          color: $blackColor;
           margin-bottom: 10px;
-          font-weight: bold;
+          @include fontWeight;
         }
         .until-shipping__mandatory {
-          background-color: red;
-          width: 40px;
-          height: 20px;
-          color: white;
-          text-align: center;
-          margin-left: 5px;
-          padding-bottom: 2px;
-          border-radius: 5px;
+          @include fieldDesign
         }
       }
       .until-shipping__select select{
-        margin-bottom: 25px;
-        width: 600px;
-        height: 40px;
-        padding-left: 10px;
+        @include select;
       }
     }
     .fifth-box {
-      background-color: white;
+      background-color: $whiteColor;
       height: 120px;     
       margin-top: 20px;
-      padding-top: 15px;    
-      padding-left: 30px;
+      padding: 15px 0 0 30px;    
       border: ridge;
-      border-radius: 10px;
+      @include borderRadius;
       .standard-price {
         font-size: 15px;
         margin-bottom: 15px;
-        font-weight: bold;
+        @include fontWeight;
       }
       .price-box {
-        display: flex;
-        justify-content: space-between;
+        @include display;
         .price-box__sample {
-          display: flex;
-          font-size: 15px;
+          @include flexSize;
           .price-box__sample-other {
-            text-align: center;
-            color: black;
-            font-weight: bold;
+            @include textAlign;
+            color: $blackColor;
+            @include fontWeight;
           }
           .price-box__mandatory {
-            background-color: red;
+            background-color: $redColor;
             width: 40px;
             height: 20px;
-            color: white;
-            text-align: center;
+            color: $whiteColor;
+            @include textAlign;
             margin-left: 5px;
             padding-bottom: 2px;
             border-radius: 5px;
@@ -341,33 +311,26 @@
       }
     }
     .btn-box {
-      background-color: white;
+      background-color: $whiteColor;
       height: 100px;     
       margin-top: 20px;
-      text-align: center;
+      @include textAlign;
       padding: 25px 50px 0 50px;
-      display: flex;
-      justify-content: space-between;
-      border: ridge;
-      border-radius: 10px;
+      @include display;
+      border: ridge; 
+      @include borderRadius;    
       .item-sell__btn {
-        background-color: #FFABCE;
-        font-size: 15px;
-        height: 80px;
-        width: 300px;
-        border-radius: 10px;
+        @include btn;
+        background-color: $redColor;
+        color: $whiteColor;
       }
       .redirect-form__btn {
-        background-color: #99FFFF;
-        font-size: 15px;
-        height: 80px;
-        width: 300px;
-        border-radius: 10px;
+        @include btn;
+        background-color: #99CCFF;       
       }
     }
   }
 }
 .footer {
-  height: 100px;
-  width: 100%;
+  @include heightWidth;
 }
