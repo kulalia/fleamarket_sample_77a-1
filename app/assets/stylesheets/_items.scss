@@ -69,13 +69,13 @@
       position: relative;
       padding: 0;
       line-height: 38px;
-      z-index:99999 !important;
+      z-index:1 !important;
+      width: 200px;
     }  
     .navLeft li a {
       background: #fff;
       color: #333;
       display: block;
-      width: 200px;
       text-decoration: none;
       line-height: 32px;
       background-position: center right;
@@ -97,12 +97,6 @@
       top: 0;
       width: 100%;
     }  
-    .navLeft li ul li ul  li  ul{
-      left: 100%;
-      position: absolute;
-      top: 0;
-      width: 100%;
-    }   
     .navLeft li a:hover {
       color: orange;
     }
@@ -116,15 +110,13 @@
       text-decoration: none;
       padding-right: 45px;
     }
-
     .login, .register {
       padding: 0 0 0 16px;
+      line-height: 32px;
     }
-
     .li {
       color: #333;
     }
-
     .navRight {
       display: flex;
       margin-left: auto;
