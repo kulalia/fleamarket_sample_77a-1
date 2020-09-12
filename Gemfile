@@ -53,6 +53,7 @@ group :development, :test do
   gem 'carrierwave', '~> 2.0'
   gem 'fog-aws'
   gem 'dotenv-rails'
+  gem 'mini_magick'
 end
 
 group :development do

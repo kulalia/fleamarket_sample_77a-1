@@ -17,6 +17,6 @@
     = f.text_field :days_until_shipping, placeholder: "発送日数"
     = f.text_field :shipping_fee, placeholder: "送料"
     = f.text_field :sale_or_sold, placeholder: "在庫"
-    = f.fields_for :item_image, @item.item_images.build do |i|
-      = i.file_field :url, multiple: true, name: "item_images[url][]"
+    = f.fields_for :item_images do |i|
+      = i.file_field :url
     = f.submit '送信'
