@@ -1,56 +1,62 @@
-.item-box
+.first-box
+  .image-box
+    %p 出品画像(必須)
+  .advice-box
+    %p 最大10枚までアップロードできます
+  .image-box__main
+
+.second-box 
+  .item-name
+    %p 商品名(必須)
   .item-title
-    %p 商品名
-  .item-box__other
-    .item-image
-    .item-user__data
-      %ul.user-name
-        %li.user-name__sample
-          %p 出品者
-        %li.user-name__real
-        = link_to '#', class: '' do
-      %ul.item-category
-        %li.item-category__sample
-          %p カテゴリー
-        %li.item-category__real
-        = link_to '#', class: '' do
-      %ul.item-brand
-        %li.item-brand__sample
-          %p ブランド
-        %li.item-brand__real
-        = link_to '#', class: '' %do
-      %ul.item-status
-        %li.item-status__sample
-          %p 商品の状態
-        %li.item-status__real
-          %p 目立った傷や汚れなし
-      %ul.delivery-fee
-        %li.delivery-fee__sample
-          %p 配送料の負担
-        %li.delivery-fee__real
-          %p 送料込み（出品者負担）
-      %ul.delivery-method
-        %li.delivery-method__sample
-          %p 配送の方法
-        %li.delivery-method__real
-          %p らくらくフリマ便
-      %ul.delivery-region
-        %li.delivery-region__sample
-          %p  配送元地域
-        %li.delivery-region__real
-          %p 大阪府
-      %ul.item-standard
-        %li.item-standard__sample
-          %p 発送日の目安
-        %li.item-standard__real
-          %p 1~2日で発送
-  .item-price
-    %p ¥3,000  (税込み)送料込み
-  .user-comment
-    = f.textarea :comment, placeholder: 'ここにコメントを書いてください', class: "comment-text"
-  .item-settings
-    = f.submit '商品の編集', class: 'item-update__btn'
-    %p or
-    = f.submit '出品を再開する', class: 'sell-restart__btn'
-    = f.submit 'この商品を削除する', class: 'item-delete__btn'
-    
+    %input.item-input-title{:name => '#', :placeholder => '40字まで', :type => 'text', :value => ''}/
+  .item-explanation
+    %p 商品の説明(必須)
+  .explanation-text
+    // textarea
+
+.third-box
+  .third-box__title
+    %p 商品の詳細(必須)
+  .item-category
+    %p カテゴリー(必須)
+  .item-category__select
+    = select_tag 'item[category]', options_for_select(['レディース', 'メンズ', 'キッズ', 'インテリア', 'ホビー', '美容', '家電', 'スポーツ', 'その他'])
+  .item-brand
+    %p ブランド(任意)
+  .brand-title
+    %input.brand-input-title{:name => 'name', :placeholder => '(例)シャネル', :type => 'text', :value => ''}/
+  .item-status
+    %p 商品の状態(必須)
+  .item-status__select
+    = select_tag 'item[status]', options_for_select(['新品・未使用', '未使用に近い', '目立った傷や汚れなし', 'やや傷や汚れあり', '傷や汚れあり', '全体的に状態が悪い'])
+
+.fourth-box
+  .fourth-box__title
+    %p 配送について
+  .shipping-fee
+    %p 配送料の負担(必須)
+  .shipping-fee__select
+    = select_tag '#', options_for_select(['送料込み(出品者負担)', '着払い（購入者負担)'])
+  .shipping-region
+    %p 発送元の地域(必須)
+  .shipping-region__text
+    %input.shipping-input-region{:name => '#', :placeholder => '都道府県名を入力してください', :type => 'text', :value => ''}/
+  .until-shipping
+    %p 発送までの日数(必須)
+  .until-shipping__select
+    = select_tag '#', options_for_select(['1~2日で発送', '2~3日で発送', '4~7日で発送'])
+
+.fifth-box
+  .standard-price
+    %p 価格(¥300 ~ ¥9,999,999)
+  .price-box
+    .price-box__sample
+      %p 販売価格(必須)
+    .price-box__text
+      %input.item-input-price{:name => '#', :placeholder => '都道府県名を入力してください', :type => 'text', :value => ''}/
+
+.btn-box
+  = button_tag '出品する', type: 'submit', class: 'item-sell__btn'
+  = button_tag 'トップページに戻る', type: 'submit', class: 'redirect-form__btn'
+
