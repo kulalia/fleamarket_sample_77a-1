@@ -4,15 +4,15 @@
       %h1.header__body--top--icons
         %a.header__body--top--icons--icon(href="/")
           = image_tag 'logo/logo.png', class: 'header__body--top--icons--icon--logo'
-      .form    
+      .form
         = form_with url: root_path do |f|
           = f.text_field :content, class: 'form__input', placeholder: 'キーワードから探す'
           = f.submit class: 'form__submitBtn'
           
-      %ul.result      
+      %ul.result
     .header__body--nav
       %ul.navLeft
-        = render "category"      
+        = render "category"
         %li.brand
           = link_to "#" do
             ブランド
@@ -39,7 +39,7 @@
         フリマアプリです
       .badge
         %a.aBadge(href="https://www.apple.com/jp/ios/app-store/")
-          = image_tag 'app_Badge.jpeg', height: 53, wigth:300, class: 'appBadge'  
+          = image_tag 'app_Badge.jpeg', height: 53, wigth:300, class: 'appBadge'
         %a.gBadge(href="https://play.google.com/store")
           = image_tag 'google_badge.png', height: 79, width: 180, class: 'googleBadge'
 
@@ -61,7 +61,7 @@
         .main__reasons__reason__reasonList--image
           %sapn.num
             2
-          = image_tag 'pict/pict-reason-02.jpg', height: 300, width: 300  
+          = image_tag 'pict/pict-reason-02.jpg', height: 300, width: 300
         %h3.main__reasons__reason__reasonList--subtitle
           %spanシンプル
           で使いやすい
@@ -91,7 +91,7 @@
         ほしかったあの商品に出会えるかもしれません。
       .badge
         %a.aBadge(href="https://www.apple.com/jp/ios/app-store/")
-          = image_tag 'app_Badge.jpeg', height: 53, wigth:200, class: 'appBadge'  
+          = image_tag 'app_Badge.jpeg', height: 53, wigth:200, class: 'appBadge'
         %a.gBadge(href="https://play.google.com/store")
           = image_tag 'google_badge.png', height: 79, width: 180, class: 'googleBadge'
 
@@ -154,7 +154,7 @@
       今すぐ無料ダウンロード!
     .badge-a
       %a.aBadge(href="https://www.apple.com/jp/ios/app-store/")
-        = image_tag 'app_Badge.jpeg', height: 53, wigth:200, class: 'appBadge'  
+        = image_tag 'app_Badge.jpeg', height: 53, wigth:200, class: 'appBadge'
       %a.gBadge(href="https://play.google.com/store")
         = image_tag 'google_badge.png', height: 79, width: 180, class: 'googleBadge'
 
