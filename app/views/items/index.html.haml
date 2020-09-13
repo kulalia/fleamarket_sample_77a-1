@@ -1,22 +1,7 @@
-%h1 Items#index
-%p Find me in app/views/items/index.html.erb
 = link_to "新規登録", new_user_registration_path
 = link_to "ログイン", new_user_session_path
 = link_to "ログアウト", destroy_user_session_path, method: :delete
 
-.form
-  = form_for [@item] do |f|
-    = f.text_field :user_id
-    = f.text_field :name, placeholder: "商品名"
-    = f.collection_select :category_id, Category.all, :id, :name, autofocus: true, placeholder: "カテゴリー"
-    = f.text_field :detail, placeholder: "詳細"
-    = f.text_field :brand, placeholder: "ブランド(任意)"
-    = f.text_field :price, placeholder: "値段"
-    = f.text_field :item_status, placeholder: "商品の状態"
-    = f.collection_select :prefecture_id, Prefecture.all, :id, :name, autofocus: true, autocomplete: "address-level1"
-    = f.text_field :days_until_shipping, placeholder: "発送日数"
-    = f.text_field :shipping_fee, placeholder: "送料"
-    = f.text_field :sale_or_sold, placeholder: "在庫"
-    = f.fields_for :item_images do |i|
-      = i.file_field :url
-    = f.submit '送信'
+= link_to "出品", new_item_path
+.contents
+  = render partial: "items", collection: @items
