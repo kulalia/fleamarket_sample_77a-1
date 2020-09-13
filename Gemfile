@@ -48,10 +48,6 @@ group :development, :test do
   gem 'capistrano-rails-console'
   gem 'rspec-rails'
   gem 'factory_bot_rails'
-  gem 'carrierwave', '~> 2.0'
-  gem 'fog-aws'
-  gem 'dotenv-rails'
-  gem 'mini_magick'
 end
 
 group :development do
@@ -81,3 +77,7 @@ end
 gem 'haml-rails'
 gem 'devise'
 gem 'active_hash'
+gem 'carrierwave', '~> 2.0'
+gem 'fog-aws'
+gem 'dotenv-rails'
+gem 'mini_magick'
