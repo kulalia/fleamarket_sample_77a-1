@@ -2,6 +2,7 @@ $white: #fff;
 $gray_white: #f8f8f8;
 $skybule: #3CCACE;
 $black: #272727;
+$orange: #ffa500;
 $shadow: 0 0 5px rgba(0,0,0,0.4);
 
 .header {
@@ -100,7 +101,7 @@ $shadow: 0 0 5px rgba(0,0,0,0.4);
     .navLeft li li {
       height: 0;
       overflow: hidden;
-      transition: 0.3s;
+      transition: .3s;
     }
 
     .navLeft li li a {
@@ -115,7 +116,7 @@ $shadow: 0 0 5px rgba(0,0,0,0.4);
     }
 
     .navLeft li a:hover {
-      color: orange;
+      color: $orange;
     }
 
     .navLeft li:hover > ul > li {
@@ -559,7 +560,7 @@ $shadow: 0 0 5px rgba(0,0,0,0.4);
 
 
 a.btn:hover {     //purchaseの出品ボタン
-  opacity: 0.8;
+  opacity: .8;
 }
 
 .purchase {
@@ -604,9 +605,9 @@ a.btn:hover {     //purchaseの出品ボタン
 }
 
 a.aBadge:hover {
-  opacity: 0.5;
+  opacity: .5;
 }
 
 a.gBadge:hover {
-  opacity:  0.5;
+  opacity:  .5;
 }
