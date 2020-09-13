@@ -28,7 +28,6 @@ $shadow: 0 0 5px rgba(0,0,0,0.4);
           }
         }
       }
-      // FURIMAロゴのform_with
       .form {
         margin-left: auto;
         width: 100%;
@@ -60,8 +59,7 @@ $shadow: 0 0 5px rgba(0,0,0,0.4);
       margin-bottom: 10px;
       height: 35px;
     }
-    // カテゴリー以下のプルダウンメニュー
-    .navLeft {
+    .navLeft {     //カテゴリー以下のプルダウンメニュー
       display: flex;
       position: relative;
     }  
@@ -106,11 +104,13 @@ $shadow: 0 0 5px rgba(0,0,0,0.4);
       height: 2rem;
       overflow: visible;
     }
-    // 
-
     .brand {
       text-decoration: none;
       padding-right: 45px;
+    }
+    .navRight {
+      display: flex;
+      margin-left: auto;
     }
     .login, .register {
       padding: 0 0 0 16px;
@@ -119,10 +119,7 @@ $shadow: 0 0 5px rgba(0,0,0,0.4);
     .li {
       color: $black;
     }
-    .navRight {
-      display: flex;
-      margin-left: auto;
-    }
+    
   }
 }
 
@@ -202,12 +199,28 @@ $shadow: 0 0 5px rgba(0,0,0,0.4);
         &--image {
           position: relative;
           margin-bottom: 20px;
+          .num {     // 数字部分
+            display: inline-block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 4%;
+            font-size: 30px;
+            text-align: center;
+            margin: 0 5px 0 0;
+            padding: 5px 20px;
+            background-color: $skybule;
+            color: $white;
+          }
         }
         &--subtitle {
           font-weight: bold;
           font-size: 24px;
           line-height: 50px;
           margin: 0 0 0 2px;
+          span {     //文字の強調部分
+            color: $skybule;
+          }
         }
         &--explanation {
           font-size: 18px;
@@ -215,24 +228,6 @@ $shadow: 0 0 5px rgba(0,0,0,0.4);
           margin: 16px 0 0;
         }
       }
-    }
-    // 文字の強調部分
-    span {
-      color: $skybule;
-    }
-    // 数字部分
-    .num {
-      display: inline-block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      border-radius: 4%;
-      font-size: 30px;
-      text-align: center;
-      margin: 0 5px 0 0;
-      padding: 5px 20px;
-      background-color: $skybule;
-      color: $white;
     }
   }
 
@@ -339,6 +334,9 @@ $shadow: 0 0 5px rgba(0,0,0,0.4);
         color: $skybule;
         font-weight: bold;
       }
+      a {
+        text-decoration: none;
+      }
       &--lists {
         width: 780px;
         margin: 26px auto;
@@ -423,8 +421,7 @@ $shadow: 0 0 5px rgba(0,0,0,0.4);
       font-size: 35px;
       text-shadow: $shadow;
     }
-    // %aside.appbannerのApple、Googleのボタン
-    .badge-a {
+    .badge-a {     //Apple、Googleのボタン
       width: 100%;
       display: flex;
       justify-content: center;
@@ -472,6 +469,9 @@ $shadow: 0 0 5px rgba(0,0,0,0.4);
         line-height: 32px;
         text-decoration: none;
       }
+      a.tex:hover {     
+        border-bottom: solid 1px;
+      }
     }
   }
   &__whiteLogo {
@@ -484,7 +484,9 @@ $shadow: 0 0 5px rgba(0,0,0,0.4);
   }
 }
 
-
+a.btn:hover {     //purchaseの出品ボタン
+  opacity: 0.8;
+}
 .purchase {
   width: 120px;
   background: $skybule;
@@ -503,9 +505,7 @@ $shadow: 0 0 5px rgba(0,0,0,0.4);
   }
 }
 
-
-// Apple、Googleのボタン
-.badge {
+.badge {     //Apple、Googleのボタン
   display: flex;
   margin: 24px 0 0 0;
 }
@@ -522,18 +522,12 @@ $shadow: 0 0 5px rgba(0,0,0,0.4);
 .googleBadge {
   vertical-align: bottom;
 }
-a {
-  text-decoration: none;
-}
+
 a.aBadge:hover {
   opacity: 0.5;
 }
 a.gBadge:hover {
   opacity:  0.5;
 }
-a.tex:hover {
-  border-bottom: solid 1px;
-}
-a.btn:hover {
-  opacity: 0.8;
-}
+
+
