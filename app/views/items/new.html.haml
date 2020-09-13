@@ -10,13 +10,15 @@
           %p 必須
       .advice-box
         %p 商品画像をアップロードできます
-        
-      -# 画像添付部分
       .image-box__main
-        %input.image-box{:type => 'file'}/
+        -# %label :image, class: 'image-box' do
+        -# %icon('fas', 'image', class: "icon")
+        -# %file_field :image, class: "hidden"
+
+        -# %label{for: 'item_images_attributes_0_image", class: "abel-box", id: "label-box--0'}
+        -#   %pre.label-box__text クリックして画像をアップロード
           
-        -# %label 'クリックして画像をアップロード'
-               
+        
     .second-box 
       .item-name
         .item-name__sample
@@ -24,7 +26,7 @@
         .item-name__mandatory
           %p 必須
       .item-title
-        %input.item-input-title{:placeholder => '40字まで', :type => 'text'}/
+        %input.item-input-title{:name => '#', :placeholder => '40字まで', :type => 'text', :value => ''}/
       .item-explanation
         .item-explanation__sample
           %p 商品の説明

@@ -79,3 +79,4 @@ end
 gem 'haml-rails'
 gem 'font-awesome-rails'
 gem 'erb2haml'
+gem 'carrierwave'

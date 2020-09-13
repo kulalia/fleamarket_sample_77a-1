@@ -110,9 +110,12 @@ $blackColor: black;
       }
       .image-box__main {
         background-color: lightblue;
-        height: 150px;
-        width: 700px;
+        height: 220px;
+        width: 680px;
         margin:0 0 35px 30px;
+        input {
+          display: none;
+        }       
       }
     }
     .second-box {
@@ -251,8 +254,8 @@ $blackColor: black;
           @include fieldDesign
         }
       }
-      .shipping-region__text input{
-        @include input;
+      .shipping-region__text select{
+        @include select;
       }
       .until-shipping {
         @include flexSize;
