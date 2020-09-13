@@ -1,3 +1,9 @@
+$white: #fff;
+$gray_white: #f8f8f8;
+$skybule: #3CCACE;
+$black: #272727;
+$shadow: 0 0 5px rgba(0,0,0,0.4);
+
 .header {
   height: 108px;
   width: 100vw;
@@ -43,7 +49,7 @@
           background-size: 20px;
           background-position: center;
           background-repeat: no-repeat;
-          background-color: #3CCACE;
+          background-color: $skybule;
           border: 0;
           width: 36px;
           height: 36px;
@@ -73,8 +79,8 @@
       width: 200px;
     }  
     .navLeft li a {
-      background: #fff;
-      color: #333;
+      background: $white;
+      color: $black;
       display: block;
       text-decoration: none;
       line-height: 32px;
@@ -89,7 +95,7 @@
       transition: 0.3s;
     }  
     .navLeft li li a {
-      border-right: 1px solid #eee;
+      border-right: 1px solid $gray_white;
     }  
     .navLeft li ul li ul {
       left: 100%;
@@ -115,7 +121,7 @@
       line-height: 32px;
     }
     .li {
-      color: #333;
+      color: $black;
     }
     .navRight {
       display: flex;
@@ -148,15 +154,15 @@
       margin: 0 auto;
       padding: 35px 0 0 0;
       &--title {
-        text-shadow: 0 0 5px rgba(0,0,0,0.4);
+        text-shadow: $shadow;
         font-size: 60px;
         line-height: 1.2;
-        color: #fff;
+        color: $white;
       }
       &--text {
-        text-shadow: 0 0 5px rgba(0,0,0,0.4);
+        text-shadow: $shadow;
         font-size: 18px;
-        color: #fff;
+        color: $white;
         line-height: 1.8;
         margin: 16px 0 0 0;
       }
@@ -177,7 +183,7 @@
         content: "";
         width: 70px;
         height: 4px;
-        background-color: #3CCACE;
+        background-color: $skybule;
         position: absolute;
         bottom: 0;
         left: 50%;
@@ -216,7 +222,7 @@
     }
     // 文字の強調部分
     span {
-      color: #3CCACE;
+      color: $skybule;
     }
     // 数字部分
     .num {
@@ -229,8 +235,8 @@
       text-align: center;
       margin: 0 5px 0 0;
       padding: 10px 20px;
-      background-color: #3CCACE;
-      color: #fff;
+      background-color: $skybule;
+      color: $white;
     }
   }
 
@@ -242,8 +248,8 @@
     display: flex;
     align-items: center;
     &__content{
-      color: #fff;
-      text-shadow: 0 0 5px rgba(0,0,0,0.4);
+      color: $white;
+      text-shadow: $shadow;
       text-align: left;
       max-width: 1040px;
       width: 100%;
@@ -263,7 +269,7 @@
 
   &__advantage {
     padding: 60px 100px;
-    background-color: #fff;
+    background-color: $white;
     &__title {
       font-size: 27px;
       text-align: center;
@@ -276,7 +282,7 @@
         content: "";
         width: 70px;
         height: 4px;
-        background-color: #3CCACE;
+        background-color: $skybule;
         position: absolute;
         bottom: 0;
         left: 50%;
@@ -318,7 +324,7 @@
 
   &__newPostList {
     padding: 80px 0 0;
-    background-color: #f8f8f8;
+    background-color: $gray_white;
     height: 430px;
     &__puCategory {
       text-align: center;
@@ -334,7 +340,7 @@
       .subtitle {
         font-size: 24px;
         text-decoration: none;
-        color: #3CCACE;
+        color: $skybule;
         font-weight: bold;
       }
       &--lists {
@@ -345,9 +351,8 @@
         &--product {
           width: 220px;
           display: inline-block;
-          float: left;
           .pic {
-            background-color: #fff;
+            background-color: $white;
             display: inline-block;
           }
           .productImage {
@@ -370,8 +375,7 @@
             object-fit: cover;
           }
           .productBody {
-            background-color: white;
-            color: #333;
+            color: $black;
             padding: 16px;
             &--name {
               overflow: hidden;
@@ -399,7 +403,7 @@
   #post {
     padding-bottom: 80px;
     height: 530px;
-    background-color: #f8f8f8;
+    background-color: $gray_white;
   }
 }
 
@@ -411,17 +415,17 @@
   background-size: cover;
   background-position: center;
   &__bannerContent {
-    color: #fff;
+    color: $white;
     text-align: center;
     &--contentTitle {
-      text-shadow: 0 0 5px rgba(0,0,0,0.4);
+      text-shadow: $shadow;
       font-size: 24px;
       font-weight: bold;
       line-height: 1.4;
     }
     &--contentText {
       font-size: 35px;
-      text-shadow: 0 0 5px rgba(0,0,0,0.4);
+      text-shadow: $shadow;
     }
     // %aside.appbannerのApple、Googleのボタン
     .badge-a {
@@ -449,8 +453,8 @@
 
 .footer {
   padding: 60px 0;
-  color: #fff;
-  background-color: #272727;
+  color: $white;
+  background-color: $black;
   text-align: center;
   &__contents {
     max-width: 840px;
@@ -467,7 +471,7 @@
         font-weight: bold;
       }
       .tex {
-        color: #fff;
+        color: $white;
         font-size: 12px;
         line-height: 32px;
         text-decoration: none;
@@ -487,7 +491,7 @@
 
 .purchase {
   width: 120px;
-  background: #3CCACE;
+  background: $skybule;
   text-align: center;
   border-radius: 4%;
   bottom: 32px;
@@ -495,7 +499,7 @@
   position: fixed;
   padding: 15px;
   &--exhibition {
-    color: #fff;
+    color: $white;
     display: block;
     font-size: 18px;
     text-decoration: none;
