@@ -74,7 +74,6 @@ group :production do
   gem 'unicorn'
 end
 
-gem 'haml-rails'
 gem 'devise'
 gem 'active_hash'
 gem 'carrierwave', '~> 2.0'
