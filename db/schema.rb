@@ -38,8 +38,6 @@ ActiveRecord::Schema.define(version: 2020_09_04_120638) do
   end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
     t.string "name", null: false
     t.integer "category_id", null: false
@@ -51,6 +49,8 @@ ActiveRecord::Schema.define(version: 2020_09_04_120638) do
     t.integer "days_until_shipping", null: false
     t.string "shipping_fee", null: false
     t.string "sale_or_sold", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_items_on_user_id"
   end
 
@@ -75,6 +75,8 @@ ActiveRecord::Schema.define(version: 2020_09_04_120638) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "delivery_addresses", "users"
