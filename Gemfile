@@ -46,8 +46,6 @@ group :development, :test do
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
   gem 'capistrano-rails-console'
-  gem 'haml-rails'
-  gem "font-awesome-sass"
 end
 
 group :development do
@@ -73,3 +71,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 group :production do
   gem 'unicorn'
 end
+  gem 'haml-rails'
+  gem "font-awesome-sass"
