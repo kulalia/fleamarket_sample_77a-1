@@ -2,7 +2,7 @@
   .header__body
     .header__body--top
       %h1.header__body--top--icons
-        %a.header__body--top--icons--icon(href="/")
+        = link_to "#", class: "header__body--top--icons--icon" do
           = image_tag 'logo/logo.png', class: 'header__body--top--icons--icon--logo'
       .form
         = form_with url: root_path do |f|
@@ -13,17 +13,14 @@
       %ul.navLeft
         = render "category"
         %li.brand
-          = link_to "#", class:"li" do
+          = link_to "#", class:"nav-list" do
             ブランド
-          -# .brand__tree
-          -#   %ul.brand__list
-          -#     %li.brand__list--item
       %ul.navRight
         %li.login
-          = link_to "#", class: "li" do
+          = link_to "#", class: "nav-list" do
             ログイン
         %li.register
-          = link_to "#", class: "li" do
+          = link_to "#", class: "nav-list" do
             新規会員登録
 
 
@@ -37,9 +34,9 @@
         %br
         フリマアプリです
       .badge
-        %a.aBadge(href="https://www.apple.com/jp/ios/app-store/")
+        = link_to "https://www.apple.com/jp/ios/app-store/", class: "aBadge" do
           = image_tag 'app_Badge.jpeg', height: 53, wigth:300, class: 'appBadge'
-        %a.gBadge(href="https://play.google.com/store")
+        = link_to "https://play.google.com/store", class: "gBadge" do
           = image_tag 'google_badge.png', height: 79, width: 180, class: 'googleBadge'
 
   %section.main__reasons
@@ -89,9 +86,9 @@
         %br
         ほしかったあの商品に出会えるかもしれません。
       .badge
-        %a.aBadge(href="https://www.apple.com/jp/ios/app-store/")
+        = link_to "https://www.apple.com/jp/ios/app-store/", class: "aBadge" do
           = image_tag 'app_Badge.jpeg', height: 53, wigth:200, class: 'appBadge'
-        %a.gBadge(href="https://play.google.com/store")
+        = link_to "https://play.google.com/store", class: "gBadge" do
           = image_tag 'google_badge.png', height: 79, width: 180, class: 'googleBadge'
 
 
@@ -127,7 +124,7 @@
       ピックアップカテゴリー
     .main__newPostList__searchBox
       .main__newPostList__searchBox--head
-        %a(href="#")
+        = link_to "#", class: "sub-title" do
           %h3.subtitle
             新規投稿商品
       .main__newPostList__searchBox--lists
@@ -138,7 +135,7 @@
       ピックアップブランド
     .main__newPostList__searchBox
       .main__newPostList__searchBox--head
-        %a(href="#")
+        = link_to "#", class: "sub-title" do
           %h3.subtitle
             アーカイバ
       .main__newPostList__searchBox--lists
@@ -151,9 +148,9 @@
     %p.appbanner__bannerContent--contentText
       今すぐ無料ダウンロード!
     .badge-a
-      %a.aBadge(href="https://www.apple.com/jp/ios/app-store/")
+      = link_to "https://www.apple.com/jp/ios/app-store/", class: "aBadge" do
         = image_tag 'app_Badge.jpeg', height: 53, wigth:200, class: 'appBadge'
-      %a.gBadge(href="https://play.google.com/store")
+      = link_to "https://play.google.com/store", class: "gBadge" do
         = image_tag 'google_badge.png', height: 79, width: 180, class: 'googleBadge'
 
 
@@ -164,48 +161,47 @@
         FURIMAについて
       %ul.footer__contents__content--contentList
         %li
-          %a.tex(href="#")
+          = link_to "#", class: "text" do
             会社概要 (運営会社)
         %li
-          %a.tex(href="#")
+          = link_to "#", class: "text" do
             プライバシーポリシー
         %li
-          %a.tex(href="#")
+          = link_to "#", class: "text" do
             FURIMA利用規約
         %li
-          %a.tex(href="#")
+          = link_to "#", class: "text" do
             ポイントに関する特約
     %li.footer__contents__content
       %h2.footer__contents__content--contentTitle
         FURIMAを見る
       %ul.footer__contents__content--contentList
         %li
-          %a.tex(href="#")
+          = link_to "#", class: "text" do
             カテゴリー一覧
         %li
-          %a.tex(href="#")
+          = link_to "#", class: "text" do
             ブランド一覧
     %li.footer__contents__content
       %h2.footer__contents__content--contentTitle
         ヘルプ&ガイド
       %ul.footer__contents__content--contentList
         %li
-          %a.tex(href="#")
+          = link_to "#", class: "text" do
             FURIMAガイド
         %li
-          %a.tex(href="#")
+          = link_to "#", class: "text" do
             FURIMAロゴ利用ガイドライン
         %li
-          %a.tex(href="#")
+          = link_to "#", class: "text" do
             お知らせ
   .footer__whiteLogo
-    %a(href="/")
+    = link_to "/", class: "footer-logo" do
       = image_tag 'logo/logo-white.png', height: 45, width: 160
   %p
     ©FURIMA
 
-
-%a.btn(href="#")
+= link_to "#", class: "btn" do
   .purchase
     %span.purchase--exhibition
       出品する
