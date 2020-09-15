@@ -1,23 +1,23 @@
-$white-Color: #ffffff;
-$red-Color: #ff0000;
-$black-Color: #000000;
+$white-color: #ffffff;
+$red-color: #ff0000;
+$black-color: #000000;
 
-@mixin field-Design {
-  background-color: $red-Color;
+@mixin field-design {
+  background-color: $red-color;
   width: 40px;
   height: 20px;
-  color: $white-Color;
+  color: $white-color;
   text-align: center;
   margin-left: 5px;
   padding-bottom: 2px;
   border-radius: 5px;
 }
 
-@mixin field-DesignBlue {
+@mixin field-designBlue {
   background-color: #99CCFF;
   width: 40px;
   height: 20px;
-  color: $black-Color;
+  color: $black-color;
   text-align: center;
   margin-left: 5px;
   padding-bottom: 2px;
@@ -31,16 +31,16 @@ $black-Color: #000000;
   border-radius: 10px;
 }
 
-@mixin flex-Size {
+@mixin flex-size {
   display: flex;
   font-size: 15px;
 }
 
-@mixin font-Weight {
+@mixin font-weight {
   font-weight: bold;
 }
 
-@mixin height-Width {
+@mixin height-width {
   height: 100px;
   width: 100%;
 }
@@ -64,19 +64,19 @@ $black-Color: #000000;
   justify-content: space-between;
 }
 
-@mixin border-Radius {
+@mixin border-radius {
   border-radius: 10px;
 }
 
-@mixin text-Align {
+@mixin text-align {
   text-align: center;
 }
 
 .header {
-  @include font-Weight;
-  @include height-Width;
-  @include text-Align;
-  background-color: $white-Color; 
+  @include font-weight;
+  @include height-width;
+  @include text-align;
+  background-color: $white-color; 
   font-size: 20px; 
   line-height: 100px;
 }
@@ -84,23 +84,23 @@ $black-Color: #000000;
 .main {
   padding: 0 350px;
   .parent-box {    
-    background-color: $white-Color;
+    background-color: $white-color;
     .first-box {     
-      background-color: $white-Color;
+      background-color: $white-color;
       height: 300px; 
       padding-top: 15px;    
       border: ridge;
-      @include border-Radius;
+      @include border-radius;
       .image-box {
-        @include flex-Size;
+        @include flex-size;
         .image-box__sample {
-          @include text-Align;
-          color: $black-Color;
+          @include text-align;
+          color: $black-color;
           margin:0 0 10px 30px;
-          @include font-Weight;
+          @include font-weight;
         }
         .image-box__mandatory {
-          @include field-Design
+          @include field-design
         }
       }     
       .advice-box {
@@ -113,47 +113,47 @@ $black-Color: #000000;
         height: 220px;
         width: 680px;
         margin:0 0 35px 30px;
-        @include text-Align;
+        @include text-align;
         line-height: 200px;
         border: 1px solid blue;
-        @include border-Radius;
+        @include border-radius;
         input {
           display: none;
         }       
       }
     }
     .second-box {
-      background-color: $white-Color;
+      background-color: $white-color;
       height: 300px;     
       margin-top: 20px;
       padding: 15px 0 30px 30px;        
       border: ridge;
-      @include border-Radius;
+      @include border-radius;
       .item-name {
-        @include flex-Size;
+        @include flex-size;
         .item-name__sample {
-          @include text-Align;
-          color: $black-Color;
+          @include text-align;
+          color: $black-color;
           margin-bottom: 10px;
-          @include font-Weight;
+          @include font-weight;
         }
         .item-name__mandatory {
-          @include field-Design
+          @include field-design
         }
       }
       .item-title input{
         @include input;
       }
       .item-explanation {
-        @include flex-Size;
+        @include flex-size;
         .item-explanation__sample {
-          @include text-Align;
-          color: $black-Color;
+          @include text-align;
+          color: $black-color;
           margin-bottom: 10px;   
-          @include font-Weight;      
+          @include font-weight;      
         }
         .item-explanation__mandatory {
-          @include field-Design
+          @include field-design
         }        
       }
       .explanation-text textarea{
@@ -162,57 +162,57 @@ $black-Color: #000000;
       }
     }
     .third-box {
-      background-color: $white-Color;
+      background-color: $white-color;
       height: 330px;     
       margin-top: 20px;
       padding: 15px 0 0 30px;         
       border: ridge;
-      @include border-Radius;
+      @include border-radius;
       .third-box__title {
         margin-bottom: 10px;
         font-size: 18px;
-        @include font-Weight;
+        @include font-weight;
       }
       .item-category {
-        @include flex-Size;
+        @include flex-size;
         .item-category__sample {
-          @include text-Align;
-          color: $black-Color;
+          @include text-align;
+          color: $black-color;
           margin-bottom: 10px;
-          @include font-Weight;
+          @include font-weight;
         }
         .item-category__mandatory {
-          @include field-Design
+          @include field-design
         }       
       }
       .item-category__select select{
         @include select;
       }
       .item-brand {
-        @include flex-Size;
+        @include flex-size;
         .item-brand__sample {          
-          @include text-Align;
-          color: $black-Color;
+          @include text-align;
+          color: $black-color;
           margin-bottom: 10px; 
-          @include font-Weight;    
+          @include font-weight;    
         }
         .item-brand__optional {
-          @include field-DesignBlue
+          @include field-designBlue
         }
       }
       .brand-title input{
         @include input;
       }
       .item-status {
-        @include flex-Size;
+        @include flex-size;
         .item-status__sample {
-          @include text-Align;
-          color: $black-Color;
+          @include text-align;
+          color: $black-color;
           margin-bottom: 10px;
-          @include font-Weight;
+          @include font-weight;
         }
         .item-status__mandatory {
-          @include field-Design
+          @include field-design
         }
       }
       .item-status__select select{
@@ -220,57 +220,57 @@ $black-Color: #000000;
       }
     }
     .fourth-box {
-      background-color: $white-Color;
+      background-color: $white-color;
       height: 330px;     
       margin-top: 20px;
       padding: 15px 0 0 30px;    
       border: ridge;
-      @include border-Radius;
+      @include border-radius;
       .fourth-box__title {
         margin-bottom: 10px;
         font-size: 18px;
-        @include font-Weight;
+        @include font-weight;
       }
       .shipping-fee {
-        @include flex-Size;
+        @include flex-size;
         .shipping-fee__sample {
-          @include text-Align;
-          color: $black-Color;
+          @include text-align;
+          color: $black-color;
           margin-bottom: 10px;
-          @include font-Weight;
+          @include font-weight;
         }
         .shipping-fee__mandatory {
-          @include field-Design
+          @include field-design
         }       
       }
       .shipping-fee__select select{
         @include select;
       }
       .shipping-region {
-        @include flex-Size;
+        @include flex-size;
         .shipping-region__sample {
-          @include text-Align;
-          color: $black-Color;
+          @include text-align;
+          color: $black-color;
           margin-bottom: 10px;
-          @include font-Weight;
+          @include font-weight;
         }
         .shipping-region__mandatory {
-          @include field-Design
+          @include field-design
         }
       }
       .shipping-region__text select{
         @include select;
       }
       .until-shipping {
-        @include flex-Size;
+        @include flex-size;
         .until-shipping__sample {
-          @include text-Align;
-          color: $black-Color;
+          @include text-align;
+          color: $black-color;
           margin-bottom: 10px;
-          @include font-Weight;
+          @include font-weight;
         }
         .until-shipping__mandatory {
-          @include field-Design
+          @include field-design
         }
       }
       .until-shipping__select select{
@@ -278,32 +278,32 @@ $black-Color: #000000;
       }
     }
     .fifth-box {
-      background-color: $white-Color;
+      background-color: $white-color;
       height: 120px;     
       margin-top: 20px;
       padding: 15px 0 0 30px;    
       border: ridge;
-      @include border-Radius;
+      @include border-radius;
       .standard-price {
         font-size: 15px;
         margin-bottom: 15px;
-        @include font-Weight;
+        @include font-weight;
       }
       .price-box {
         @include display;
         .price-box__sample {
-          @include flex-Size;
+          @include flex-size;
           .price-box__sample-other {
-            @include text-Align;
-            color: $black-Color;
-            @include font-Weight;
+            @include text-align;
+            color: $black-color;
+            @include font-weight;
           }
           .price-box__mandatory {
-            background-color: $red-Color;
+            background-color: $red-color;
             width: 40px;
             height: 20px;
-            color: $white-Color;
-            @include text-Align;
+            color: $white-color;
+            @include text-align;
             margin-left: 5px;
             padding-bottom: 2px;
             border-radius: 5px;
@@ -318,18 +318,18 @@ $black-Color: #000000;
       }
     }
     .btn-box {
-      background-color: $white-Color;
+      background-color: $white-color;
       height: 100px;     
       margin-top: 20px;
-      @include text-Align;
+      @include text-align;
       padding: 25px 50px 0 50px;
       @include display;
       border: ridge; 
-      @include border-Radius;    
+      @include border-radius;    
       .item-sell__btn {
         @include btn;
-        background-color: $red-Color;
-        color: $white-Color;
+        background-color: $red-color;
+        color: $white-color;
       }
       .redirect-form__btn {
         @include btn;
@@ -339,5 +339,5 @@ $black-Color: #000000;
   }
 }
 .footer {
-  @include height-Width;
+  @include height-width;
 }
