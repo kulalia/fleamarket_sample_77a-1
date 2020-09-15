@@ -109,10 +109,14 @@ $blackColor: black;
         padding-left: 30px;
       }
       .image-box__main {
-        background-color: lightblue;
+        background-color: #EEFFFF;
         height: 220px;
         width: 680px;
         margin:0 0 35px 30px;
+        @include textAlign;
+        line-height: 200px;
+        border: 1px solid blue;
+        @include borderRadius;
         input {
           display: none;
         }       
