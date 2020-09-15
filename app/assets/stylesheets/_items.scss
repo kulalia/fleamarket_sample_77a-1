@@ -1,23 +1,23 @@
-$whiteColor: white;
-$redColor: red;
-$blackColor: black;
+$white-Color: #ffffff;
+$red-Color: #ff0000;
+$black-Color: #000000;
 
-@mixin fieldDesign {
-  background-color: $redColor;
+@mixin field-Design {
+  background-color: $red-Color;
   width: 40px;
   height: 20px;
-  color: $whiteColor;
+  color: $white-Color;
   text-align: center;
   margin-left: 5px;
   padding-bottom: 2px;
   border-radius: 5px;
 }
 
-@mixin fieldDesignBlue {
+@mixin field-DesignBlue {
   background-color: #99CCFF;
   width: 40px;
   height: 20px;
-  color: $blackColor;
+  color: $black-Color;
   text-align: center;
   margin-left: 5px;
   padding-bottom: 2px;
@@ -31,16 +31,16 @@ $blackColor: black;
   border-radius: 10px;
 }
 
-@mixin flexSize {
+@mixin flex-Size {
   display: flex;
   font-size: 15px;
 }
 
-@mixin fontWeight {
+@mixin font-Weight {
   font-weight: bold;
 }
 
-@mixin heightWidth {
+@mixin height-Width {
   height: 100px;
   width: 100%;
 }
@@ -64,19 +64,19 @@ $blackColor: black;
   justify-content: space-between;
 }
 
-@mixin borderRadius {
+@mixin border-Radius {
   border-radius: 10px;
 }
 
-@mixin textAlign {
+@mixin text-Align {
   text-align: center;
 }
 
 .header {
-  @include fontWeight;
-  @include heightWidth;
-  @include textAlign;
-  background-color: $whiteColor; 
+  @include font-Weight;
+  @include height-Width;
+  @include text-Align;
+  background-color: $white-Color; 
   font-size: 20px; 
   line-height: 100px;
 }
@@ -84,23 +84,23 @@ $blackColor: black;
 .main {
   padding: 0 350px;
   .parent-box {    
-    background-color: $whiteColor;
+    background-color: $white-Color;
     .first-box {     
-      background-color: $whiteColor;
+      background-color: $white-Color;
       height: 300px; 
       padding-top: 15px;    
       border: ridge;
-      @include borderRadius;
+      @include border-Radius;
       .image-box {
-        @include flexSize;
+        @include flex-Size;
         .image-box__sample {
-          @include textAlign;
-          color: $blackColor;
+          @include text-Align;
+          color: $black-Color;
           margin:0 0 10px 30px;
-          @include fontWeight;
+          @include font-Weight;
         }
         .image-box__mandatory {
-          @include fieldDesign
+          @include field-Design
         }
       }     
       .advice-box {
@@ -113,47 +113,47 @@ $blackColor: black;
         height: 220px;
         width: 680px;
         margin:0 0 35px 30px;
-        @include textAlign;
+        @include text-Align;
         line-height: 200px;
         border: 1px solid blue;
-        @include borderRadius;
+        @include border-Radius;
         input {
           display: none;
         }       
       }
     }
     .second-box {
-      background-color: $whiteColor;
+      background-color: $white-Color;
       height: 300px;     
       margin-top: 20px;
       padding: 15px 0 30px 30px;        
       border: ridge;
-      @include borderRadius;
+      @include border-Radius;
       .item-name {
-        @include flexSize;
+        @include flex-Size;
         .item-name__sample {
-          @include textAlign;
-          color: $blackColor;
+          @include text-Align;
+          color: $black-Color;
           margin-bottom: 10px;
-          @include fontWeight;
+          @include font-Weight;
         }
         .item-name__mandatory {
-          @include fieldDesign
+          @include field-Design
         }
       }
       .item-title input{
         @include input;
       }
       .item-explanation {
-        @include flexSize;
+        @include flex-Size;
         .item-explanation__sample {
-          @include textAlign;
-          color: $blackColor;
+          @include text-Align;
+          color: $black-Color;
           margin-bottom: 10px;   
-          @include fontWeight;      
+          @include font-Weight;      
         }
         .item-explanation__mandatory {
-          @include fieldDesign
+          @include field-Design
         }        
       }
       .explanation-text textarea{
@@ -162,57 +162,57 @@ $blackColor: black;
       }
     }
     .third-box {
-      background-color: $whiteColor;
+      background-color: $white-Color;
       height: 330px;     
       margin-top: 20px;
       padding: 15px 0 0 30px;         
       border: ridge;
-      @include borderRadius;
+      @include border-Radius;
       .third-box__title {
         margin-bottom: 10px;
         font-size: 18px;
-        @include fontWeight;
+        @include font-Weight;
       }
       .item-category {
-        @include flexSize;
+        @include flex-Size;
         .item-category__sample {
-          @include textAlign;
-          color: $blackColor;
+          @include text-Align;
+          color: $black-Color;
           margin-bottom: 10px;
-          @include fontWeight;
+          @include font-Weight;
         }
         .item-category__mandatory {
-          @include fieldDesign
+          @include field-Design
         }       
       }
       .item-category__select select{
         @include select;
       }
       .item-brand {
-        @include flexSize;
+        @include flex-Size;
         .item-brand__sample {          
-          @include textAlign;
-          color: $blackColor;
+          @include text-Align;
+          color: $black-Color;
           margin-bottom: 10px; 
-          @include fontWeight;    
+          @include font-Weight;    
         }
         .item-brand__optional {
-          @include fieldDesignBlue
+          @include field-DesignBlue
         }
       }
       .brand-title input{
         @include input;
       }
       .item-status {
-        @include flexSize;
+        @include flex-Size;
         .item-status__sample {
-          @include textAlign;
-          color: $blackColor;
+          @include text-Align;
+          color: $black-Color;
           margin-bottom: 10px;
-          @include fontWeight;
+          @include font-Weight;
         }
         .item-status__mandatory {
-          @include fieldDesign
+          @include field-Design
         }
       }
       .item-status__select select{
@@ -220,57 +220,57 @@ $blackColor: black;
       }
     }
     .fourth-box {
-      background-color: $whiteColor;
+      background-color: $white-Color;
       height: 330px;     
       margin-top: 20px;
       padding: 15px 0 0 30px;    
       border: ridge;
-      @include borderRadius;
+      @include border-Radius;
       .fourth-box__title {
         margin-bottom: 10px;
         font-size: 18px;
-        @include fontWeight;
+        @include font-Weight;
       }
       .shipping-fee {
-        @include flexSize;
+        @include flex-Size;
         .shipping-fee__sample {
-          @include textAlign;
-          color: $blackColor;
+          @include text-Align;
+          color: $black-Color;
           margin-bottom: 10px;
-          @include fontWeight;
+          @include font-Weight;
         }
         .shipping-fee__mandatory {
-          @include fieldDesign
+          @include field-Design
         }       
       }
       .shipping-fee__select select{
         @include select;
       }
       .shipping-region {
-        @include flexSize;
+        @include flex-Size;
         .shipping-region__sample {
-          @include textAlign;
-          color: $blackColor;
+          @include text-Align;
+          color: $black-Color;
           margin-bottom: 10px;
-          @include fontWeight;
+          @include font-Weight;
         }
         .shipping-region__mandatory {
-          @include fieldDesign
+          @include field-Design
         }
       }
       .shipping-region__text select{
         @include select;
       }
       .until-shipping {
-        @include flexSize;
+        @include flex-Size;
         .until-shipping__sample {
-          @include textAlign;
-          color: $blackColor;
+          @include text-Align;
+          color: $black-Color;
           margin-bottom: 10px;
-          @include fontWeight;
+          @include font-Weight;
         }
         .until-shipping__mandatory {
-          @include fieldDesign
+          @include field-Design
         }
       }
       .until-shipping__select select{
@@ -278,32 +278,32 @@ $blackColor: black;
       }
     }
     .fifth-box {
-      background-color: $whiteColor;
+      background-color: $white-Color;
       height: 120px;     
       margin-top: 20px;
       padding: 15px 0 0 30px;    
       border: ridge;
-      @include borderRadius;
+      @include border-Radius;
       .standard-price {
         font-size: 15px;
         margin-bottom: 15px;
-        @include fontWeight;
+        @include font-Weight;
       }
       .price-box {
         @include display;
         .price-box__sample {
-          @include flexSize;
+          @include flex-Size;
           .price-box__sample-other {
-            @include textAlign;
-            color: $blackColor;
-            @include fontWeight;
+            @include text-Align;
+            color: $black-Color;
+            @include font-Weight;
           }
           .price-box__mandatory {
-            background-color: $redColor;
+            background-color: $red-Color;
             width: 40px;
             height: 20px;
-            color: $whiteColor;
-            @include textAlign;
+            color: $white-Color;
+            @include text-Align;
             margin-left: 5px;
             padding-bottom: 2px;
             border-radius: 5px;
@@ -318,18 +318,18 @@ $blackColor: black;
       }
     }
     .btn-box {
-      background-color: $whiteColor;
+      background-color: $white-Color;
       height: 100px;     
       margin-top: 20px;
-      @include textAlign;
+      @include text-Align;
       padding: 25px 50px 0 50px;
       @include display;
       border: ridge; 
-      @include borderRadius;    
+      @include border-Radius;    
       .item-sell__btn {
         @include btn;
-        background-color: $redColor;
-        color: $whiteColor;
+        background-color: $red-Color;
+        color: $white-Color;
       }
       .redirect-form__btn {
         @include btn;
@@ -339,5 +339,5 @@ $blackColor: black;
   }
 }
 .footer {
-  @include heightWidth;
+  @include height-Width;
 }
