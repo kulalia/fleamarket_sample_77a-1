@@ -74,10 +74,11 @@ group :production do
   gem 'unicorn'
 end
 
-gem 'haml-rails'
 gem 'devise'
 gem 'active_hash'
 gem 'carrierwave', '~> 2.0'
 gem 'fog-aws'
 gem 'dotenv-rails'
 gem 'mini_magick'
+gem 'haml-rails'
+gem "font-awesome-sass"

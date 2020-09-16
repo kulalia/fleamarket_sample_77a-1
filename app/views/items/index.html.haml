@@ -1,7 +1,209 @@
-= link_to "新規登録", new_user_registration_path
-= link_to "ログイン", new_user_session_path
-= link_to "ログアウト", destroy_user_session_path, method: :delete
+.header
+  .header__body
+    .header__body--top
+      %h1.header__body--top--icons
+        = link_to "#", class: "header__body--top--icons--icon" do
+          = image_tag 'logo/logo.png', class: 'header__body--top--icons--icon--logo'
+      .form
+        = form_with url: root_path do |f|
+          = f.text_field :content, class: 'form__input', placeholder: 'キーワードから探す'
+          = f.submit class: 'form__submitBtn'
+      %ul.result
+    .header__body--nav
+      %ul.navLeft
+        = render "category"
+        %li.brand
+          = link_to "#", class:"nav-list" do
+            ブランド
+      %ul.navRight
+        %li.login
+          = link_to "#", class: "nav-list" do
+            ログイン
+        %li.register
+          = link_to "#", class: "nav-list" do
+            新規会員登録
 
-= link_to "出品", new_item_path
-.contents
-  = render partial: "items", collection: @items
+
+.main
+  %section.main__beginning
+    .main__beginning__hearding
+      %h2.main__beginning__hearding--title
+        人生を変えるをフリマアプリ
+      %p.main__beginning__hearding--text
+        FURIMAは誰でもかんたんに出品、購入できる
+        %br
+        フリマアプリです
+      .badge
+        = link_to "https://www.apple.com/jp/ios/app-store/", class: "aBadge" do
+          = image_tag 'app_Badge.jpeg', height: 53, wigth:300, class: 'appBadge'
+        = link_to "https://play.google.com/store", class: "gBadge" do
+          = image_tag 'google_badge.png', height: 79, width: 180, class: 'googleBadge'
+
+  %section.main__reasons
+    %h2.main__reasons__title
+      FURIMAが選ばれる3つの理由
+    %ul.main__reasons__reason
+      %li.main__reasons__reason__reasonList
+        .main__reasons__reason__reasonList--image
+          %span.num
+            1
+          = image_tag 'pict/pict-reason-01.jpg', height: 300, width: 300
+        %h3.main__reasons__reason__reasonList--subtitle
+          %span３分
+          ですぐに出品
+        %p.main__reasons__reason__reasonList--explanation
+          スマホで入力するだけで簡単に出品できる!
+      %li.main__reasons__reason__reasonList
+        .main__reasons__reason__reasonList--image
+          %sapn.num
+            2
+          = image_tag 'pict/pict-reason-02.jpg', height: 300, width: 300
+        %h3.main__reasons__reason__reasonList--subtitle
+          %spanシンプル
+          で使いやすい
+        %p.main__reasons__reason__reasonList--explanation
+          めんどくさい入力は必要なく、検索も購入もスムーズ!
+      %li.main__reasons__reason__reasonList
+        .main__reasons__reason__reasonList--image
+          %span.num
+            3
+          = image_tag 'pict/pict-reason-03.jpg', height: 300, width: 300
+        %h3.main__reasons__reason__reasonList--subtitle
+          手数料
+          %span業界最安
+        %p.main__reasons__reason__reasonList--explanation
+          最大3%でお得に出品&購入!
+
+
+  %section.main__mainBanner
+    .main__mainBanner__content
+      %h2.main__mainBanner__content--title
+        会員数日本一位
+      %p.main__mainBanner__content--text
+        FURIMAは、フリマアプリで最も人気。
+        %br
+        出品・購入回数も業界最多です。
+        %br
+        ほしかったあの商品に出会えるかもしれません。
+      .badge
+        = link_to "https://www.apple.com/jp/ios/app-store/", class: "aBadge" do
+          = image_tag 'app_Badge.jpeg', height: 53, wigth:200, class: 'appBadge'
+        = link_to "https://play.google.com/store", class: "gBadge" do
+          = image_tag 'google_badge.png', height: 79, width: 180, class: 'googleBadge'
+
+
+  %section.main__advantage
+    %h2.main__advantage__title
+      FURIMAの特徴
+    .main__advantage__feature
+      %section.main__advantage__feature__box
+        %figure.main__advantage__feature__box--boxImage
+          = image_tag 'icon/icon-01.png', height: 340, wigth:220
+        %h3.main__advantage__feature__box--boxTitle
+          簡単に売り買いできる
+        %p.main__advantage__feature__box--boxText
+          スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
+      %section.main__advantage__feature__box
+        %figure.main__advantage__feature__box--boxImage
+          = image_tag 'icon/icon-03.png', height: 340, wigth:220
+        %h3.main__advantage__feature__box--boxTitle
+          売上金は即日振込みに対応
+        %p.main__advantage__feature__box--boxText
+          午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします!
+      %section.main__advantage__feature__box
+        %figure.main__advantage__feature__box--boxImage
+          = image_tag 'icon/icon-04.png', height: 340, wigth:220
+        %h3.main__advantage__feature__box--boxTitle
+          様々な支払いに対応
+        %p.main__advantage__feature__box--boxText
+          お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
+
+
+  %section.main__newPostList
+    %h2.main__newPostList__puCategory
+      ピックアップカテゴリー
+    .main__newPostList__searchBox
+      .main__newPostList__searchBox--head
+        = link_to "#", class: "sub-title" do
+          %h3.subtitle
+            新規投稿商品
+      .main__newPostList__searchBox--lists
+        = render "newPostList"
+
+  %section.main__newPostList#post
+    %h2.main__newPostList__puCategory
+      ピックアップブランド
+    .main__newPostList__searchBox
+      .main__newPostList__searchBox--head
+        = link_to "#", class: "sub-title" do
+          %h3.subtitle
+            アーカイバ
+      .main__newPostList__searchBox--lists
+        = render "newPostList"
+
+%aside.appbanner
+  .appbanner__bannerContent
+    %h2.appbanner__bannerContent--contentTitle
+      だれでもかんたん、人生を変えるフリマアプリ
+    %p.appbanner__bannerContent--contentText
+      今すぐ無料ダウンロード!
+    .badge-a
+      = link_to "https://www.apple.com/jp/ios/app-store/", class: "aBadge" do
+        = image_tag 'app_Badge.jpeg', height: 53, wigth:200, class: 'appBadge'
+      = link_to "https://play.google.com/store", class: "gBadge" do
+        = image_tag 'google_badge.png', height: 79, width: 180, class: 'googleBadge'
+
+
+.footer
+  %ul.footer__contents
+    %li.footer__contents__content
+      %h2.footer__contents__content--contentTitle
+        FURIMAについて
+      %ul.footer__contents__content--contentList
+        %li
+          = link_to "#", class: "text" do
+            会社概要 (運営会社)
+        %li
+          = link_to "#", class: "text" do
+            プライバシーポリシー
+        %li
+          = link_to "#", class: "text" do
+            FURIMA利用規約
+        %li
+          = link_to "#", class: "text" do
+            ポイントに関する特約
+    %li.footer__contents__content
+      %h2.footer__contents__content--contentTitle
+        FURIMAを見る
+      %ul.footer__contents__content--contentList
+        %li
+          = link_to "#", class: "text" do
+            カテゴリー一覧
+        %li
+          = link_to "#", class: "text" do
+            ブランド一覧
+    %li.footer__contents__content
+      %h2.footer__contents__content--contentTitle
+        ヘルプ&ガイド
+      %ul.footer__contents__content--contentList
+        %li
+          = link_to "#", class: "text" do
+            FURIMAガイド
+        %li
+          = link_to "#", class: "text" do
+            FURIMAロゴ利用ガイドライン
+        %li
+          = link_to "#", class: "text" do
+            お知らせ
+  .footer__whiteLogo
+    = link_to "/", class: "footer-logo" do
+      = image_tag 'logo/logo-white.png', height: 45, width: 160
+  %p
+    ©FURIMA
+
+= link_to "#", class: "btn" do
+  .purchase
+    %span.purchase--exhibition
+      出品する
+
+      = image_tag 'icon/icon_camera.png', height: 54, width: 54
