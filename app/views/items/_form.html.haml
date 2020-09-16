@@ -1,0 +1,26 @@
+.form
+  = form_for [@item] do |f|
+    = f.text_field :name, placeholder: "商品名", required: true
+    %br/
+    = f.collection_select :category_id, Category.all, :id, :name, autofocus: true, placeholder: "カテゴリー"
+    %br/
+    = f.text_field :detail, placeholder: "詳細", required: true
+    %br/
+    = f.text_field :brand, placeholder: "ブランド(任意)"
+    %br/
+    = f.text_field :price, placeholder: "値段", required: true
+    %br/
+    = f.select :item_status, {'新品同様': 1, '多少の傷あり': 2},include_blank: '選択してください', required: true
+    %br/
+    = f.collection_select :prefecture_id, Prefecture.all, :id, :name, autofocus: true, autocomplete: "address-level1"
+    %br/
+    = f.text_field :days_until_shipping, placeholder: "発送日数", required: true
+    %br/
+    = f.text_field :shipping_fee, placeholder: "送料", required: true
+    %br/
+    = f.text_field :sale_or_sold, placeholder: "在庫", required: true
+    %br/
+    = f.fields_for :item_images do |i|
+      = i.file_field :url, required: true
+    %br/
+    = f.submit '送信'
