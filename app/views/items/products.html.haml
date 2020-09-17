@@ -1,0 +1,91 @@
+.header
+  header
+
+.back
+  .main
+    .items__name
+      商品名
+    .items__photo_main
+      商品画像大
+    .itmes__photo__sub
+      商品画像小
+    .items__price
+      ¥1,000
+    .items__price__sub
+      (税込)送料込み
+    .information
+      ee
+
+    %table{class: 'table'}
+      %tr
+        %th{class: 'table__left'}
+          出品者
+        %td{class: 'table__right'}
+          ss
+      %tr
+        %th{class: 'table__left'}
+          カテゴリー
+        %td{class: 'table__right'}
+          = link_to 'ベビー・キッズ' , '#', class:'table__link'
+          %br/
+          = link_to 'ベビー服(男の子用) ~95cm', '#', class:'table__link'
+          %br/
+          = link_to 'アウター', '#', class:'table__link'
+      %tr
+        %th{class: 'table__left'}
+          ブランド
+        %td{class: 'table__right'}
+      %tr
+        %th{class: 'table__left'}
+          商品のサイズ
+        %td{class: 'table__right'}
+      %tr
+        %th{class: 'table__left'}
+          商品の状態
+        %td{class: 'table__right'}
+          新品/未使用
+      %tr
+        %th{class: 'table__left'}
+          送料
+        %td{class: 'table__right'}
+          送料込（出品者負担）
+      %tr
+        %th{class: 'table__left'}
+          発送元の地域
+        %td{class: 'table__right'}
+          = link_to '北海道', '#', class:'table__link'
+      %tr
+        %th{class: 'table__left'}
+          発送日の目安
+        %td{class: 'table__right'}
+          1-2日で発送
+
+    .option
+      %ul= link_to '★ お気に入り 0', '#', class:'favorite'
+      %ul
+        = link_to '#', class:'bad' do
+          = icon('fas', 'flag')
+          不適切な商品の通報
+
+  .comment
+    = form_for('#') do |f|
+      %textarea{required:'required', name:'comment', class:'comment__form'}
+      .comment__msg
+        相手のことを考え丁寧なコメントを心がけましょう。
+        %br/
+        不快な言葉遣いなどは利用制限や退会処分となることがあります。
+      %button{type: "submit", class:'comment__send'} 
+        %i.fas.fa-comment
+        コメントする
+
+  .page
+    %ul=link_to '< 前の商品', '#', class:'page__prev'
+    %ul=link_to '後ろの商品 >', '#', class:'page__next'
+  
+  .more
+    %ul=link_to 'ベビー・キッズをもっと見る', '#', class:'more__list'
+    .more__img
+      画像
+
+.footer
+  footer
