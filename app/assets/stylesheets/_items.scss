@@ -1,3 +1,10 @@
+$white: #fff;
+$gray_white: #f8f8f8;
+$skyblue: #3CCACE;
+$black: #272727;
+$orange: #ffa500;
+$shadow: 0 0 5px rgba(0,0,0,0.4);
+
 .header {
   height: 108px;
   width: 100vw;
@@ -47,7 +54,7 @@
           background-size: 20px;
           background-position: center;
           background-repeat: no-repeat;
-          background-color: $skybule;
+          background-color: $skyblue;
           border: 0;
           width: 36px;
           height: 36px;
@@ -197,7 +204,7 @@
         content: "";
         width: 70px;
         height: 4px;
-        background-color: $skybule;
+        background-color: $skyblue;
         position: absolute;
         bottom: 0;
         left: 50%;
@@ -234,7 +241,7 @@
             text-align: center;
             margin: 0 5px 0 0;
             padding: 5px 20px;
-            background-color: $skybule;
+            background-color: $skyblue;
             color: $white;
           }
         }
@@ -245,7 +252,7 @@
           line-height: 50px;
           margin: 0 0 0 2px;
           span {     //文字の強調部分
-            color: $skybule;
+            color: $skyblue;
           }
         }
 
@@ -305,7 +312,7 @@
         content: "";
         width: 70px;
         height: 4px;
-        background-color: $skybule;
+        background-color: $skyblue;
         position: absolute;
         bottom: 0;
         left: 50%;
@@ -372,7 +379,7 @@
       .subtitle {
         font-size: 24px;
         text-decoration: none;
-        color: $skybule;
+        color: $skyblue;
         font-weight: bold;
       }
 
@@ -542,7 +549,7 @@
 
 .purchase {
   width: 120px;
-  background: $skybule;
+  background: $skyblue;
   text-align: center;
   border-radius: 4%;
   bottom: 32px;
