@@ -46,8 +46,6 @@ group :development, :test do
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
   gem 'capistrano-rails-console'
-  gem 'devise'
-  gem 'active_hash'
   gem 'rspec-rails'
   gem 'factory_bot_rails'
 end
@@ -79,4 +77,10 @@ group :production do
   gem 'unicorn'
 end
 
+gem 'devise'
+gem 'active_hash'
+gem 'carrierwave', '~> 2.0'
+gem 'fog-aws'
+gem 'dotenv-rails'
+gem 'mini_magick'
 gem 'haml-rails'
