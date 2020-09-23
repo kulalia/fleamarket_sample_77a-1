@@ -1,0 +1,84 @@
+.card {
+  height: 100vh;
+  width: 100%;
+  background-color: #f8f8f8;
+  display: flex;
+  align-items: center;
+
+  &__box {
+    height: 600px;
+    width: 600px;
+    background-color: #fff;
+    margin: 0 auto;
+    text-align: center;
+
+    &__text {
+      height: 80px;
+      font-size: 20px;
+      font-weight: bold;
+      line-height: 80px;
+      border: 2px solid;
+      border-color: #f8f8f8;
+    }
+
+    &__form {
+      padding-top: 30px;
+      width: 400px;
+      margin: 0 auto;
+
+      .field {
+        width: 400px;
+        text-align: left;
+        padding: 15px 0 10px 10px;
+        font-size: 16px;
+        font-weight: bold;
+      }
+
+      .field-select {
+        display: flex;
+      }
+  
+      .input {
+        height: 40px;
+        width: 360px;
+        padding-left: 10px;
+        margin-top: 8px;
+        font-weight: normal;
+        font-size: 14px;
+      }
+
+      .input-select select {
+        height: 50px;
+        width: 85px;
+        margin-top: 8px;
+        padding: 0 10px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background-image: url('icon-arrow.png');
+        background-repeat: no-repeat;
+        background-size: 15px 15px;
+        background-position: right 10px center;
+        font-weight: normal;
+      }
+
+      .actions {
+        padding-top: 30px;
+      }
+
+      .submit-btn {
+        height: 40px;
+        width: 230px;
+        background-color: $mainColor;
+        border-radius: 100px;
+        color: $mainBoxFontColor;
+        border: 1px solid;
+      }
+
+    }
+
+    
+  }
+
+  
+}
