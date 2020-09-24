@@ -29,7 +29,7 @@
       .field {
         width: 400px;
         text-align: left;
-        padding: 15px 0 10px 10px;
+        padding: 15px 10px 15px 10px;
         font-size: 16px;
         font-weight: bold;
 
@@ -44,10 +44,6 @@
         }
       }
 
-      .field-select {
-        display: flex;
-      }
-  
       .input {
         height: 40px;
         width: 360px;
@@ -57,20 +53,48 @@
         font-size: 14px;
       }
 
-      .input-select select {
-        height: 50px;
-        width: 85px;
-        margin-top: 8px;
-        padding: 0 10px;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-        background-image: url('icon-arrow.png');
-        background-repeat: no-repeat;
-        background-size: 15px 15px;
-        background-position: right 10px center;
-        font-weight: normal;
+
+      .field-select {
+        display: flex;
+
+        .input-select {
+          display: flex;
+          position: relative;
+          align-items: center;
+
+          .icon {
+            position: absolute;
+            padding-left: 75px;
+            padding-top: 8px;
+            pointer-events: none;
+          }
+
+          .month-year {
+            height: 50px;
+            width: 30px;
+            line-height: 58px;
+            text-align: center;
+          }
+        }
+
+        select {
+          height: 50px;
+          width: 100px;
+          margin-top: 8px;
+          padding: 0 10px;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          background-repeat: no-repeat;
+          background-size: 15px 15px;
+          background-position: right 10px center;
+          font-weight: normal;
+        }
+
+        
       }
+  
+      
 
       .actions {
         padding-top: 30px;
