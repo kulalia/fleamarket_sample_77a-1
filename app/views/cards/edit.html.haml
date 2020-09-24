@@ -1,9 +1,10 @@
+= render "users/left-content"
 .card
   .card__box
     .card__box__text
-      = "クレジットカード情報の編集"
+      = "クレジットカード情報編集"
     .card__box__form
-      = form_with url: card_path do |f|
+      = form_with url: cards_path do |f|
         .field
           = f.label :card_number, "カード番号"
           %span{ :class => "must" }
@@ -16,10 +17,16 @@
           .field-select
             .input-select
               = f.select :exp_month, [["--", 0], ["1", 1], ["2", 2],["3", 3],["4", 4],["5", 5],["6", 6],["7", 7],["8", 8],["9", 9],["10", 10],["11", 11],["12", 12]]
-              %span 月
+              .icon
+                = icon('fas', 'chevron-down')
+              %span{ :class => "month-year" }
+                = "月"
             .input-select
               = f.select :exp_year, [["--", 0], ["2020", 20], ["2021", 21], ["2022", 22], ["2023", 23], ["2024", 24], ["2025", 25], ["2026", 26], ["2027", 27], ["2028", 28], ["2029", 29], ["2030", 30]]
-              %span 年
+              .icon
+                = icon('fas', 'chevron-down')
+              %span{ :class => "month-year" }
+                = "年"
         .field
           = f.label :security_code, "セキュリティコード"
           %span{ :class => "must" }
