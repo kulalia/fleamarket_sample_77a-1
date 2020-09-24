@@ -10,6 +10,13 @@
           %span{ :class => "must" }
             = "必須"
           = f.text_field :card_number, autofocus: true, placeholder: "半角英数", class: "input"
+        .card-logos
+          .logo
+            = image_tag src= "visa-cc260c309b710c0cf188ebd1adc60d574968094001f000927f4aaa44b0e29161.gif", size: "50x40"
+          .logo
+            = image_tag src= "master-f39519f1042a79678e3f36fada2e67e9e4b1c7da1ca1d7249d7712afc9af3bce.png", size: "50x40"
+          .logo
+            = image_tag src= "jcb-1b98129942b5461f815ae470459d0705a2947693cbadde0c4ddd14a795eaad92.gif", size: "50x40"
         .field
           = f.label :exp_date, "有効期限"
           %span{ :class => "must" }
