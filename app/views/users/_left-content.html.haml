@@ -56,5 +56,5 @@
         = link_to '#', class: 'left-data' do
           メール
         %li.left-content__logout
-        = link_to '#', class: 'left-data' do
+        = link_to destroy_user_session_path, method: :delete, class: 'left-data' do
           ログアウト
