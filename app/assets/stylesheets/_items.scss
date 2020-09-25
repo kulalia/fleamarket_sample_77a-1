@@ -18,4 +18,20 @@
     height: 98px;
     line-height: 98px;
   }
+  &__image {
+    height:145px;
+    background-color: yellow;
+  }
+  &__price {
+    height: 181px;
+    background-color: green;
+  }
+  &__payment {
+    height: 111px;
+    background-color: gray;
+  }
+  &__delivery-address {
+    height: 105px;
+    background-color: darkgray;
+  }
 }
