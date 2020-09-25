@@ -10,5 +10,5 @@ Rails.application.routes.draw do
       get 'pay_method_select'
     end
   end
-  resources :cards, only: [:new, :create, :edit, :update]
+  resources :cards, only: [:new, :edit, :update]
 end
