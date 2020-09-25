@@ -8,8 +8,14 @@
   width: 100vw;
   text-align: center;
   line-height: 128px;
-  &__image {
+}
 
-    
+.content {
+  &__title {
+    text-align: center;
+    font-size: 24px;
+    background-color: blue;
+    height: 98px;
+    line-height: 98px;
   }
 }
