@@ -8,6 +8,11 @@ class ItemsController < ApplicationController
     @item.item_images.build
   end
 
+  def buy_confirm
+    @item = Item.new(item_params)
+    render :new if @item.invalid?
+  end
+
   def create
     @item = Item.new(item_params)
     if @item.save!
