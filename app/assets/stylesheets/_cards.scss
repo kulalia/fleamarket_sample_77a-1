@@ -1,3 +1,7 @@
+
+
+
+
 .card {
   height: 100vh;
   width: calc(100% - 450px);
@@ -100,11 +104,7 @@
           background-position: right 10px center;
           font-weight: normal;
         }
-
-        
       }
-  
-      
 
       .actions {
         padding-top: 30px;
@@ -118,11 +118,6 @@
         color: $mainBoxFontColor;
         border: 1px solid;
       }
-
     }
-
-    
   }
-
-  
 }

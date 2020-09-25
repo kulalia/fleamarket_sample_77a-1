@@ -3,7 +3,15 @@
 }
 
 
-body {
+$white-color: #fff;
+$blue-color: #3CCACE;
+$gray-color: #f8f8f8;
+$lightgray-color: #f8f8f8;
+$red-color: #f36;
+$black-color: #000;
+
+
+.mypage-main {
   background-color: $lightgray-color;
   display: flex;
   justify-content: space-around;
