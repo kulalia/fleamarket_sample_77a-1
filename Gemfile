@@ -81,4 +81,4 @@ gem 'fog-aws'
 gem 'dotenv-rails'
 gem 'mini_magick'
 gem 'haml-rails'
-gem "font-awesome-sass"
+gem 'font-awesome-sass'
