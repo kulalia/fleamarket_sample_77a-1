@@ -133,6 +133,30 @@ $inputFontSize: 14px;
         font-weight: normal;
         font-size: $inputFontSize;
       }
+
+      .input-select {
+        display: flex;
+        position: relative;
+
+        .icon-left {
+          position: absolute;
+          padding-left: 60px;
+          padding-top: 25px;
+          pointer-events: none;
+        }
+
+        .icon-center {
+
+        }
+
+        .icon-right {
+
+        }
+
+      }
+
+        
+
     }
   }
 
