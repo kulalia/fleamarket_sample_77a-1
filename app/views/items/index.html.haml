@@ -16,12 +16,21 @@
           = link_to "#", class:"nav-list" do
             ブランド
       %ul.navRight
-        %li.login
-          = link_to new_user_session_path, class: "nav-list" do
-            ログイン
-        %li.register
-          = link_to new_user_registration_path, class: "nav-list" do
-            新規会員登録
+        - if user_signed_in?
+          %li.login
+            = link_to users_path, class: "nav-list" do
+              マイページ
+          %li.register
+            = link_to destroy_user_session_path, method: :delete, class: "nav-list" do
+              ログアウト
+        - else
+          %li.login
+            = link_to new_user_session_path, class: "nav-list" do
+              ログイン
+          %li.register
+            = link_to new_user_registration_path, class: "nav-list" do
+              新規会員登録
+        
 
 
 .main
@@ -200,10 +209,16 @@
       = image_tag 'logo/logo-white.png', height: 45, width: 160
   %p
     ©FURIMA
-
-= link_to "#", class: "btn" do
-  .purchase
-    %span.purchase--exhibition
-      出品する
-
-      = image_tag 'icon/icon_camera.png', height: 54, width: 54
+- if user_signed_in? 
+  = link_to new_item_path, class: "btn" do
+    .purchase
+      %span.purchase--exhibition
+        出品する
+        = image_tag 'icon/icon_camera.png', height: 54, width: 54
+- else
+  = link_to root_path, class: "btn" do
+    .purchase
+      %span.purchase--exhibition
+        出品する
+        = image_tag 'icon/icon_camera.png', height: 54, width: 54
+  
