@@ -157,25 +157,28 @@ $inputFontSize: 14px;
           position: absolute;
           padding-left: 60px;
           padding-top: 10px;
+          pointer-events: none;
         }
 
         .icon-center {
           position: absolute;
           padding-left: 175px;
           padding-top: 10px;
-
+          pointer-events: none;
         }
 
         .icon-right {
           position: absolute;
           padding-left: 290px;
           padding-top: 10px;
+          pointer-events: none;
         }
 
         .icon-prefecture {
           position: absolute;
           padding-left: 60px;
           padding-top: 10px;
+          pointer-events: none;
         }
 
       }
