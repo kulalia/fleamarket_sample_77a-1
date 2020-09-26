@@ -4,6 +4,7 @@ class ItemsController < ApplicationController
   end
 
   def new
+    @items = Item.includes(:item_images).order('created_at DESC')
     @item = Item.new
     @item.item_images.build
   end

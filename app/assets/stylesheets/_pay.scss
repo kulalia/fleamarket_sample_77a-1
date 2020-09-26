@@ -1,0 +1,96 @@
+$backgroundColor: #f8f8f8;
+$mainColor: #3CCACE;
+$mainBoxFontColor: #fff;
+$pointColor: rgb(224, 44, 44);
+
+@mixin edit-delete-btn-style() {
+  height: 30px;
+  width: 60px;
+  line-height: 30px;
+  border-radius: 5px;
+}
+
+.pay-method {
+  height: 100vh;
+  width: calc(100% - 450px);
+  background-color: $backgroundColor;
+  display: flex;
+  align-items: center;
+
+  &__box {
+    height: 600px;
+    width: 600px;
+    background-color: $mainBoxFontColor;
+    margin: 0 auto;
+    text-align: center;
+    align-items: center;
+
+    &__text {
+      height: 80px;
+      font-size: 20px;
+      font-weight: bold;
+      line-height: 80px;
+      border: 2px solid;
+      border-color: $backgroundColor;
+    }
+
+    &__register {
+      height: 80px;
+      line-height: 80px;
+      padding-top: 20px;
+
+      .register {
+        text-decoration: none;
+        color: $mainBoxFontColor;
+        background-color: $mainColor;
+        padding: 10px 20px;
+        border-radius: 100px;
+      }
+    }
+
+    &__all-cards {
+      height: 400px;
+      width: 600px;
+      margin-top: 30px;
+      padding: 10px;
+      
+      .card-box {
+        height: 80px;
+        width: 500px;
+        display: flex;
+        justify-content: space-between;
+        line-height: 80px;
+        margin: 10px auto;
+        background-color: $backgroundColor;
+
+        .registered-card {
+          height: 80px;
+          width: 350px;
+        }
+
+        .edit-delete {
+          height: 80px;
+          width: 150px;
+          display: flex;
+          align-items: center;
+
+          .edit {
+            @include edit-delete-btn-style();
+            background-color: $mainColor;
+          }
+
+          .delete {
+            @include edit-delete-btn-style();
+            margin-left: 20px;
+            background-color: $pointColor;
+          }
+
+          .edit-delete-btn {
+            text-decoration: none;
+            color: $mainBoxFontColor;
+          }
+        }
+      }
+    }
+  }
+}

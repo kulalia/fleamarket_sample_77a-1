@@ -1,0 +1,123 @@
+$backgroundColor: #f8f8f8;
+$mainColor: #3CCACE;
+$mainBoxFontColor: #fff;
+$pointColor: rgb(224, 44, 44);
+
+.card {
+  height: 100vh;
+  width: calc(100% - 450px);
+  background-color: $backgroundColor;
+  display: flex;
+  align-items: center;
+
+  &__box {
+    height: 600px;
+    width: 600px;
+    background-color: $mainBoxFontColor;
+    margin: 0 auto;
+    text-align: center;
+
+    &__text {
+      height: 80px;
+      font-size: 20px;
+      font-weight: bold;
+      line-height: 80px;
+      border: 2px solid;
+      border-color: $backgroundColor;
+    }
+
+    &__form {
+      padding-top: 30px;
+      width: 400px;
+      margin: 0 auto;
+
+      .card-logos {
+        display: flex;
+        align-items: flex-start;
+        padding: 0 0 20px 15px;
+
+        .logo {
+          padding-left: 5px;
+        }
+      }
+
+      .field {
+        width: 400px;
+        text-align: left;
+        padding: 15px 10px 15px 10px;
+        font-size: 16px;
+        font-weight: bold;
+
+        .must {
+          background-color: $pointColor;
+          color: $mainBoxFontColor;
+          font-size: 12px;
+          margin-left: 3px;
+          padding: 3px;
+          font-weight: normal;
+          border-radius: 2px;
+        }
+      }
+
+      .input {
+        height: 40px;
+        width: 360px;
+        padding-left: 10px;
+        margin-top: 8px;
+        font-weight: normal;
+        font-size: 14px;
+      }
+
+      .field-select {
+        display: flex;
+
+        .input-select {
+          display: flex;
+          position: relative;
+          align-items: center;
+
+          .icon {
+            position: absolute;
+            padding-left: 75px;
+            padding-top: 8px;
+            pointer-events: none;
+          }
+
+          .month-year {
+            height: 50px;
+            width: 30px;
+            line-height: 58px;
+            text-align: center;
+          }
+        }
+
+        select {
+          height: 50px;
+          width: 100px;
+          margin-top: 8px;
+          padding: 0 10px;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          background-repeat: no-repeat;
+          background-size: 15px 15px;
+          background-position: right 10px center;
+          font-weight: normal;
+        }
+      }
+
+      .actions {
+        padding-top: 30px;
+      }
+
+      .submit-btn {
+        height: 40px;
+        width: 230px;
+        background-color: $mainColor;
+        border-radius: 100px;
+        color: $mainBoxFontColor;
+        border: 1px solid;
+      }
+    }
+  }
+}
