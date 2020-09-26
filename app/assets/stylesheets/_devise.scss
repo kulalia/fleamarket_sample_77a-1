@@ -126,12 +126,58 @@ $inputFontSize: 14px;
         -webkit-appearance: none;
         -moz-appearance: none;
         appearance: none;
-        background-image: url('icon-arrow.png');
         background-repeat: no-repeat;
         background-size: 15px 15px;
         background-position: right 10px center;
         font-weight: normal;
         font-size: $inputFontSize;
+      }
+
+      .input-select {
+        display: flex;
+        align-items: center;
+        position: relative;
+        
+        #user_user_profile_attributes_birthday_1i {
+          margin-right: 10px;
+        }
+    
+        #user_user_profile_attributes_birthday_2i {
+          margin-right: 10px;
+          margin-left: 10px;
+        }
+    
+        #user_user_profile_attributes_birthday_3i {
+          margin-right: 10px;
+          margin-left: 10px;
+        }
+    
+        .icon-left {
+          position: absolute;
+          padding-left: 60px;
+          pointer-events: none;
+          padding-top: 10px;
+        }
+    
+        .icon-center {
+          position: absolute;
+          padding-left: 175px;
+          padding-top: 10px;
+    
+        }
+    
+        .icon-right {
+          position: absolute;
+          padding-left: 290px;
+          padding-top: 10px;
+        }
+    
+        .icon-prefecture {
+          position: absolute;
+          padding-left: 60px;
+          padding-top: 10px;
+        }
+    
       }
     }
   }
