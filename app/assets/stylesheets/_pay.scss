@@ -1,14 +1,26 @@
+$backgroundColor: #f8f8f8;
+$mainColor: #3CCACE;
+$mainBoxFontColor: #fff;
+$pointColor: rgb(224, 44, 44);
+
+@mixin edit-delete-btn-style() {
+  height: 30px;
+  width: 60px;
+  line-height: 30px;
+  border-radius: 5px;
+}
+
 .pay-method {
   height: 100vh;
   width: calc(100% - 450px);
-  background-color: #f8f8f8;
+  background-color: $backgroundColor;
   display: flex;
   align-items: center;
 
   &__box {
     height: 600px;
     width: 600px;
-    background-color: #fff;
+    background-color: $mainBoxFontColor;
     margin: 0 auto;
     text-align: center;
     align-items: center;
@@ -19,7 +31,7 @@
       font-weight: bold;
       line-height: 80px;
       border: 2px solid;
-      border-color: #f8f8f8;
+      border-color: $backgroundColor;
     }
 
     &__register {
@@ -29,8 +41,8 @@
 
       .register {
         text-decoration: none;
-        color: #fff;
-        background-color: #3CCACE;
+        color: $mainBoxFontColor;
+        background-color: $mainColor;
         padding: 10px 20px;
         border-radius: 100px;
       }
@@ -49,7 +61,7 @@
         justify-content: space-between;
         line-height: 80px;
         margin: 10px auto;
-        background-color: #f8f8f8;
+        background-color: $backgroundColor;
 
         .registered-card {
           height: 80px;
@@ -63,30 +75,22 @@
           align-items: center;
 
           .edit {
-            height: 30px;
-            width: 60px;
-            line-height: 30px;
-            background-color: #3CCACE;
-            border-radius: 5px;
+            @include edit-delete-btn-style();
+            background-color: $mainColor;
           }
 
           .delete {
-            height: 30px;
-            width: 60px;
-            line-height: 30px;
+            @include edit-delete-btn-style();
             margin-left: 20px;
-            background-color: rgb(224, 44, 44);
-            border-radius: 5px;
+            background-color: $pointColor;
           }
 
           .edit-delete-btn {
             text-decoration: none;
-            color: #fff;
+            color: $mainBoxFontColor;
           }
         }
-
       }
     }
-
   }
 }

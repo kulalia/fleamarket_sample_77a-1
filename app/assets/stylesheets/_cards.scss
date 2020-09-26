@@ -1,18 +1,19 @@
-
-
-
+$backgroundColor: #f8f8f8;
+$mainColor: #3CCACE;
+$mainBoxFontColor: #fff;
+$pointColor: rgb(224, 44, 44);
 
 .card {
   height: 100vh;
   width: calc(100% - 450px);
-  background-color: #f8f8f8;
+  background-color: $backgroundColor;
   display: flex;
   align-items: center;
 
   &__box {
     height: 600px;
     width: 600px;
-    background-color: #fff;
+    background-color: $mainBoxFontColor;
     margin: 0 auto;
     text-align: center;
 
@@ -22,7 +23,7 @@
       font-weight: bold;
       line-height: 80px;
       border: 2px solid;
-      border-color: #f8f8f8;
+      border-color: $backgroundColor;
     }
 
     &__form {
@@ -48,8 +49,8 @@
         font-weight: bold;
 
         .must {
-          background-color: rgb(224, 44, 44);
-          color: #fff;
+          background-color: $pointColor;
+          color: $mainBoxFontColor;
           font-size: 12px;
           margin-left: 3px;
           padding: 3px;
@@ -66,7 +67,6 @@
         font-weight: normal;
         font-size: 14px;
       }
-
 
       .field-select {
         display: flex;
