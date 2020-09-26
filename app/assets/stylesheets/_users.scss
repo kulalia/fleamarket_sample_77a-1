@@ -133,6 +133,58 @@ $inputFontSize: 14px;
         font-weight: normal;
         font-size: $inputFontSize;
       }
+
+      .input-select {
+        display: flex;
+        align-items: center;
+        position: relative;
+        
+        #user_user_profile_attributes_birthday_1i {
+          margin-right: 10px;
+        }
+
+        #user_user_profile_attributes_birthday_2i {
+          margin-right: 10px;
+          margin-left: 10px;
+        }
+
+        #user_user_profile_attributes_birthday_3i {
+          margin-right: 10px;
+          margin-left: 10px;
+        }
+
+        .icon-left {
+          position: absolute;
+          padding-left: 60px;
+          padding-top: 10px;
+          pointer-events: none;
+        }
+
+        .icon-center {
+          position: absolute;
+          padding-left: 175px;
+          padding-top: 10px;
+          pointer-events: none;
+        }
+
+        .icon-right {
+          position: absolute;
+          padding-left: 290px;
+          padding-top: 10px;
+          pointer-events: none;
+        }
+
+        .icon-prefecture {
+          position: absolute;
+          padding-left: 60px;
+          padding-top: 10px;
+          pointer-events: none;
+        }
+
+      }
+
+        
+
     }
   }
 
