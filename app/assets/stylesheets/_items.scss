@@ -1,5 +1,9 @@
+$margin: 0 auto;
+$padding: 32px 16px;
+$max-width: 375px;
+
 .contents {
-  margin: 0 auto;
+  margin: $margin;
   width: 700px;
 }
 
@@ -9,33 +13,66 @@
   text-align: center;
   line-height: 128px;
 }
-
 .content {
   &__title {
     text-align: center;
     font-size: 24px;
-    background-color: blue;
-    height: 98px;
-    line-height: 98px;
+    color: white;
+    background-color: #3ccace;
+    height: 30px;
+    line-height: 30px;
+    max-width: $max-width;
+    padding: $padding;
+    margin: $margin;  
   }
   &__image {
     height:145px;
-    background-color: yellow;
+    max-width: $max-width;
+    padding: $padding;
+    margin: $margin;  
+    display: flex;
+    justify-content: space-between;
+    &--text {
+      padding: 24px 0;
+    }
   }
   &__price {
-    height: 181px;
-    background-color: green;
+    height: 60px;
+    line-height: 60px;
+    max-width: $max-width;
+    padding: $padding;
+    margin: $margin;  
+    text-align: center;
+    font-size: 36px;
   }
-  &__payment {
-    height: 111px;
-    background-color: gray;
-  }
-  &__delivery-address {
-    height: 105px;
-    background-color: darkgray;
-  }
+
   &__submit {
-    height: 93px;
-    background-color: lightgreen;
+    height: 30px;
+    line-height: 30px;
+    max-width: $max-width;
+    padding: $padding;
+    margin: $margin;  
+    text-align: center;
+    &--title {
+      color: red;
+      font-size: 16px;
+    }
+    &--btn {
+      height: 50px;
+      color: white;
+      background-color: #3ccace;
+      width: 100%;
+      cursor: pointer;
+      font-size: 24px;
+    }
+  }
+}
+
+.text {
+  &__title {
+    font-size: 24px;
+  }
+  &__price {
+    font-size: 15px;
   }
 }
