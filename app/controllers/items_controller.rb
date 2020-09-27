@@ -8,11 +8,10 @@ class ItemsController < ApplicationController
     @item.item_images.build
   end
 
-  def buy_confirm
-    @item = Item.new(item_params)
-    render :new if @item.invalid?
+  def show
+    @item = Item.includes(:item_images).order('created_at DESC')
   end
-
+  
   def create
     @item = Item.new(item_params)
     if @item.save!
