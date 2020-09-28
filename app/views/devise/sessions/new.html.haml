@@ -1,3 +1,5 @@
+= render "layouts/header"
+
 .devise
   .devise__loginbox
     .devise__loginbox__text
@@ -16,3 +18,5 @@
             = f.label :remember_me, class: "text"
         .actions
           = f.submit "ログインする", class: "submit-btn"
+
+= render "layouts/footer"
