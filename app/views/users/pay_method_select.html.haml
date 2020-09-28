@@ -1,3 +1,4 @@
+= render "layouts/header"
 .mypage-main
   = render "left-content"
   .pay-method
@@ -48,5 +49,6 @@
             .delete
               = link_to "#", class: "edit-delete-btn" do
                 = "削除"
+= render "layouts/footer"
 
 
