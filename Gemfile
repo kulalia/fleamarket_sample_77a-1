@@ -83,3 +83,5 @@ gem 'mini_magick'
 gem 'haml-rails'
 gem 'font-awesome-sass'
 gem 'payjp'
+gem "jquery-rails"
+gem 'jquery-turbolinks'
