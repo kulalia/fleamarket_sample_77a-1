@@ -1,0 +1,20 @@
+.header
+  = link_to image_tag("logo/logo.png", alt: "FURIMA", size: "185x49"), root_path
+.contents
+  %h2.content__title
+    購入内容の確認
+  .content__image
+    = image_tag "icon/member_photo_noimage_thumb.png", alt: "image", size: "150x150"
+    .content__image--text
+      %p.text__title
+        サンプル
+      %p.text__price
+        送料込み(税込):¥5,800
+  .content__price
+    支払い金額 : ¥5,800
+  .content__submit
+    %p.content__submit--title
+      本当に購入しますか？
+    %button.content__submit--btn
+      購入する
+.footer
