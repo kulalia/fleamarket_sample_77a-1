@@ -8,5 +8,10 @@ Rails.application.routes.draw do
   resources :users, only: :index
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :users, only: [:index]
-  resources :cards, only: [:index, :new, :create, :destroy]
+  resources :cards, only: [:index, :new, :create, :destroy] do
+    member do
+      get 'buy_comfirm'
+      get 'purchase'
+    end
+  end
 end

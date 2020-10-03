@@ -46,4 +46,12 @@ class CardsController < ApplicationController
     @card.destroy
     redirect_to new_card_path
   end
+
+  def buy_comfirm
+  end
+
+  def purchase
+    redirect_to root_path
+  end
+
 end

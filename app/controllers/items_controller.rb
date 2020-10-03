@@ -19,6 +19,7 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @item = Item.includes(:item_images).find(params[:id])
   end
 
   private
