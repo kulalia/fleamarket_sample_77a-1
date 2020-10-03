@@ -4,14 +4,14 @@
   %h2.content__title
     購入内容の確認
   .content__image
-    = image_tag "icon/member_photo_noimage_thumb.png", alt: "image", size: "150x150"
+    = image_tag @image.url.url, alt: "image", size: "150x150"
     .content__image--text
       %p.text__title
-        サンプル
+        = "#{@item.name}"
       %p.text__price
-        送料込み(税込):¥5,800
+        = "送料込み(税込) : #{@item.price}"
   .content__price
-    支払い金額 : ¥5,800
+    = "支払い金額 : #{@item.price}"
   .content__submit
     %p.content__submit--title
       本当に購入しますか？

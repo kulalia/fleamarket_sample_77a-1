@@ -48,6 +48,8 @@ class CardsController < ApplicationController
   end
 
   def buy_comfirm
+    @item = Item.includes(:item_images).find(params[:id])
+    @image = @item.item_images.first
   end
 
   def purchase
