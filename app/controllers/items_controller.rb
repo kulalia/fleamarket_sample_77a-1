@@ -7,10 +7,6 @@ class ItemsController < ApplicationController
     @item = Item.new
     @item.item_images.build
   end
-
-  def show
-    @item = Item.includes(:item_images).order('created_at DESC')
-  end
   
   def create
     @item = Item.new(item_params)
