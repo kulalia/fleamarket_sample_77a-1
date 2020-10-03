@@ -59,13 +59,14 @@ $pointColor: rgb(224, 44, 44);
         width: 500px;
         display: flex;
         justify-content: space-between;
-        line-height: 80px;
+        // line-height: 35px;
         margin: 10px auto;
         background-color: $backgroundColor;
 
         .registered-card {
           height: 80px;
           width: 350px;
+          padding-top: 20px;
         }
 
         .edit-delete {

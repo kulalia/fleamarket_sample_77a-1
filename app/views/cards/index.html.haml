@@ -1,0 +1,57 @@
+= render "layouts/header"
+.mypage-main
+  = render "users/left-content"
+  .pay-method
+    .pay-method__box
+      .pay-method__box__text
+        = "登録済みクレジットカード"
+      -# .pay-method__box__register
+      -#   = "新しいクレジットカードを登録する"
+      .pay-method__box__all-cards
+        .card-box
+          .registered-card
+            = "**** **** **** " + @card.last4
+            %br
+              - exp_month = @card.exp_month.to_s
+              - exp_year = @card.exp_year.to_s.slice(2,3)
+              = exp_month + " / " + exp_year
+          .edit-delete
+            -# .edit
+            -#   = link_to "#", class: "edit-delete-btn" do
+            -#     = "編集"
+            .delete
+              = link_to card_path(@card.id), method: :delete, class: "edit-delete-btn" do
+                = "削除"
+        -# .card-box
+        -#   .registered-card
+        -#     = "登録済みのカード"
+        -#   .edit-delete
+        -#     .edit
+        -#       = link_to "#", class: "edit-delete-btn" do
+        -#         = "編集"
+        -#     .delete
+        -#       = link_to "#", class: "edit-delete-btn" do
+        -#         = "削除"
+        -# .card-box
+        -#   .registered-card
+        -#     = "登録済みのカード"
+        -#   .edit-delete
+        -#     .edit
+        -#       = link_to "#", class: "edit-delete-btn" do
+        -#         = "編集"
+        -#     .delete
+        -#       = link_to "#", class: "edit-delete-btn" do
+        -#         = "削除"
+        -# .card-box
+        -#   .registered-card
+        -#     = "登録済みのカード"
+        -#   .edit-delete
+        -#     .edit
+        -#       = link_to "#", class: "edit-delete-btn" do
+        -#         = "編集"
+        -#     .delete
+        -#       = link_to "#", class: "edit-delete-btn" do
+        -#         = "削除"
+= render "layouts/footer"
+
+
