@@ -1,0 +1,46 @@
+= render "layouts/header"
+.mypage-main
+  = render "users/left-content"
+  .card
+    .card__box
+      .card__box__text
+        = "クレジットカード情報入力"
+      .card__box__form
+        = form_with url: cards_path do |f|
+          .field
+            = f.label :card_number, "カード番号"
+            %span{ class: "must" }
+              = "必須"
+            = f.text_field :card_number, autofocus: true, placeholder: "半角英数", class: "input"
+          .card-logos
+            .logo
+              = image_tag "visa-cc260c309b710c0cf188ebd1adc60d574968094001f000927f4aaa44b0e29161.gif", size: "50x40"
+            .logo
+              = image_tag "master-f39519f1042a79678e3f36fada2e67e9e4b1c7da1ca1d7249d7712afc9af3bce.png", size: "50x40"
+            .logo
+              = image_tag "jcb-1b98129942b5461f815ae470459d0705a2947693cbadde0c4ddd14a795eaad92.gif", size: "50x40"
+          .field
+            = f.label :exp_date, "有効期限"
+            %span{ class: "must" }
+              = "必須"
+            .field-select
+              .input-select
+                = f.select :exp_month, [["--", 0], ["1", 1], ["2", 2],["3", 3],["4", 4],["5", 5],["6", 6],["7", 7],["8", 8],["9", 9],["10", 10],["11", 11],["12", 12]]
+                .icon
+                  = icon('fas', 'chevron-down')
+                %span{ class: "month-year" }
+                  = "月"
+              .input-select
+                = f.select :exp_year, [["--", 0], ["2020", 20], ["2021", 21], ["2022", 22], ["2023", 23], ["2024", 24], ["2025", 25], ["2026", 26], ["2027", 27], ["2028", 28], ["2029", 29], ["2030", 30]]
+                .icon
+                  = icon('fas', 'chevron-down')
+                %span{ class: "month-year" }
+                  = "年"
+          .field
+            = f.label :security_code, "セキュリティコード"
+            %span{ class: "must" }
+              = "必須"
+            = f.text_field :security_code, autofocus: true, placeholder: "カード背面の4桁または3桁の番号", class: "input"
+          .actions
+            = f.submit "登録する", class: "submit-btn"
+= render "layouts/footer"
