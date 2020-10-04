@@ -18,8 +18,6 @@
     %br/
     = f.text_field :shipping_fee, placeholder: "送料", required: true
     %br/
-    = f.text_field :sale_or_sold, placeholder: "在庫", required: true
-    %br/
     = f.fields_for :item_images do |i|
       = i.file_field :url, required: true
     %br/
