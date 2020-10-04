@@ -16,6 +16,6 @@
     %p.content__submit--title
       本当に購入しますか？
     %button.content__submit--btn
-      = link_to purchase_card_path do
+      = link_to purchase_card_path(@item) do
         = "購入する"
 .footer
