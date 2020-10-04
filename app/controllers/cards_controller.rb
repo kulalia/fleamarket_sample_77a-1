@@ -55,7 +55,7 @@ class CardsController < ApplicationController
 
 
   # 購入確認画面
-  def buy_comfirm
+  def buy_confirm
     @item = Item.includes(:item_images).find(params[:id])
     @image = @item.item_images.first
 

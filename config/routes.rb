@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :users, only: [:index]
   resources :cards, only: [:index, :new, :create, :destroy] do
     member do
-      get 'buy_comfirm'
+      get 'buy_confirm'
       get 'purchase'
     end
   end
