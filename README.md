@@ -17,7 +17,7 @@
 |prefecture_id(active_hash)|integer|null: false|
 |days_until_shipping|integer|null: false|
 |shipping_fee|string|null: false|
-|sale_or_sold|string|null: false|
+|purchaser_id|integer|
 
 
 ### Association
@@ -47,7 +47,7 @@
 
 ### Association
 - has_many :items, dependent: :destroy
-- has_many :cards, dependent: :destroy
+- has_one :card, dependent: :destroy
 - has_many :delivery_addresses, dependent: :destroy
 - accepts_nested_attributes_for :delivery_addresses
 - has_many :purchase_histories, dependent: :destroy
