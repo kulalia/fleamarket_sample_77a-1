@@ -1,20 +1,20 @@
-.header
+.buy-confirm__header
   = link_to image_tag("logo/logo.png", alt: "FURIMA", size: "185x49"), root_path
-.contents
-  %h2.content__title
+.buy-confirm-contents
+  %h2.buy-confirm-content__title
     購入内容の確認
-  .content__image
+  .buy-confirm-content__image
     = image_tag "icon/member_photo_noimage_thumb.png", alt: "image", size: "150x150"
-    .content__image--text
-      %p.text__title
+    .buy-confirm-content__image--text
+      %p.buy-confirm-text__title
         サンプル
-      %p.text__price
+      %p.buy-confirm-text__price
         送料込み(税込):¥5,800
-  .content__price
+  .buy-confirm-content__price
     支払い金額 : ¥5,800
-  .content__submit
-    %p.content__submit--title
+  .buy-confirm-content__submit
+    %p.buy-confirm-content__submit--title
       本当に購入しますか？
-    %button.content__submit--btn
+    %button.buy-confirm-content__submit--btn
       購入する
-.footer
+.buy-confirm-footer
