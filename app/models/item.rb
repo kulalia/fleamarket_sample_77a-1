@@ -9,5 +9,5 @@ class Item < ApplicationRecord
     belongs_to_active_hash :category_ladys
     belongs_to_active_hash :prefecture
 
-  validates :user_id, :name, :category_id, :detail, :price, :item_status, :prefecture_id, :days_until_shipping, :shipping_fee, :sale_or_sold, presence: true
+  validates :user_id, :name, :category_id, :detail, :price, :item_status, :prefecture_id, :days_until_shipping, :shipping_fee, presence: true
 end

@@ -1,0 +1,22 @@
+= render "layouts/header"
+.mypage-main
+  = render "users/left-content"
+  .pay-method
+    .pay-method__box
+      .pay-method__box__text
+        = "登録済みクレジットカード"
+      .pay-method__box__all-cards
+        .card-box
+          .registered-card
+            = "**** **** **** " + @default_card.last4
+            %br
+              - exp_month = @default_card.exp_month.to_s
+              - exp_year = @default_card.exp_year.to_s.slice(2,3)
+              = exp_month + " / " + exp_year
+          .edit-delete
+            .delete
+              = link_to card_path(@default_card.id), method: :delete, class: "edit-delete-btn" do
+                = "削除"
+= render "layouts/footer"
+
+
