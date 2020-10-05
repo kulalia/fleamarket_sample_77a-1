@@ -1,3 +1,4 @@
+= render "layouts/header"
 .buy-confirm__header
   = link_to image_tag("logo/logo.png", alt: "FURIMA", size: "185x49"), root_path
 .buy-confirm-contents
@@ -18,4 +19,4 @@
     %button.buy-confirm-content__submit--btn
       = link_to purchase_card_path(@item) do
         = "購入する"
-.buy-confirm-footer
+= render "layouts/footer"
