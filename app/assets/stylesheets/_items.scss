@@ -675,3 +675,20 @@ $shadow: 0 0 5px rgba(0,0,0,0.4);
 .gBadge:hover {
   opacity:  .5;
 }
+
+$pointColor: rgb(224, 44, 44);
+$mainBoxFontColor: #fff;
+
+.must {
+  background-color: $pointColor;
+  color: $mainBoxFontColor;
+  font-size: 12px;
+  margin-left: 3px;
+  padding: 3px;
+  font-weight: normal;
+  border-radius: 2px;
+}
+
+#image-box {
+  background-color: gray;
+}
