@@ -8,7 +8,7 @@ class ItemsController < ApplicationController
     @item = Item.new
     @item.item_images.build
   end
-
+  
   def create
     @item = Item.new(item_params)
     if @item.save!
