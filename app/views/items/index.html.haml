@@ -2,7 +2,7 @@
   .header__body
     .header__body--top
       %h1.header__body--top--icons
-        = link_to "#", class: "header__body--top--icons--icon" do
+        = link_to root_path, class: "header__body--top--icons--icon" do
           = image_tag 'logo/logo.png', class: 'header__body--top--icons--icon--logo'
       .form
         = form_with url: root_path do |f|
