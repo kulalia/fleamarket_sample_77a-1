@@ -56,6 +56,9 @@
     %span{ class: "must" }
       = "必須"
     %br/
+    売約情報
+    %br/
+    = f.text_field :sale_or_sold
     #image-box
       #previews
         -if @item.persisted?
