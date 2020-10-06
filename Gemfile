@@ -85,3 +85,4 @@ gem 'mini_magick'
 gem 'haml-rails'
 gem "font-awesome-sass"
 gem 'active_hash'
+gem 'jquery-rails'

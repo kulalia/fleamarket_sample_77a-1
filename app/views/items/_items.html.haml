@@ -3,5 +3,5 @@
   = items.name
   %p/
   = "#{items.price}円"
-  - items.item_images.each do |image|
+  - item.item_images.each do |image|
     = image_tag image.url.url, size: "400x400"
