@@ -13,10 +13,11 @@
           %p 最大10枚までをアップロードできます        
         #image-box      
           = f.fields_for :item_images do |i|
-            = i.file_field :url, type: 'file', name: 'item[images_attributes][][image_url]', value: '', id: 'image-file', class: 'js-file', required: true
-            %label{ for: 'img-file' }
-              %i.fas.fa-camera
-
+            .js-file_group{ "data-index": i.index}
+              = i.file_field :url, type: 'file', name: 'item[images_attributes][][image_url]', value: '', id: 'image-file', class: 'js-file', required: true
+              %span.js-remove
+                削除
+              
       .second-box 
         .item-name
           .item-name__sample
@@ -103,6 +104,4 @@
       .btn-box
         = f.submit '出品する', class: 'item-sell__btn'   
         = link_to 'トップページに戻る', root_path, class: 'redirect-form__btn'
-        
 .footer
-  
