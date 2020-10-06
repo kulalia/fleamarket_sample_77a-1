@@ -13,7 +13,7 @@
           %p 最大10枚までをアップロードできます        
         #image-box      
           = f.fields_for :item_images do |i|
-            = i.file_field :url, type: 'file', name: 'item[images_attributes][][image_url]', value: '', id: 'image-file', required: true
+            = i.file_field :url, type: 'file', name: 'item[images_attributes][][image_url]', value: '', id: 'image-file', class: 'js-file', required: true
             %label{ for: 'img-file' }
               %i.fas.fa-camera
 
