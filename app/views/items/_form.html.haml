@@ -68,8 +68,8 @@
         .js-file_group{data: {index: i.index}}
           = i.file_field :url, required: true, class: "js-file"
           %br/
-          %span{ class: "js-remove"}
-            = "削除"
+          .js-remove
+            削除
         - if @item.persisted?
           = i.check_box :_destroy, data:{ index: i.index }, class: 'hidden-destroy'
       - if @item.persisted?
