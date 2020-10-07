@@ -6,7 +6,7 @@
       .card__box__text
         = "クレジットカード情報入力"
       .card__box__form
-        = form_with url: cards_path, method: :post, id: "form" do |f|
+        = form_with url: cards_path, method: :post, id: "card-form" do |f|
           .field
             = f.label :card_number, "カード番号"
             %span{ class: "must" }
@@ -42,5 +42,5 @@
               = "必須"
             = f.text_field :security_code, autofocus: true, placeholder: "カード背面の4桁または3桁の番号", class: "input"
           .actions
-            = f.submit "登録する", class: "submit-btn"
+            = f.submit "登録する", class: "submit-btn", id: "card-submit-btn"
 = render "layouts/footer"

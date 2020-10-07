@@ -3,9 +3,9 @@ $(function() {
   // Pay.jpのテスト用公開鍵
   Payjp.setPublicKey('pk_test_6cb120ab7206d36ff1052253');
 
-  var form = $("#form");
+  var form = $("#card-form");
 
-  $(".submit-btn").on('click', (function() {
+  $("#card-submit-btn").on('click', (function() {
 
     // formの送信を止める(サーバーと通信しない)
     form.find("input[type=submit]").prop("disabled", true);
