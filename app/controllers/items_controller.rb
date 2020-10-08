@@ -1,8 +1,13 @@
 class ItemsController < ApplicationController
   def index
+    # 購入者がいない商品を取得
     items = Item.includes(:item_images).where(purchaser_id: nil)
+
+    # 新しい投稿から5件取得
     @items = items.order('created_at DESC').limit(5)
 
+    # ランダムに5件取得
+    @items_by_random = items.sample(5)
   end
 
   def new
