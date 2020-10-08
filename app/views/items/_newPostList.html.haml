@@ -1,84 +1,18 @@
-.main__newPostList__searchBox--lists--product
-  = link_to "#", class: "pic" do
-    %figure.productImage
-      = image_tag 'fot.jpg', class: 'image'
-    .productBody
-      %h3.productBody--name
-        デザート
-      .productBody--date
-        %ul.productBody--date--box
-          %li
-            1,000円
-          %li
-            %i.fas.fa-star
-              1
-        %p
-          (税込)
+- @items.each do |item|
+  .main__newPostList__searchBox--lists--product
+    = link_to item_path(item), class: "pic" do
+      %figure.productImage
+        = image_tag item.item_images.first.url.url, class: 'image'
+      .productBody
+        %h3.productBody--name
+          = truncate("#{item.name}", length:14)
+        .productBody--date
+          %ul.productBody--date--box
+            %li
+              = "#{item.price}円"
+            %li
+              %i.fas.fa-star
+                1
+          %p
+            (税込)
 
-.main__newPostList__searchBox--lists--product
-  = link_to "#", class: "pic" do
-    %figure.productImage
-      = image_tag 'yos.jpg', class: 'image'
-    .productBody
-      %h3.productBody--name
-        洋食1
-      .productBody--date
-        %ul.productBody--date--box
-          %li
-            1,500円
-          %li
-            %i.fas.fa-star
-              4
-        %p
-          (税込)
-
-.main__newPostList__searchBox--lists--product
-  = link_to "#", class: "pic" do
-    %figure.productImage
-      = image_tag 'yos0.jpg', class: 'image'
-    .productBody
-      %h3.productBody--name
-        洋食2
-      .productBody--date
-        %ul.productBody--date--box
-          %li
-            1,600円
-          %li
-            %i.fas.fa-star
-              3
-        %p
-          (税込)
-
-.main__newPostList__searchBox--lists--product
-  = link_to "#", class: "pic" do
-    %figure.productImage
-      = image_tag 'was.jpg', class: 'image'
-    .productBody
-      %h3.productBody--name
-        和食
-      .productBody--date
-        %ul.productBody--date--box
-          %li
-            1,200円
-          %li
-            %i.fas.fa-star
-              2
-        %p
-          (税込)
-
-.main__newPostList__searchBox--lists--product
-  = link_to "#", class: "pic" do
-    %figure.productImage
-      = image_tag 'was0.jpg', class: 'image'
-    .productBody
-      %h3.productBody--name
-        団子
-      .productBody--date
-        %ul.productBody--date--box
-          %li
-            900円
-          %li
-            %i.fas.fa-star
-              1
-        %p
-          (税込)

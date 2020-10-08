@@ -1,10 +1,11 @@
 class ItemsController < ApplicationController
   def index
-    @items = Item.includes(:item_images).order('created_at DESC')
+    items = Item.includes(:item_images).where(purchaser_id: nil)
+    @items = items.order('created_at DESC').limit(5)
+
   end
 
   def new
-    @items = Item.includes(:item_images).order('created_at DESC')
     @item = Item.new
     @item.item_images.build
   end
