@@ -1,18 +1,17 @@
-- @items.each do |item|
+- @items_by_random.each do |item_by_random|
   .main__newPostList__searchBox--lists--product
-    = link_to item_path(item), class: "pic" do
+    = link_to item_path(item_by_random), class: "pic" do
       %figure.productImage
-        = image_tag item.item_images.first.url.url, class: 'image'
+        = image_tag item_by_random.item_images.first.url.url, class: 'image'
       .productBody
         %h3.productBody--name
-          = truncate("#{item.name}", length:14)
+          = truncate("#{item_by_random.name}", length:14)
         .productBody--date
           %ul.productBody--date--box
             %li
-              = "#{item.price}円"
+              = "#{item_by_random.price}円"
             %li
               %i.fas.fa-star
                 1
           %p
             (税込)
-
