@@ -1,11 +1,13 @@
 $(function(){
 
   const buildFileField = (index)=> {
-    const html = `<div class="js-file_group" data-index="${index}">
-                    <input class="js-file" type="file"
-                    name="item[item_images_attributes][${index}][url]"
-                    id="item_item_images_attributes_${index}_url"><br>
-                    <span class="js-remove">削除</span>
+    const html = `<div id="image-field>
+                    <div class="js-file_group" data-index="${index}">
+                      <input class="js-file" type="file"
+                      name="item[item_images_attributes][${index}][url]"
+                      id="item_item_images_attributes_${index}_url"><br>
+                      <span class="js-remove">削除</span>
+                    </div>
                   </div>`;
     return html;
   }
@@ -18,7 +20,7 @@ $(function(){
 
   lastIndex = $('.js-file_group:last').data('index');
   fileIndex.splice(0, lastIndex);
-  $('.hidden-destroy').hide();
+  // $('.hidden-destroy').hide();
   $('#image-box').on('change', '.js-file', function(e) {
     const targetIndex = $(this).parent().data('index');
     const file = e.target.files[0];
@@ -43,7 +45,7 @@ $(function(){
     if (hiddenCheck) hiddenCheck.prop('checked', true);
 
     $(this).parent().remove();
-    $(`img[data-index="${targetIndex}"]`).remove();
+    $(`js-file_group[data-index="${targetIndex}"]`).remove();
 
     if ($('.js-file').length == 0) $('#image-box').append(buildFileField(fileIndex[0]));
   });
