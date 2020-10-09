@@ -4,10 +4,11 @@ $(function() {
   // 画像用のinputを生成する関数
   const buildFileField = (index)=> {
     console.log('ok2');
-    const html = `<div data-index="${index}" id="image-box">
+    const html = `<div data-index="${index}" class='js-file_group'>
                     <input type="file"
                     name="item[images_attributes][${index}][image_url]"
                     value id="image_file"
+                    class='js-file'
                     required="required">
                     <label for="img-file">
                       <i class="fas fa-camera">
@@ -29,6 +30,8 @@ $(function() {
   // 既に使われているindexを除外
   lastIndex = $('.js-file_group:last').data('index');
   fileIndex.splice(0, lastIndex);
+
+  $('.hidden-destroy').hide();
 
   $('#image-box').on('change', '.js-file', function(e) {
     console.log('ok3');

@@ -109,14 +109,11 @@ $black-color: #000000;
           margin-bottom: 10px;
           padding-left: 30px;
         }
-        #image-box {
-          background-color: #add8ea;
-          height: 300px;
-          width: 700px;
-          border-radius: 5px;
-          border: 1px solid blue;
-          margin:0 5px;         
+        .image-area {                
           margin-left: 20px;
+          #image-box {
+            margin-right: 5px;
+          }
         }
       }
 
