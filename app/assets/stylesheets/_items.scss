@@ -690,11 +690,36 @@ $mainBoxFontColor: #fff;
 }
 
 #image-box {
+  display: flex;
+}
+
+#image-field {
   background-color: gray;
 }
 
+
+
+$preview-bgc: #3ccace;
+
 #previews {
   display: flex;
+}
+.preview-text {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.preview {
+  &__edit {
+    color: $mainBoxFontColor;
+    background-color: $preview-bgc;
+  }
+  &__delete {
+    color: $mainBoxFontColor;
+    background-color: $preview-bgc;
+  }
 }
 .none {
   display: none;
