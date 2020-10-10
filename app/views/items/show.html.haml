@@ -1,3 +1,5 @@
+= render partial: "header"
+
 .back
   .show-main
     .items__name
@@ -76,8 +78,21 @@
       %button{type: "submit", class:'cmt__send'}
         %i.fas.fa-comment
         コメントする
-    = link_to "#" do
-      = "購入画面へ"
+      
+    - if user_session == current_user.id
+      = link_to '商品情報編集', '#', class:'show__btn__link'
+      = link_to '商品情報削除', '#', class:'show__btn__link'
+    
+    - else
+      = link_to '購入画面へ', '#', class:'show__btn__link'
+
+    -# .show__btn
+    -#   - if user_signed_in?
+    -#     = link_to '商品情報編集', '#', class:'show__btn__link'
+    -#     = link_to '商品情報削除', '#', class:'show__btn__link'
+    -#   - else
+    -#     = link_to '購入画面へ', '#', class:'show__btn__link'
+      
   .page
     %ul=link_to '< 前の商品', '#', class:'page__prev'
     %ul=link_to '後ろの商品 >', '#', class:'page__next'
@@ -87,3 +102,4 @@
     .more__img
       画像
 
+= render partial: "footer"

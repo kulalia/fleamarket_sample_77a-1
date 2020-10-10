@@ -127,9 +127,23 @@ $whiteColor: #fff;
       color: $whiteColor;
       width: 60%;
       font-size: 18px;
-      border-radius: 100px;margin-top: 20px;
+      border-radius: 100px;
+      margin-top: 20px;
     }
   }
+
+  .show__btn {
+    margin-top: 80px;
+
+    &__link {
+      padding: 20px 60px;
+      background: #ea352d;
+      color: $whiteColor;
+      border-radius: 100px;
+      text-decoration: none;
+    }
+  }
+
   .page {
     display: flex;
     justify-content: space-between;
