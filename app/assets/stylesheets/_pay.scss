@@ -34,20 +34,6 @@ $pointColor: rgb(224, 44, 44);
       border-color: $backgroundColor;
     }
 
-    &__register {
-      height: 80px;
-      line-height: 80px;
-      padding-top: 20px;
-
-      .register {
-        text-decoration: none;
-        color: $mainBoxFontColor;
-        background-color: $mainColor;
-        padding: 10px 20px;
-        border-radius: 100px;
-      }
-    }
-
     &__all-cards {
       height: 400px;
       width: 600px;
@@ -59,13 +45,14 @@ $pointColor: rgb(224, 44, 44);
         width: 500px;
         display: flex;
         justify-content: space-between;
-        line-height: 80px;
+        // line-height: 35px;
         margin: 10px auto;
         background-color: $backgroundColor;
 
         .registered-card {
           height: 80px;
           width: 350px;
+          padding-top: 20px;
         }
 
         .edit-delete {
@@ -73,11 +60,6 @@ $pointColor: rgb(224, 44, 44);
           width: 150px;
           display: flex;
           align-items: center;
-
-          .edit {
-            @include edit-delete-btn-style();
-            background-color: $mainColor;
-          }
 
           .delete {
             @include edit-delete-btn-style();

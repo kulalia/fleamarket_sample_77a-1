@@ -1,4 +1,4 @@
-= render partial: "header"
+= render "layouts/header"
 
 .back
   .show-main
@@ -78,14 +78,15 @@
       %button{type: "submit", class:'cmt__send'}
         %i.fas.fa-comment
         コメントする
-      
+        
     .show__btn
       - if @item.user_id == current_user.id
         = link_to '商品情報編集', '#', class:'show__btn__link'
         = link_to '商品情報削除', '#', class:'show__btn__link'
       
       - else
-        = link_to '購入画面へ', '#', class:'show__btn__link'
+        = link_to buy_confirm_card_path, class:'show__btn__link' do
+          = '購入画面へ'
       
   .page
     %ul=link_to '< 前の商品', '#', class:'page__prev'
@@ -95,5 +96,5 @@
     %ul=link_to 'ベビー・キッズをもっと見る', '#', class:'more__list'
     .more__img
       画像
-
-= render partial: "footer"
+      
+= render "layouts/footer"

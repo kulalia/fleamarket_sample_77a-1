@@ -1,3 +1,5 @@
+= render "layouts/header"
+
 .devise
   .devise__signupbox
     .devise__signupbox__text
@@ -127,3 +129,5 @@
             = f.text_field :phone_number, autofocus: true, autocomplete: "tel", placeholder: "例）09011112222", class: "input-text"
         .actions
           = f.submit "新規登録する", class: "submit-btn"
+
+= render "layouts/footer"
