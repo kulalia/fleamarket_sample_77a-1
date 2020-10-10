@@ -79,19 +79,13 @@
         %i.fas.fa-comment
         コメントする
       
-    - if user_session == current_user.id
-      = link_to '商品情報編集', '#', class:'show__btn__link'
-      = link_to '商品情報削除', '#', class:'show__btn__link'
-    
-    - else
-      = link_to '購入画面へ', '#', class:'show__btn__link'
-
-    -# .show__btn
-    -#   - if user_signed_in?
-    -#     = link_to '商品情報編集', '#', class:'show__btn__link'
-    -#     = link_to '商品情報削除', '#', class:'show__btn__link'
-    -#   - else
-    -#     = link_to '購入画面へ', '#', class:'show__btn__link'
+    .show__btn
+      - if @item.user_id == current_user.id
+        = link_to '商品情報編集', '#', class:'show__btn__link'
+        = link_to '商品情報削除', '#', class:'show__btn__link'
+      
+      - else
+        = link_to '購入画面へ', '#', class:'show__btn__link'
       
   .page
     %ul=link_to '< 前の商品', '#', class:'page__prev'

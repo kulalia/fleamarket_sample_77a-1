@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  before_action :move_to_login, except: [:index]
+
   def index
     @items = Item.includes(:item_images).order('created_at DESC')
   end
@@ -23,6 +25,10 @@ class ItemsController < ApplicationController
   end
 
   private
+  
+  def move_to_login
+    redirect_to new_user_session_path unless user_signed_in? 
+  end
 
   def item_params
     params.require(:item).permit(:name, :category_id, :detail, :brand, :price, :item_status, :prefecture_id, :days_until_shipping, :shipping_fee, :sale_or_sold, item_images_attributes: [:id, :url, :_destroy]).merge(user_id: current_user.id)
