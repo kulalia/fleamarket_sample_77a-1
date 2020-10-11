@@ -697,6 +697,8 @@ $mainBoxFontColor: #fff;
   background-color: gray;
   height: 124px;
   width: 100%;
+  text-align: center;
+  line-height: 124px;
 }
 
 
@@ -705,6 +707,11 @@ $preview-bgc: #3ccace;
 
 #previews {
   display: flex;
+}
+
+.preview-box {
+  border: 1px solid;
+  border-color: $preview-bgc;
 }
 .preview-text {
   display: flex;
