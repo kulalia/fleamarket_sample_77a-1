@@ -29,18 +29,26 @@ $(function(){
   fileIndex.splice(0, lastIndex);
   $('.hidden-destroy').hide();
 
-  $('#image-box').on('change', '.js-file', function(e) {
-    const targetIndex = $(this).parent().data('index');
-    const file = e.target.files[0];
-    const blobUrl = window.URL.createObjectURL(file);
-    if (img = $(`img[data-index="${targetIndex}"]`)[0]) {
-      img.setAttribute('src', blobUrl);
-    } else {
-      $('#previews').append(buildImg(targetIndex, blobUrl));
-      $('#image-field').append(buildFileField(fileIndex[0]));
-      fileIndex.shift();
-      fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
-    }
+  $('#image-box').on('click', '.preview__edit', function() {
+    const targetIndex = $(this).data('index');
+    $(`input[data-index="${targetIndex}"].js-file`).on('click', function(e){
+      e.stopPropagation();
+    });
+
+    $(`input[data-index="${targetIndex}"].js-file`).click();
+    $('#image-box').on('change', '.js-file', function(e) {
+      const targetIndex = $(this).parent().data('index');
+      const file = e.target.files[0];
+      const blobUrl = window.URL.createObjectURL(file);
+      if (img = $(`img[data-index="${targetIndex}"]`)[0]) {
+        img.setAttribute('src', blobUrl);
+      } else {
+        $('#previews').append(buildImg(targetIndex, blobUrl));
+        $('#image-field').append(buildFileField(fileIndex[0]));
+        fileIndex.shift();
+        fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
+      }
+    });
   });
 
   $('#image-box').on('click', '.js-remove', function() {
@@ -54,4 +62,6 @@ $(function(){
 
     if ($('.js-file').length == 0) $('#image-box').append(buildFileField(fileIndex[0]));
   });
+
+
 });
