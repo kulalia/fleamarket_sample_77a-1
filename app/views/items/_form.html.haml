@@ -71,6 +71,7 @@
                 .preview__delete.js-remove{data: {index: i}}
                   削除
       #image-field
+        ここをクリックして画像をアップロード
         = f.fields_for :item_images do |i|
           .js-file_group{data: {index: i.index}}
             = i.file_field :url, class: "js-file", data:{ index: i.index}
