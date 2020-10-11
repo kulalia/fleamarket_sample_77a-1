@@ -2,7 +2,7 @@ $(function(){
 
   const buildFileField = (index)=> {
     const html = `<div class="js-file_group" data-index="${index}">
-                    <input class="js-file" type="file"
+                    <input class="js-file none" type="file"
                     name="item[item_images_attributes][${index}][url]"
                     id="item_item_images_attributes_${index}_url"><br>
                   </div>`;
@@ -28,6 +28,7 @@ $(function(){
   lastIndex = $('.js-file_group:last').data('index');
   fileIndex.splice(0, lastIndex);
   $('.hidden-destroy').hide();
+  $('.js-file').hide();
 
   $('#image-box').on('click', '.preview__edit', function() {
     const targetIndex = $(this).data('index');
@@ -49,6 +50,29 @@ $(function(){
         fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
       }
     });
+  });
+
+  $('#image-field').on('click', function(){
+    $(".js-file_group:last").on('click', function(e){
+      e.stopPropagation();
+    });
+
+    $(`input[type=file]:last`).click();
+
+    $('#image-box').on('change', '.js-file', function(e) {
+      const targetIndex = $(this).parent().data('index');
+      const file = e.target.files[0];
+      const blobUrl = window.URL.createObjectURL(file);
+      if (img = $(`img[data-index="${targetIndex}"]`)[0]) {
+        img.setAttribute('src', blobUrl);
+      } else {
+        $('#previews').append(buildImg(targetIndex, blobUrl));
+        $('#image-field').append(buildFileField(fileIndex[0]));
+        fileIndex.shift();
+        fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
+      }
+    });
+
   });
 
   $('#image-box').on('click', '.js-remove', function() {
