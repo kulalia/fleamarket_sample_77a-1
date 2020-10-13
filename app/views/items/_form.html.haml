@@ -78,9 +78,9 @@
                 .preview-box
                   = image_tag image.url.url, data: {index: i}, width: "100", height: "100", class: 'preview__image'
                   .preview-text
-                    .preview__edit{ data: {index: i} }
+                    .preview__edit{ data: { index: i } }
                       変更
-                    .preview__delete.js-remove{ data: {index: i} }
+                    .preview__delete.js-remove{ data: { index: i } }
                       削除
           #image-field
             = icon("fa", "camera")
