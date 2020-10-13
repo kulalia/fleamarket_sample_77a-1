@@ -10,7 +10,7 @@
     %br/
     = f.text_field :price, placeholder: "値段", required: true
     %br/
-    = f.select :item_status, {'新品同様': '新品同様', '多少の傷あり': '多少の傷あり'},include_blank: '選択してください', required: true
+    = f.select :item_status, { '新品同様': '新品同様', '多少の傷あり': '多少の傷あり'}, required: true
     %br/
     = f.collection_select :prefecture_id, Prefecture.all, :id, :name, autofocus: true, autocomplete: "address-level1"
     %br/
