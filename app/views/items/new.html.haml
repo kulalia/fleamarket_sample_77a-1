@@ -10,28 +10,29 @@
           .image-box__mandatory
             %p 必須
         .advice-box
-          %p 最大10枚までをアップロードできます 
+          %p 画像をアップロードできます 
         .image-area       
           #image-box     
             #previews
+              -if @item.persisted?
+                - @item.item_images.each_with_index do |image, i|
+                  .preview-box
+                    = image_tag image.url.url, data: {index: i}, width: "100", height: "100", class: 'preview__image'
+                    .preview-text
+                      .preview__edit{data: {index: i}}
+                        変更
+                      .preview__delete.js-remove{data: {index: i}}
+                        削除
+            #image-field
+              ここをクリックして画像をアップロード
+              = f.fields_for :item_images do |i|
+                .js-file_group{data: {index: i.index}}
+                  = i.file_field :url, class: "js-file", data:{ index: i.index }
+                - if @item.persisted?
+                  = i.check_box :_destroy, data:{ index: i.index }, class: 'hidden-destroy'
               - if @item.persisted?
-                - @item.item_images.each_with_index do |image, i| 
-                  = i.image_tag item_images.url.url, data: { index: i }, width: '100', height: '100' 
-            = f.fields_for :item_images do |i|
-              .js-file_group{"data-index" => "#{i.index}"}
-                = i.file_field :url, type: 'file', name: 'item[images_attributes][][image_url]', value: '', id: 'image-file', class: 'js-file', required: true
-                %span.js-remove 削除
-              - if @item.persisted?
-                = i.check_box :_destroy, data:{ index: i.index }, class: 'hidden-destroy'
-            - if @item.persisted?
-              .js-file_group{"data-index" => "#{@item.item_images.count}"}
-                = file_field_tag :url, 'item[images_attributes][#{@item.item_images.count}][url]', class: 'js-file'
-                %span.js-remove 削除              
-            -# = f.fields_for :item_images do |i|
-            -#   .js-box{data: { index: i.index }}
-            -#     = i.file_field :url, type: 'file', name: 'item[images_attributes][][image_url]', value: '', id: 'image-file', class: 'js-file', required: true
-            -#     %span.js-remove 削除
-          
+                .js-file_group{data: {index: @item.item_images.count}}
+                  = file_field_tag :url, name: "item[item_images_attributes][#{@item.item_images.count}][url]", class: 'js-file'          
               
       .second-box 
         .item-name
@@ -79,7 +80,7 @@
           .item-status__mandatory
             %p 必須
         .item-status__select
-          = f.select :item_status, {'新品同様': 1, '多少の傷あり': 2},include_blank: '選択してください', required: true
+          = f.select :item_status, {'新品同様': 1, '多少の傷あり': 2}, required: true
       .fourth-box
         .fourth-box__title
           %p 配送について

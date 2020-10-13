@@ -105,15 +105,48 @@ $black-color: #000000;
           }
         }     
         .advice-box {
-          font-size: 15px;
-          margin-bottom: 10px;
+          height: 100px;
           padding-left: 30px;
         }
-        .image-area {                
-          margin-left: 20px;
-          #image-box {
-            margin-right: 5px;
+        #image-box {
+          display: flex;
+        }
+        #image-field {
+          background-color: gray;
+          height: 124px;
+          width: 100%;
+          text-align: center;
+          line-height: 124px;
+        }
+
+        $preview-bgc: #3ccace;
+
+        #previews {
+          display: flex;
+        }
+        .preview-box {
+          border: 1px solid;
+          border-color: $preview-bgc;
+        }
+        .preview-text {
+          display: flex;
+          justify-content: space-between;
+          margin: 0 auto;
+          padding: 0 10px;
+        }     
+        
+        .preview {
+          &__edit {
+            color: $white-color;
+            background-color: $preview-bgc;
           }
+          &__delete {
+            color: $white-color;
+            background-color: $preview-bgc;
+          }
+        }
+        .none {
+          display: none;
         }
       }
 
