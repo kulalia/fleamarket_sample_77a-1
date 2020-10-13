@@ -2,11 +2,17 @@ class ItemsController < ApplicationController
   before_action :set_item, except: [:index, :new, :create]
 
   def index
-    @items = Item.includes(:item_images).order('created_at DESC')
+    # 購入者がいない商品を取得
+    items = Item.includes(:item_images).where(purchaser_id: nil)
+
+    # 新しい投稿から5件取得
+    @items = items.order('created_at DESC').limit(5)
+
+    # ランダムに5件取得
+    @items_by_random = items.sample(5)
   end
 
   def new
-    @items = Item.includes(:item_images).order('created_at DESC')
     @item = Item.new
     @item.item_images.build
   end
@@ -21,6 +27,7 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @item = Item.includes(:item_images).find(params[:id])
   end
 
   def update
@@ -36,9 +43,8 @@ class ItemsController < ApplicationController
   end
   
   private
-
   def item_params
-    params.require(:item).permit(:name, :category_id, :detail, :brand, :price, :item_status, :prefecture_id, :days_until_shipping, :shipping_fee, :sale_or_sold, item_images_attributes: [:id, :url, :_destroy]).merge(user_id: current_user.id)
+    params.require(:item).permit(:name, :category_id, :detail, :brand, :price, :item_status, :prefecture_id, :days_until_shipping, :shipping_fee, item_images_attributes: [:id, :url, :_destroy]).merge(user_id: current_user.id)
   end
 
   def set_item

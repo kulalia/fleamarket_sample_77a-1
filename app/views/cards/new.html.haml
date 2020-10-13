@@ -6,7 +6,7 @@
       .card__box__text
         = "クレジットカード情報入力"
       .card__box__form
-        = form_with url: cards_path do |f|
+        = form_with url: cards_path, method: :post, id: "card-form" do |f|
           .field
             = f.label :card_number, "カード番号"
             %span{ class: "must" }
@@ -25,13 +25,13 @@
               = "必須"
             .field-select
               .input-select
-                = f.select :exp_month, [["--", 0], ["1", 1], ["2", 2],["3", 3],["4", 4],["5", 5],["6", 6],["7", 7],["8", 8],["9", 9],["10", 10],["11", 11],["12", 12]]
+                = f.select :exp_month, [["--", 0], ["01", 01], ["02", 02],["03", 03],["04", 04],["05", 05],["06", 06],["07", 07],["08", 8],["09", 9],["10", 10],["11", 11],["12", 12]]
                 .icon
                   = icon('fas', 'chevron-down')
                 %span{ class: "month-year" }
                   = "月"
               .input-select
-                = f.select :exp_year, [["--", 0], ["2020", 20], ["2021", 21], ["2022", 22], ["2023", 23], ["2024", 24], ["2025", 25], ["2026", 26], ["2027", 27], ["2028", 28], ["2029", 29], ["2030", 30]]
+                = f.select :exp_year, [["--", 0], ["2020", 2020], ["2021", 2021], ["2022", 2022], ["2023", 2023], ["2024", 2024], ["2025", 2025], ["2026", 2026], ["2027", 2027], ["2028", 2028], ["2029", 2029], ["2030", 2030]]
                 .icon
                   = icon('fas', 'chevron-down')
                 %span{ class: "month-year" }
@@ -42,5 +42,5 @@
               = "必須"
             = f.text_field :security_code, autofocus: true, placeholder: "カード背面の4桁または3桁の番号", class: "input"
           .actions
-            = f.submit "登録する", class: "submit-btn"
+            = f.submit "登録する", class: "submit-btn", id: "card-submit-btn"
 = render "layouts/footer"

@@ -1,5 +1,4 @@
 FactoryBot.define do
-  # 仮置き
 
   factory :user do
     nickname              {"abe"}

@@ -1,20 +1,23 @@
-.buy-confirm__header
-  = link_to image_tag("logo/logo.png", alt: "FURIMA", size: "185x49"), root_path
-.buy-confirm-contents
-  %h2.buy-confirm-content__title
-    購入内容の確認
-  .buy-confirm-content__image
-    = image_tag "icon/member_photo_noimage_thumb.png", alt: "image", size: "150x150"
-    .buy-confirm-content__image--text
-      %p.buy-confirm-text__title
-        サンプル
-      %p.buy-confirm-text__price
-        送料込み(税込):¥5,800
-  .buy-confirm-content__price
-    支払い金額 : ¥5,800
-  .buy-confirm-content__submit
-    %p.buy-confirm-content__submit--title
-      本当に購入しますか？
-    %button.buy-confirm-content__submit--btn
-      購入する
-.buy-confirm-footer
+= render "layouts/header"
+.buy-confirm
+  .buy-confirm__header
+    = link_to image_tag("logo/logo.png", alt: "FURIMA", size: "185x49"), root_path
+  .buy-confirm-content
+    %h2.buy-confirm-content__title
+      購入内容の確認
+    .buy-confirm-content__image
+      = image_tag @image.url.url, alt: "image", size: "150x150"
+      .buy-confirm-content__image--text
+        %p.buy-confirm-text__title
+          = truncate("#{@item.name}", length:30)
+        %p.buy-confirm-text__price
+          = "送料込み(税込) : #{@item.price}円"
+    .buy-confirm-content__price
+      = "支払い金額 : #{@item.price}円"
+    .buy-confirm-content__submit
+      %p.buy-confirm-content__submit--title
+        本当に購入しますか？
+      %button.buy-confirm-content__submit--btn
+        = link_to purchase_card_path(@item), class: "buy-submit" do
+          = "購入する"
+= render "layouts/footer"
