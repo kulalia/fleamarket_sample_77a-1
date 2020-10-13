@@ -691,6 +691,18 @@ $mainBoxFontColor: #fff;
 
 // form部分
 
+.form {
+  width: 100vw;
+  background-color: lightgray;
+  &__contents {
+    background-color: white;
+    width: 700px;
+    margin: 0 auto;
+    padding: 0 10px;
+  }
+}
+
+
 #image-box {
   display: flex;
 }
@@ -698,7 +710,7 @@ $mainBoxFontColor: #fff;
 #image-field {
   background-color: gray;
   height: 124px;
-  width: 100%;
+  width: 100vw;
   text-align: center;
   line-height: 124px;
 }
