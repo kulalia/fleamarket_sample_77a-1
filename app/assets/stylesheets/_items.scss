@@ -720,6 +720,7 @@ textarea {
       background-color: $preview-bgc;
       color: white;
       font-size: 36px;
+      cursor: pointer;
     }
   }
 }
@@ -753,6 +754,7 @@ textarea {
   justify-content: space-between;
   margin: 0 auto;
   padding: 0 10px;
+  cursor: pointer;
 }
 
 .preview {
@@ -765,6 +767,10 @@ textarea {
     background-color: $preview-bgc;
   }
 }
+.submit-btn {
+  padding-bottom: 30px;
+}
+
 .none {
   display: none;
 }
