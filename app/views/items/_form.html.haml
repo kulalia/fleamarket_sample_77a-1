@@ -1,84 +1,98 @@
 .form
-  = form_for [@item] do |f|
-    商品名
-    %span{ class: "must" }
-      = "必須"
-    %br/
-    = f.text_field :name, placeholder: "商品名", required: true
-    %br/
-    カテゴリー
-    %span{ class: "must" }
-      = "必須"
-    %br/
-    = f.collection_select :category_id, Category.all, :id, :name, autofocus: true, placeholder: "カテゴリー"
-    %br/
-    詳細
-    %span{ class: "must" }
-      = "必須"
-    %br/
-    = f.text_field :detail, placeholder: "詳細", required: true
-    %br/
-    ブランド
-    %br/
-    = f.text_field :brand, placeholder: "ブランド(任意)"
-    %br/
-    値段
-    %span{ class: "must" }
-      = "必須"
-    %br/
-    = f.text_field :price, placeholder: "値段", required: true
-    %br/
-    商品の状態
-    %span{ class: "must" }
-      = "必須"
-    %br/
-    = f.select :item_status, {'新品同様': 1, '多少の傷あり': 2},include_blank: '選択してください', required: true
-    %br/
-    都道府県
-    %span{ class: "must" }
-      = "必須"
-    %br/
-    = f.collection_select :prefecture_id, Prefecture.all, :id, :name, autofocus: true, autocomplete: "address-level1"
-    %br/
-    発送日数
-    %span{ class: "must" }
-      = "必須"
-    %br/
-    = f.text_field :days_until_shipping, placeholder: "発送日数", required: true
-    %br/
-    送料
-    %span{ class: "must" }
-      = "必須"
-    %br/
-    = f.text_field :shipping_fee, placeholder: "送料", required: true
-    %br/
-    画像
-    %span{ class: "must" }
-      = "必須"
-    %br/
-    売約情報
-    %br/
-    = f.text_field :sale_or_sold
-    #image-box
-      #previews
-        -if @item.persisted?
-          - @item.item_images.each_with_index do |image, i|
-            .preview-box
-              = image_tag image.url.url, data: {index: i}, width: "100", height: "100", class: 'preview__image'
-              .preview-text
-                .preview__edit{data: {index: i}}
-                  変更
-                .preview__delete.js-remove{data: {index: i}}
-                  削除
-      #image-field
-        ここをクリックして画像をアップロード
-        = f.fields_for :item_images do |i|
-          .js-file_group{data: {index: i.index}}
-            = i.file_field :url, class: "js-file", data:{ index: i.index}
-          - if @item.persisted?
-            = i.check_box :_destroy, data:{ index: i.index }, class: 'hidden-destroy'
-        - if @item.persisted?
-          .js-file_group{data: {index: @item.item_images.count}}
-            = file_field_tag :url, name: "item[item_images_attributes][#{@item.item_images.count}][url]", class: 'js-file'
-    %br/
-    = f.submit '送信'
+  .form__contents
+    = form_for [@item] do |f|
+      .form__contents--menu
+        商品名
+        %span{ class: "must" }
+          = "必須"
+        %br/
+        = f.text_field :name, placeholder: "商品名", required: true
+        %br/
+      .form__contents--menu
+        カテゴリー
+        %span{ class: "must" }
+          = "必須"
+        %br/
+        = f.collection_select :category_id, Category.all, :id, :name, autofocus: true, placeholder: "カテゴリー"
+        %br/
+      .form__contents--menu
+        詳細
+        %span{ class: "must" }
+          = "必須"
+        %br/
+        = f.text_field :detail, placeholder: "詳細", required: true
+        %br/
+      .form__contents--menu
+        ブランド
+        %br/
+        = f.text_field :brand, placeholder: "ブランド(任意)"
+        %br/
+      .form__contents--menu
+        値段
+        %span{ class: "must" }
+          = "必須"
+        %br/
+        = f.text_field :price, placeholder: "値段", required: true
+        %br/
+      .form__contents--menu
+        商品の状態
+        %span{ class: "must" }
+          = "必須"
+        %br/
+        = f.select :item_status, {'新品同様': 1, '多少の傷あり': 2},include_blank: '選択してください', required: true
+        %br/
+      .form__contents--menu
+        都道府県
+        %span{ class: "must" }
+          = "必須"
+        %br/
+        = f.collection_select :prefecture_id, Prefecture.all, :id, :name, autofocus: true, autocomplete: "address-level1"
+        %br/
+      .form__contents--menu
+        発送日数
+        %span{ class: "must" }
+          = "必須"
+        %br/
+        = f.text_field :days_until_shipping, placeholder: "発送日数", required: true
+        %br/
+      .form__contents--menu
+        送料
+        %span{ class: "must" }
+          = "必須"
+        %br/
+        = f.text_field :shipping_fee, placeholder: "送料", required: true
+        %br/
+        %br/
+      .form__contents--menu
+        売約情報
+        %br/
+        = f.text_field :sale_or_sold
+        %br/
+      .form__contents--menu
+        画像
+        %span{ class: "must" }
+          = "必須"
+      .form__contents--images
+        #image-box
+          #previews
+            -if @item.persisted?
+              - @item.item_images.each_with_index do |image, i|
+                .preview-box
+                  = image_tag image.url.url, data: {index: i}, width: "100", height: "100", class: 'preview__image'
+                  .preview-text
+                    .preview__edit{data: {index: i}}
+                      変更
+                    .preview__delete.js-remove{data: {index: i}}
+                      削除
+          #image-field
+            ここをクリックして画像をアップロード
+            = f.fields_for :item_images do |i|
+              .js-file_group{data: {index: i.index}}
+                = i.file_field :url, class: "js-file", data:{ index: i.index}
+              - if @item.persisted?
+                = i.check_box :_destroy, data:{ index: i.index }, class: 'hidden-destroy'
+            - if @item.persisted?
+              .js-file_group{data: {index: @item.item_images.count}}
+                = file_field_tag :url, name: "item[item_images_attributes][#{@item.item_images.count}][url]", class: 'js-file'
+        %br/
+        = f.submit '送信'
