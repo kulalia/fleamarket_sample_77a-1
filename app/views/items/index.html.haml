@@ -131,3 +131,16 @@
 
 
 = render "layouts/footer"
+
+- if user_signed_in? 
+  = link_to new_item_path, class: "btn" do
+    .purchase
+      %span.purchase--exhibition
+        出品する
+        = image_tag 'icon/icon_camera.png', height: 54, width: 54
+- else
+  = link_to root_path, class: "btn" do
+    .purchase
+      %span.purchase--exhibition
+        出品する
+        = image_tag 'icon/icon_camera.png', height: 54, width: 54
