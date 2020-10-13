@@ -72,7 +72,6 @@ $(function(){
         fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
       }
     });
-
   });
 
   $('#image-box').on('click', '.js-remove', function() {
@@ -86,6 +85,4 @@ $(function(){
 
     if ($('.js-file').length == 0) $('#image-box').append(buildFileField(fileIndex[0]));
   });
-
-
 });
