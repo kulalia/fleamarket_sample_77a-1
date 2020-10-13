@@ -93,4 +93,5 @@
               .js-file_group{data: {index: @item.item_images.count}}
                 = file_field_tag :url, name: "item[item_images_attributes][#{@item.item_images.count}][url]", class: 'js-file'
         %br/
-        = f.submit '出品する', class: "form__contents--btn"
+        .submit-btn
+          = f.submit '出品する', class: "form__contents--btn"
