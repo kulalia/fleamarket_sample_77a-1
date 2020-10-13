@@ -690,15 +690,37 @@ $mainBoxFontColor: #fff;
 }
 
 // form部分
+$preview-bgc: #3ccace;
+
+textarea {
+  width: 600px;
+}
 
 .form {
   width: 100vw;
   background-color: lightgray;
+  &__contents input[type="text"]{
+    width: 600px;
+    margin: 0 auto;
+  }
   &__contents {
     background-color: white;
     width: 700px;
     margin: 0 auto;
     padding: 0 10px;
+    &--menu {
+      padding: 5px 0;
+    }
+    &--btn {
+      display: block;
+      height: 100px;
+      width: 200px;
+      margin: 0 auto;
+      border: none;
+      background-color: $preview-bgc;
+      color: white;
+      font-size: 36px;
+    }
   }
 }
 
@@ -708,7 +730,7 @@ $mainBoxFontColor: #fff;
 }
 
 #image-field {
-  background-color: gray;
+  background-color: lightgray;
   height: 124px;
   width: 100vw;
   text-align: center;
@@ -717,7 +739,6 @@ $mainBoxFontColor: #fff;
 
 
 
-$preview-bgc: #3ccace;
 
 #previews {
   display: flex;
