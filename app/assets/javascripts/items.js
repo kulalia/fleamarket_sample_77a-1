@@ -2,7 +2,7 @@ $(function(){
 
   const buildFileField = (index)=> {
     const html = `<div class="js-file_group" data-index="${index}">
-                    <input class="js-file none" type="file"
+                    <input class="js-file none" data-index="${index}" type="file"
                     name="item[item_images_attributes][${index}][url]"
                     id="item_item_images_attributes_${index}_url"><br>
                   </div>`;
@@ -23,6 +23,7 @@ $(function(){
                   </div>`;
     return html;
   }
+
   let fileIndex = [1,2,3,4,5,6,7,8,9,10];
 
   lastIndex = $('.js-file_group:last').data('index');
@@ -63,6 +64,7 @@ $(function(){
       const targetIndex = $(this).parent().data('index');
       const file = e.target.files[0];
       const blobUrl = window.URL.createObjectURL(file);
+
       if (img = $(`img[data-index="${targetIndex}"]`)[0]) {
         img.setAttribute('src', blobUrl);
       } else {
@@ -71,6 +73,8 @@ $(function(){
         fileIndex.shift();
         fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
       }
+
+      if ($('.preview-box').length == 5) $('#image-field').hide();
     });
   });
 
@@ -83,6 +87,7 @@ $(function(){
     $(this).parent().parent().remove();
     $(`.js-file_group[data-index="${targetIndex}"]`).remove();
 
+    if ($('.preview-box').length == 4) $('#image-field').show();
     if ($('.js-file').length == 0) $('#image-box').append(buildFileField(fileIndex[0]));
   });
 });
