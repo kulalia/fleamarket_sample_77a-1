@@ -39,7 +39,7 @@ $(function(){
 
     $(`input[data-index="${targetIndex}"].js-file`).click();
     $('#image-box').on('change', '.js-file', function(e) {
-      const targetIndex = $(this).parent().data('index');
+      const targetIndex = $(this).data('index');
       const file = e.target.files[0];
       const blobUrl = window.URL.createObjectURL(file);
       if (img = $(`img[data-index="${targetIndex}"]`)[0]) {
