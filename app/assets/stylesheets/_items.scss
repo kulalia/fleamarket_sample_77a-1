@@ -79,10 +79,13 @@ $black-color: #000000;
   background-color: $white-color; 
   font-size: 20px; 
   line-height: 100px;
+  width: 100vw;
 }
 
 .main {
   padding: 0 350px;
+  height: 1600px;
+  width: 100vw;
   .parent-box {    
     background-color: $white-color;
     .new_item {

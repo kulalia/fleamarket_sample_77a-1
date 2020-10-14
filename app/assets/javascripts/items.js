@@ -14,7 +14,7 @@ $(function() {
                     <img data-index="${index}" width="100" height="100" class="preview__image" src="${url}">
                       <div class="preview-text">
                         <div class="preview__edit" data-index="${index}">
-                          変更
+                          編集
                         </div>
                         <div class="preview__delete js-remove" data-index="${index}">
                           削除
@@ -60,7 +60,6 @@ $(function() {
     $(`input[type=file]:last`).click();
 
     $('#image-box').on('change', '.js-file', function(e) {
-      console.log('ok6');
       const targetIndex = $(this).parent().data('index');
       const file = e.target.files[0];
       const blobUrl = window.URL.createObjectURL(file);
@@ -85,5 +84,11 @@ $(function() {
     $(`.js-file_group[data-index="${targetIndex}"]`).remove();
 
     if ($('.js-file').length == 0) $('#image-box').append(buildFileField(fileIndex[0]));
+  });
+
+  $('#image-box').on('click', '.js-update', function() {
+    setTimeout(function() {
+      location.href = '#';
+    }, 1000);
   });
 });
