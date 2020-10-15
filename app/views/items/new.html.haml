@@ -14,26 +14,25 @@
         .image-area       
           #image-box     
             #previews
-              -if @item.persisted?
+              - if @item.persisted?
                 - @item.item_images.each_with_index do |image, i|
                   .preview-box
-                    = image_tag image.url.url, data: {index: i}, width: "100", height: "100", class: 'preview__image'
+                    = image_tag image.url.url, data: { index: i }, width: "100", height: "100", class: 'preview__image'
                     .preview-text
-                      .preview__edit{data: {index: i}}
+                      .preview__edit{ data: { index: i }}
                         編集
-                      .preview__delete.js-remove{data: {index: i}}
+                      .preview__delete.js-remove{ data: { index: i }}
                         削除
             #image-field
               ここをクリックして画像をアップロード
               = f.fields_for :item_images do |i|
-                .js-file_group{data: {index: i.index}}
+                .js-file_group{ data: { index: i.index }}
                   = i.file_field :url, class: "js-file", data:{ index: i.index }
                 - if @item.persisted?
                   = i.check_box :_destroy, data:{ index: i.index }, class: 'hidden-destroy'
               - if @item.persisted?
-                .js-file_group{data: {index: @item.item_images.count}}
-                  = file_field_tag :url, name: "item[item_images_attributes][#{@item.item_images.count}][url]", class: 'js-file'          
-              
+                .js-file_group{ data: { index: @item.item_images.count }}
+                  = file_field_tag :url, name: "item[item_images_attributes][#{@item.item_images.count}][url]", class: 'js-file'                        
       .second-box 
         .item-name
           .item-name__sample
