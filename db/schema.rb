@@ -9,6 +9,7 @@
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
 # It's strongly recommended that you check this file into your version control system.
+
 ActiveRecord::Schema.define(version: 2020_09_21_055826) do
 
   create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -19,7 +20,6 @@ ActiveRecord::Schema.define(version: 2020_09_21_055826) do
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_cards_on_user_id"
   end
-
 
   create_table "delivery_addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(version: 2020_09_21_055826) do
     t.integer "prefecture_id", null: false
     t.integer "days_until_shipping", null: false
     t.string "shipping_fee", null: false
-    t.integer "purchaser_id"
+    t.string "sale_or_sold", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_items_on_user_id"
@@ -88,6 +88,7 @@ ActiveRecord::Schema.define(version: 2020_09_21_055826) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "cards", "users"
   add_foreign_key "delivery_addresses", "users"
   add_foreign_key "item_images", "items"
   add_foreign_key "items", "users"
