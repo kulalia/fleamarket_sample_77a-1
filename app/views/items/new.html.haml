@@ -1,6 +1,9 @@
-.header
-  %p 商品出品ページ
-.main 
+.new-header
+  .new-header__icon
+    %h1.header-icon
+      = link_to root_path, class: "header-icon__link" do
+        = image_tag 'logo/logo.png', class: 'header-icon-logo'
+.new-main 
   .parent-box
     = form_for [@item] do |f|
       .first-box
@@ -66,13 +69,6 @@
             %p 任意
         .brand-title
           = f.text_field :brand, placeholder: 'ブランド名: (例)シャネル'
-        .item-stock
-          .item-stock__sample
-            %p 在庫確認
-          .item-stock__mandatory
-            %p 必須
-        .item-stock__text
-          = f.text_field :sale_or_sold, placeholder: '在庫数: （例)5', required: true
         .item-status
           .item-status__sample
             %p 商品の状態
@@ -120,3 +116,4 @@
         = f.submit '出品する', class: 'item-sell__btn'   
         = link_to 'トップページに戻る', root_path, class: 'redirect-form__btn'
 .footer
+  = render "layouts/footer"

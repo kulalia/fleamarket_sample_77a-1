@@ -72,325 +72,396 @@ $black-color: #000000;
   text-align: center;
 }
 
-.header {
-  @include font-weight;
-  @include height-width;
-  @include text-align;
-  background-color: $white-color; 
-  font-size: 20px; 
-  line-height: 100px;
+@mixin box-width {
   width: 100vw;
 }
 
-.main {
-  padding: 0 350px;
-  height: 1600px;
-  width: 100vw;
-  .parent-box {    
-    background-color: $white-color;
-    .new_item {
-      .first-box {     
-        background-color: $white-color;
-        height: 400px; 
-        padding-top: 15px;    
-        border: ridge;
-        @include border-radius;
-        .image-box {
-          @include flex-size;
-          .image-box__sample {
-            @include text-align;
-            color: $black-color;
-            margin:0 0 10px 30px;
-            @include font-weight;
-          }
-          .image-box__mandatory {
-            @include field-design
-          }
-        }     
-        .advice-box {
-          height: 100px;
-          padding-left: 30px;
-        }
-        #image-box {
-          display: flex;
-        }
-        #image-field {
-          background-color: gray;
-          height: 124px;
-          width: 100%;
-          text-align: center;
-          line-height: 124px;
-        }
-
-        $preview-bgc: #3ccace;
-
-        #previews {
-          display: flex;
-        }
-        .preview-box {
-          border: 1px solid;
-          border-color: $preview-bgc;
-        }
-        .preview-text {
-          display: flex;
-          justify-content: space-between;
-          margin: 0 auto;
-          padding: 0 10px;
-        }     
-        
-        .preview {
-          &__edit {
-            color: $white-color;
-            background-color: $preview-bgc;
-          }
-          &__delete {
-            color: $white-color;
-            background-color: $preview-bgc;
-          }
-        }
-        .none {
-          display: none;
-        }
+.new-header {
+  padding-top: 50px;
+  height: 200px;
+  width: 100%;
+  &__icon {
+    .header-icon {
+      text-align: center;
+      .header-icon-logo {
+        width: 300px;
       }
-
-      .second-box {
-        background-color: $white-color;
-        height: 300px;     
-        margin-top: 20px;
-        padding: 15px 0 30px 30px;        
-        border: ridge;
-        @include border-radius;
-        .item-name {
-          @include flex-size;
-          .item-name__sample {
-            @include text-align;
-            @include font-weight;
-            color: $black-color;
-            margin-bottom: 5px;
-          }
-          .item-name__mandatory {
-            @include field-design
-          }
-        }
-        .item-title input{
-          @include input;
-        }
-        .item-explanation {
-          @include flex-size;
-          .item-explanation__sample {
-            @include text-align;
-            color: $black-color;
-            margin-bottom: 10px;   
-            @include font-weight;      
-          }
-          .item-explanation__mandatory {
-            @include field-design
-          }        
-        }
-        .explanation-text textarea{
-          height: 130px;
-          width: 680px;
-          padding: 10px 10px;
-        }
-      }
-      .third-box {
-        background-color: $white-color;
-        height: 450px;     
-        margin-top: 20px;
-        padding: 15px 0 0 30px;         
-        border: ridge;
-        @include border-radius;
-        .third-box__title {
-          margin-bottom: 10px;
-          font-size: 18px;
-          @include font-weight;
-        }
-        .item-category {
-          @include flex-size;
-          .item-category__sample {
-            @include text-align;
-            color: $black-color;
-            margin-bottom: 10px;
-            @include font-weight;
-          }
-          .item-category__mandatory {
-            @include field-design
-          }       
-        }
-        .item-category__select select{
-          @include select;
-        }
-        .item-brand {
-          @include flex-size;
-          .item-brand__sample {          
-            @include text-align;
-            color: $black-color;
-            margin-bottom: 10px; 
-            @include font-weight; 
-          }
-          .item-brand__optional {
-            @include field-designBlue
-          }
-        }
-        .brand-title input{
-          @include input;
-        }
-        .item-stock {
-          @include flex-size;
-          .item-stock__sample {
-            @include font-weight;
-            margin-bottom: 10px;
-          }
-          .item-stock__mandatory {
-            @include field-design;
-          }
-        }
-        .item-stock__text input{
-          @include input;
-        }
-        .item-status {
-          @include flex-size;
-          .item-status__sample {
-            @include text-align;
-            color: $black-color;
-            margin-bottom: 10px;
-            @include font-weight;
-          }
-          .item-status__mandatory {
-            @include field-design;
-          }
-        }
-        .item-status__select select{
-          @include select;
-        }
-      }
-      .fourth-box {
-        background-color: $white-color;
-        height: 330px;     
-        margin-top: 20px;
-        padding: 15px 0 0 30px;    
-        border: ridge;
-        @include border-radius;
-        .fourth-box__title {
-          margin-bottom: 10px;
-          font-size: 18px;
-          @include font-weight;
-        }
-        .shipping-fee {
-          @include flex-size;
-          .shipping-fee__sample {
-            @include text-align;
-            color: $black-color;
-            margin-bottom: 10px;
-            @include font-weight;
-          }
-          .shipping-fee__mandatory {
-            @include field-design
-          }       
-        }
-        .shipping-fee__select select{
-          @include select;
-        }
-        .shipping-region {
-          @include flex-size;
-          .shipping-region__sample {
-            @include text-align;
-            color: $black-color;
-            margin-bottom: 10px;
-            @include font-weight;
-          }
-          .shipping-region__mandatory {
-            @include field-design
-          }
-        }
-        .shipping-region__text select{
-          @include select;
-        }
-        .until-shipping {
-          @include flex-size;
-          .until-shipping__sample {
-            @include text-align;
-            color: $black-color;
-            margin-bottom: 10px;
-            @include font-weight;
-          }
-          .until-shipping__mandatory {
-            @include field-design
-          }
-        }
-        .until-shipping__select select{
-          @include select;
-        }
-      }
-      .fifth-box {
-        background-color: $white-color;
-        height: 120px;     
-        margin-top: 20px;
-        padding: 15px 0 0 30px;    
-        border: ridge;
-        @include border-radius;
-        .standard-price {
-          font-size: 15px;
-          margin-bottom: 15px;
-          @include font-weight;
-        }
-        .price-box {
-          @include display;
-          .price-box__sample {
-            @include flex-size;
-            .price-box__sample-other {
-              @include text-align;
-              color: $black-color;
-              @include font-weight;
-            }
-            .price-box__mandatory {
-              background-color: $red-color;
-              width: 40px;
-              height: 20px;
-              color: $white-color;
-              @include text-align;
-              margin-left: 5px;
-              padding-bottom: 2px;
-              border-radius: 5px;
-            }         
-          }
-          .price-box__text input{
-            margin-right: 50px;
-            width: 400px;
-            height: 40px;
-            padding-left: 10px;
-          }
-        }
-      }
-      .btn-box {
-        background-color: $white-color;
-        height: 140px;     
-        margin-top: 20px;
-        @include text-align;
-        padding: 25px 50px 0 50px;
-        @include display;
-        border: ridge; 
-        @include border-radius;    
-        .item-sell__btn {
-          @include btn;
-          background-color: $red-color;
-          color: $white-color;
-        }
-        .redirect-form__btn {
-          background-color: #005fff; 
-          color: $white-color;
-          @include btn;             
-          border:1px ridge $black-color; 
-          text-decoration: none;
-          line-height: 80px;
-        }
-      }
-    }  
+    }
   }
 }
-.footer {
-  @include height-width;
+
+.new-main {
+  padding: 0 350px;
+  height: 1900px;
+  @include box-width;
+
+  .parent-box {    
+    background-color: $white-color;
+
+  .first-box {     
+    background-color: $white-color;
+    height: 400px; 
+    padding-top: 15px;    
+    border: ridge;
+    @include border-radius;
+
+    .image-box {
+      @include flex-size;
+    }
+
+    .image-box__sample {
+      @include text-align;
+      color: $black-color;
+      margin:0 0 10px 30px;
+      @include font-weight;
+    }
+
+    .image-box__mandatory {
+      @include field-design
+    }
+         
+
+    .advice-box {
+      height: 100px;
+      padding-left: 30px;
+    }
+
+    #image-box {
+      display: flex;
+    }
+
+    #image-field {
+      background-color: gray;
+      height: 124px;
+      width: 100%;
+      text-align: center;
+      line-height: 124px;
+    }
+
+    $preview-bgc: #3ccace;
+
+    #previews {
+      display: flex;
+    }
+
+    .preview-box {
+      border: 1px solid;
+      border-color: $preview-bgc;
+    }
+
+    .preview-text {
+      display: flex;
+      justify-content: space-between;
+      margin: 0 auto;
+      padding: 0 10px;
+    }     
+    
+    .preview {
+
+      &__edit {
+        color: $white-color;
+        background-color: $preview-bgc;
+      }
+
+      &__delete {
+        color: $white-color;
+        background-color: $preview-bgc;
+      }
+    }
+
+    .none {
+      display: none;
+    }
+  }
+
+  .second-box {
+    background-color: $white-color;
+    height: 300px;     
+    margin-top: 20px;
+    padding: 15px 0 30px 30px;        
+    border: ridge;
+    @include border-radius;
+
+    .item-name {
+      @include flex-size;
+
+      &__sample {
+        @include text-align;
+        @include font-weight;
+        color: $black-color;
+        margin-bottom: 5px;
+      }
+
+      &__mandatory {
+        @include field-design
+      }
+    }
+
+    .item-title input{
+      @include input;
+    }
+
+    .item-explanation {
+      @include flex-size;
+
+      &__sample {
+        @include text-align;
+        color: $black-color;
+        margin-bottom: 10px;   
+        @include font-weight;      
+      }
+
+      &__mandatory {
+        @include field-design
+      }        
+    }
+
+    .explanation-text textarea{
+      height: 130px;
+      width: 680px;
+      padding: 10px 10px;
+    }
+  }
+
+  .third-box {
+    background-color: $white-color;
+    height: 450px;     
+    margin-top: 20px;
+    padding: 15px 0 0 30px;         
+    border: ridge;
+    @include border-radius;
+
+    &__title {
+      margin-bottom: 10px;
+      font-size: 18px;
+      @include font-weight;
+    }
+
+    .item-category {
+      @include flex-size;
+
+      &__sample {
+        @include text-align;
+        color: $black-color;
+        margin-bottom: 10px;
+        @include font-weight;
+      }
+
+      &__mandatory {
+        @include field-design
+      }       
+    }
+
+    .item-category__select select{
+      @include select;
+    }
+
+    .item-brand {
+      @include flex-size;
+
+      &__sample {          
+        @include text-align;
+        color: $black-color;
+        margin-bottom: 10px; 
+        @include font-weight; 
+      }
+
+      &__optional {
+        @include field-designBlue
+      }
+    }
+
+    .brand-title input{
+      @include input;
+    }
+
+    .item-stock {
+      @include flex-size;
+
+      &__sample {
+        @include font-weight;
+        margin-bottom: 10px;
+      }
+
+      &__mandatory {
+        @include field-design;
+      }
+    }
+
+    .item-stock__text input{
+      @include input;
+    }
+
+    .item-status {
+      @include flex-size;
+
+      &__sample {
+        @include text-align;
+        color: $black-color;
+        margin-bottom: 10px;
+        @include font-weight;
+      }
+
+      &__mandatory {
+        @include field-design;
+      }
+    }
+
+    .item-status__select select{
+      @include select;
+    }
+  }
+
+  .fourth-box {
+    background-color: $white-color;
+    height: 330px;     
+    margin-top: 20px;
+    padding: 15px 0 0 30px;    
+    border: ridge;
+    @include border-radius;
+
+    &__title {
+      margin-bottom: 10px;
+      font-size: 18px;
+      @include font-weight;
+    }
+
+    .shipping-fee {
+      @include flex-size;
+
+      &__sample {
+        @include text-align;
+        color: $black-color;
+        margin-bottom: 10px;
+        @include font-weight;
+      }
+
+      &__mandatory {
+        @include field-design
+      }       
+    }
+
+    .shipping-fee__select select{
+      @include select;
+    }
+
+    .shipping-region {
+      @include flex-size;
+
+      &__sample {
+        @include text-align;
+        color: $black-color;
+        margin-bottom: 10px;
+        @include font-weight;
+      }
+
+      &__mandatory {
+        @include field-design
+      }
+    }
+
+    .shipping-region__text select{
+      @include select;
+    }
+
+    .until-shipping {
+      @include flex-size;
+
+      &__sample {
+        @include text-align;
+        color: $black-color;
+        margin-bottom: 10px;
+        @include font-weight;
+      }
+
+      &__mandatory {
+        @include field-design
+      }
+    }
+
+    .until-shipping__select select{
+      @include select;
+    }
+  }
+
+  .fifth-box {
+    background-color: $white-color;
+    height: 120px;     
+    margin-top: 20px;
+    padding: 15px 0 0 30px;    
+    border: ridge;
+    @include border-radius;
+
+    .standard-price {
+      font-size: 15px;
+      margin-bottom: 15px;
+      @include font-weight;
+    }
+
+    .price-box {
+      @include display;
+
+      &__sample {
+        @include flex-size;
+
+        &-other {
+          @include text-align;
+          color: $black-color;
+          @include font-weight;
+        }
+
+        .price-box__mandatory {
+          background-color: $red-color;
+          width: 40px;
+          height: 20px;
+          color: $white-color;
+          @include text-align;
+          margin-left: 5px;
+          padding-bottom: 2px;
+          border-radius: 5px;
+        }         
+      }
+
+      &__text input{
+        margin-right: 50px;
+        width: 400px;
+        height: 40px;
+        padding-left: 10px;
+      }
+    }
+  }
+  .btn-box {
+    background-color: $white-color;
+    height: 140px;     
+    margin-top: 20px;
+    @include text-align;
+    padding: 25px 50px 0 50px;
+    @include display;
+    border: ridge; 
+    @include border-radius;   
+
+    .item-sell__btn {
+      @include btn;
+      background-color: $red-color;
+      color: $white-color;
+    }
+
+    .redirect-form__btn {
+      background-color: #005fff; 
+      color: $white-color;
+      @include btn;             
+      border:1px ridge $black-color; 
+      text-decoration: none;
+      line-height: 80px;
+    }
+  } 
+  } 
 }
+.footer {
+  height: 150px;
+  width: 100%;
+}
+
 
 $white: #fff;
 $gray_white: #f8f8f8;
