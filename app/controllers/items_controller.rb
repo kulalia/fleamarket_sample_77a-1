@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, except: [:index, :new, :create, :edit]
+  before_action :set_item, except: [:index, :new, :create]
 
   def index
     # 購入者がいない商品を取得
