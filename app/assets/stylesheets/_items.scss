@@ -696,3 +696,102 @@ $shadow: 0 0 5px rgba(0,0,0,0.4);
 .gBadge:hover {
   opacity:  .5;
 }
+
+$pointColor: rgb(224, 44, 44);
+$mainBoxFontColor: #fff;
+
+.must {
+  background-color: $pointColor;
+  color: $mainBoxFontColor;
+  font-size: 12px;
+  margin-left: 3px;
+  padding: 3px;
+  font-weight: normal;
+  border-radius: 2px;
+}
+
+// form部分
+$preview-bgc: #3ccace;
+
+textarea {
+  width: 600px;
+}
+
+.form-container {
+  width: 100vw;
+  background-color: lightgray;
+  &__contents input[type="text"]{
+    width: 600px;
+    margin: 0 auto;
+  }
+  &__contents {
+    background-color: white;
+    width: 700px;
+    margin: 0 auto;
+    padding: 0 10px;
+    &--menu {
+      padding: 5px 0;
+    }
+    &--btn {
+      display: block;
+      height: 100px;
+      width: 200px;
+      margin: 0 auto;
+      border: none;
+      background-color: $preview-bgc;
+      color: white;
+      font-size: 36px;
+      cursor: pointer;
+    }
+  }
+}
+
+
+#image-box {
+  display: flex;
+}
+
+#image-field {
+  background-color: lightgray;
+  height: 124px;
+  width: 100vw;
+  text-align: center;
+  line-height: 124px;
+}
+
+
+
+
+#previews {
+  display: flex;
+}
+
+.preview-box {
+  border: 1px solid;
+  border-color: $preview-bgc;
+}
+.preview-text {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+.preview {
+  &__edit {
+    color: $mainBoxFontColor;
+    background-color: $preview-bgc;
+  }
+  &__delete {
+    color: $mainBoxFontColor;
+    background-color: $preview-bgc;
+  }
+}
+.submit-btn {
+  padding-bottom: 30px;
+}
+
+.none {
+  display: none;
+}
