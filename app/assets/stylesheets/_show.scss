@@ -3,17 +3,11 @@ $textColor: #3ccace;
 $imgColor: lightblue;
 $whiteColor: #fff;
 
-.header {
-  height: 100px;
-  width: 100%;
-  background-color: $whiteColor;
-}
-
 .back {
   background: $backColor;
   padding: 40px;
 
-  .main {
+  .show-main {
     background-color: $whiteColor;
     width: 700px;
     margin: 0 auto;
@@ -170,10 +164,4 @@ $whiteColor: #fff;
       margin-top: 20px;
     }
   }
-}
-
-.footer {
-  height: 100px;
-  width: 100%;
-  background-color: $whiteColor;
 }

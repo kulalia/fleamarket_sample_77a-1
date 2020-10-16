@@ -6,7 +6,7 @@ $black-color: #000000;
   background-color: $red-color;
   width: 40px;
   height: 23px;
-  color: $white-color;
+  color: white;
   text-align: center;
   margin-left: 5px;
   padding-bottom: 2px;
@@ -96,10 +96,10 @@ $black-color: #000000;
   @include box-width;
 
   .parent-box {    
-    background-color: $white-color;
+    background-color: white;
 
   .first-box {     
-    background-color: $white-color;
+    background-color: white;
     height: 400px; 
     padding-top: 15px;    
     border: ridge;
@@ -159,12 +159,12 @@ $black-color: #000000;
     .preview {
 
       &__edit {
-        color: $white-color;
+        color: white;
         background-color: $preview-bgc;
       }
 
       &__delete {
-        color: $white-color;
+        color: white;
         background-color: $preview-bgc;
       }
     }
@@ -175,7 +175,7 @@ $black-color: #000000;
   }
 
   .second-box {
-    background-color: $white-color;
+    background-color: white;
     height: 300px;     
     margin-top: 20px;
     padding: 15px 0 30px 30px;        
@@ -224,7 +224,7 @@ $black-color: #000000;
   }
 
   .third-box {
-    background-color: $white-color;
+    background-color: white;
     height: 450px;     
     margin-top: 20px;
     padding: 15px 0 0 30px;         
@@ -313,7 +313,7 @@ $black-color: #000000;
   }
 
   .fourth-box {
-    background-color: $white-color;
+    background-color: white;
     height: 330px;     
     margin-top: 20px;
     padding: 15px 0 0 30px;    
@@ -385,7 +385,7 @@ $black-color: #000000;
   }
 
   .fifth-box {
-    background-color: $white-color;
+    background-color: white;
     height: 120px;     
     margin-top: 20px;
     padding: 15px 0 0 30px;    
@@ -414,7 +414,7 @@ $black-color: #000000;
           background-color: $red-color;
           width: 40px;
           height: 20px;
-          color: $white-color;
+          color: white;
           @include text-align;
           margin-left: 5px;
           padding-bottom: 2px;
@@ -431,7 +431,7 @@ $black-color: #000000;
     }
   }
   .btn-box {
-    background-color: $white-color;
+    background-color: white;
     height: 140px;     
     margin-top: 20px;
     @include text-align;
@@ -443,12 +443,12 @@ $black-color: #000000;
     .item-sell__btn {
       @include btn;
       background-color: $red-color;
-      color: $white-color;
+      color: white;
     }
 
     .redirect-form__btn {
       background-color: #005fff; 
-      color: $white-color;
+      color: white;
       @include btn;             
       border:1px ridge $black-color; 
       text-decoration: none;
@@ -461,6 +461,97 @@ $black-color: #000000;
   height: 150px;
   width: 100%;
 }
+$margin: 0 auto;
+$padding: 32px 16px;
+$max-width: 375px;
+
+.buy-confirm {
+  min-height: 100vh;
+  width: 100%;
+  align-items: center;
+
+  &__header {
+    height: 128px;
+    width: 100vw;
+    text-align: center;
+    line-height: 85px;
+
+  }
+
+  .buy-confirm-content {
+    height: 800px;
+    width: 500px;
+    margin: $margin;  
+    
+    &__title {
+      text-align: center;
+      font-size: 24px;
+      color: white;
+      background-color: #3ccace;
+      height: 30px;
+      line-height: 5px;
+      padding: $padding;
+      margin: $margin;
+    }
+    &__image {
+      height:250px;
+      padding: $padding;
+      margin: $margin;  
+      display: flex;
+      justify-content: space-between;
+
+      &--text {
+        width: 300px;
+        padding: 24px;
+      }
+
+
+    }
+    &__price {
+      height: 60px;
+      line-height: 20px;
+      padding: $padding;
+      margin: $margin;  
+      text-align: center;
+      font-size: 36px;
+    }
+    
+    &__submit {
+      height: 130px;
+      line-height: 30px;
+      padding: $padding;
+      margin: $margin;  
+      text-align: center;
+      &--title {
+        color: red;
+        font-size: 16px;
+      }
+      &--btn {
+        height: 50px;
+        background-color: #3ccace;
+        width: 100%;
+        cursor: pointer;
+  
+        .buy-submit {
+          display: inline-block;
+          height: 50px;
+          width: 100%;
+          line-height: 50px;
+          text-decoration: none;
+          color: white;
+          font-size: 24px;
+        }
+  
+      }
+    }
+  }
+}
+
+
+
+
+
+
 
 
 $white: #fff;
@@ -469,7 +560,6 @@ $skyblue: #3CCACE;
 $black: #272727;
 $orange: #ffa500;
 $shadow: 0 0 5px rgba(0,0,0,0.4);
-
 
 .header {
   height: 108px;
@@ -960,6 +1050,14 @@ $shadow: 0 0 5px rgba(0,0,0,0.4);
   }
 }
 
+.buy-confirm-text {
+  &__title {
+    font-size: 24px;
+  }
+  &__price {
+    font-size: 15px;
+  }
+}
 
 .footer {
   padding: 60px 0;
