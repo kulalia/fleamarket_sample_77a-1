@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  before_action :set_item, except: [:index, :new, :create]
+
   def index
     # 購入者がいない商品を取得
     items = Item.includes(:item_images).where(purchaser_id: nil)
@@ -28,8 +30,25 @@ class ItemsController < ApplicationController
     @item = Item.includes(:item_images).find(params[:id])
   end
 
+  def update
+    if @item.update(item_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
+  
+  def edit
+  end
+  
   private
   def item_params
     params.require(:item).permit(:name, :category_id, :detail, :brand, :price, :item_status, :prefecture_id, :days_until_shipping, :shipping_fee, item_images_attributes: [:id, :url, :_destroy]).merge(user_id: current_user.id)
   end
+
+  def set_item
+    @item = Item.find(params[:id])
+  end
+
 end
+

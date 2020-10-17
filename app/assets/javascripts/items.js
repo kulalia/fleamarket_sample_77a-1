@@ -1,20 +1,20 @@
-$(function() {
-  
+$(function(){
+
   const buildFileField = (index)=> {
-    const html = `<div class='js-file_group' data-index='${index}'>
-                    <input class='js-file none' type='file'
+    const html = `<div class="js-file_group" data-index="${index}">
+                    <input class="js-file none" data-index="${index}" type="file"
                     name="item[item_images_attributes][${index}][url]"
-                    id="item_item_images_attributes_${index}_url"><br>                 
+                    id="item_item_images_attributes_${index}_url"><br>
                   </div>`;
     return html;
   }
 
   const buildImg = (index, url)=> {
-    const html = `<div class='preview-box'>
+    const html = `<div class="preview-box">
                     <img data-index="${index}" width="100" height="100" class="preview__image" src="${url}">
                       <div class="preview-text">
                         <div class="preview__edit" data-index="${index}">
-                          編集
+                          変更
                         </div>
                         <div class="preview__delete js-remove" data-index="${index}">
                           削除
@@ -23,22 +23,23 @@ $(function() {
                   </div>`;
     return html;
   }
+
   let fileIndex = [1,2,3,4,5,6,7,8,9,10];
-  
+
   lastIndex = $('.js-file_group:last').data('index');
   fileIndex.splice(0, lastIndex);
   $('.hidden-destroy').hide();
   $('.js-file').hide();
 
-  $('#image-box').on('click', '.preview_edit', function() {
+  $('#image-box').on('click', '.preview__edit', function() {
     const targetIndex = $(this).data('index');
     $(`input[data-index="${targetIndex}"].js-file`).on('click', function(e){
       e.stopPropagation();
     });
-    
+
     $(`input[data-index="${targetIndex}"].js-file`).click();
     $('#image-box').on('change', '.js-file', function(e) {
-      const targetIndex = $(this).parent().data('index');
+      const targetIndex = $(this).data('index');
       const file = e.target.files[0];
       const blobUrl = window.URL.createObjectURL(file);
       if (img = $(`img[data-index="${targetIndex}"]`)[0]) {
@@ -63,6 +64,7 @@ $(function() {
       const targetIndex = $(this).parent().data('index');
       const file = e.target.files[0];
       const blobUrl = window.URL.createObjectURL(file);
+
       if (img = $(`img[data-index="${targetIndex}"]`)[0]) {
         img.setAttribute('src', blobUrl);
       } else {
@@ -71,6 +73,8 @@ $(function() {
         fileIndex.shift();
         fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
       }
+
+      if ($('.preview-box').length == 5) $('#image-field').hide();
     });
   });
 
@@ -83,12 +87,7 @@ $(function() {
     $(this).parent().parent().remove();
     $(`.js-file_group[data-index="${targetIndex}"]`).remove();
 
+    if ($('.preview-box').length == 4) $('#image-field').show();
     if ($('.js-file').length == 0) $('#image-box').append(buildFileField(fileIndex[0]));
-  });
-
-  $('#image-box').on('click', '.js-update', function() {
-    setTimeout(function() {
-      location.href = '#';
-    }, 1000);
   });
 });
