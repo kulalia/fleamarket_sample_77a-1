@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(version: 2020_09_21_055826) do
     t.integer "prefecture_id", null: false
     t.integer "days_until_shipping", null: false
     t.string "shipping_fee", null: false
-    t.integer "purchaser_id"
+    t.string "sale_or_sold", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_items_on_user_id"

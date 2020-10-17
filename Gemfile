@@ -74,6 +74,8 @@ group :production do
   gem 'unicorn'
 end
 
+gem 'font-awesome-rails'
+gem 'erb2haml'
 gem 'devise'
 gem 'active_hash'
 gem 'carrierwave', '~> 2.0'
@@ -84,4 +86,5 @@ gem 'haml-rails'
 gem 'font-awesome-sass'
 gem 'payjp'
 gem "jquery-rails"
+
 
