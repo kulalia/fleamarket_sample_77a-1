@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_21_055826) do
+ActiveRecord::Schema.define(version: 2020_10_18_064821) do
 
   create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 2020_09_21_055826) do
     t.string "sale_or_sold", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "purchaser_id"
     t.index ["user_id"], name: "index_items_on_user_id"
   end
 
