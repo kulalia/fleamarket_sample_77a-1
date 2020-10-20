@@ -90,9 +90,11 @@ $black-color: #000000;
   }
 }
 
+
+// 出品・編集フォーム
 .new-main {
-  padding: 0 350px;
-  height: 1900px;
+  padding: 100px 350px;
+  height: 2100px;
   @include box-width;
 
   .parent-box {    
@@ -119,7 +121,7 @@ $black-color: #000000;
     .image-box__mandatory {
       @include field-design
     }
-         
+
 
     .advice-box {
       height: 100px;
@@ -457,11 +459,7 @@ $black-color: #000000;
   } 
   } 
 }
-.footer {
-  background-color: black;
-  height: 300px;
-  width: 100%;
-}
+
 
 $margin: 0 auto;
 $padding: 32px 16px;
@@ -1253,7 +1251,7 @@ textarea {
     background-color: $preview-bgc;
   }
 }
-.submit-btn {
+.items-submit-btn {
   padding-bottom: 30px;
 }
 
