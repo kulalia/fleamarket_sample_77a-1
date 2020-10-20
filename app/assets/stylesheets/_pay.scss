@@ -1,7 +1,5 @@
-$backgroundColor: #f8f8f8;
-$mainColor: #3CCACE;
-$mainBoxFontColor: #fff;
-$pointColor: rgb(224, 44, 44);
+// 登録済みカードの表示
+
 
 @mixin edit-delete-btn-style() {
   height: 30px;
@@ -13,14 +11,14 @@ $pointColor: rgb(224, 44, 44);
 .pay-method {
   height: 100vh;
   width: calc(100% - 450px);
-  background-color: $backgroundColor;
+  background-color: $gray_white;
   display: flex;
   align-items: center;
 
   &__box {
     min-height: 200px;
     width: 600px;
-    background-color: $mainBoxFontColor;
+    background-color: $white;
     margin: 0 auto;
     text-align: center;
     align-items: center;
@@ -31,7 +29,7 @@ $pointColor: rgb(224, 44, 44);
       font-weight: bold;
       line-height: 80px;
       border: 2px solid;
-      border-color: $backgroundColor;
+      border-color: $gray_white;
     }
 
     &__all-cards {
@@ -45,9 +43,8 @@ $pointColor: rgb(224, 44, 44);
         width: 500px;
         display: flex;
         justify-content: space-between;
-        // line-height: 35px;
         margin: 10px auto;
-        background-color: $backgroundColor;
+        background-color: $gray_white;
 
         .registered-card {
           height: 80px;
@@ -64,12 +61,12 @@ $pointColor: rgb(224, 44, 44);
           .delete {
             @include edit-delete-btn-style();
             margin-left: 20px;
-            background-color: $pointColor;
+            background-color: $red;
           }
 
           .edit-delete-btn {
             text-decoration: none;
-            color: $mainBoxFontColor;
+            color: $white;
           }
         }
       }

@@ -1,0 +1,460 @@
+// 出品・編集フォーム
+
+@mixin field-design {
+  background-color: $red;
+  width: 40px;
+  height: 23px;
+  color: white;
+  text-align: center;
+  margin-left: 5px;
+  padding-bottom: 2px;
+  border-radius: 5px;
+}
+
+@mixin field-designBlue {
+  background-color: #99CCFF;
+  width: 40px;
+  height: 23px;
+  text-align: center;
+  margin-left: 5px;
+  padding-bottom: 2px;
+  border-radius: 5px;
+}
+
+@mixin btn {
+  font-size: 15px;
+  height: 80px;
+  width: 300px;
+  border-radius: 10px;
+
+}
+
+@mixin flex-size {
+  display: flex;
+  font-size: 15px;
+}
+
+@mixin font-weight {
+  font-weight: bold;
+}
+
+@mixin height-width {
+  height: 100px;
+  width: 100%;
+}
+
+@mixin select {
+  margin-bottom: 25px;
+  width: 600px;
+  height: 40px;
+  padding-left: 10px;
+}
+
+@mixin input {
+  margin-bottom: 25px;
+  width: 587px;
+  height: 40px;
+  padding-left: 10px;
+}
+
+@mixin display {
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin border-radius {
+  border-radius: 10px;
+}
+
+@mixin text-align {
+  text-align: center;
+}
+
+@mixin box-width {
+  width: 100vw;
+}
+
+.new-main {
+  padding: 100px 350px;
+  height: 2100px;
+  @include box-width;
+
+  .parent-box {    
+    background-color: white;
+
+  .first-box {     
+    background-color: white;
+    height: 400px; 
+    padding-top: 15px;    
+    border: ridge;
+    @include border-radius;
+
+    .image-box {
+      @include flex-size;
+    }
+
+    .image-box__sample {
+      @include text-align;
+      margin:0 0 10px 30px;
+      @include font-weight;
+    }
+
+    .image-box__mandatory {
+      @include field-design
+    }
+
+
+    .advice-box {
+      height: 100px;
+      padding-left: 30px;
+    }
+
+    #image-box {
+      display: flex;
+    }
+
+    #image-field {
+      background-color: gray;
+      height: 124px;
+      width: 100%;
+      text-align: center;
+      line-height: 124px;
+      cursor: pointer;
+    }
+
+    $preview-bgc: #3ccace;
+
+    #previews {
+      display: flex;
+    }
+
+    .preview-box {
+      border: 1px solid;
+      border-color: $preview-bgc;
+    }
+
+    .preview-text {
+      display: flex;
+      justify-content: space-between;
+      margin: 0 auto;
+      padding: 0 10px;
+    }     
+    
+    .preview {
+
+      &__edit {
+        color: white;
+        background-color: $preview-bgc;
+      }
+
+      &__delete {
+        color: white;
+        background-color: $preview-bgc;
+      }
+    }
+
+    .none {
+      display: none;
+    }
+  }
+
+  .second-box {
+    background-color: white;
+    height: 300px;     
+    margin-top: 20px;
+    padding: 15px 0 30px 30px;        
+    border: ridge;
+    @include border-radius;
+
+    .item-name {
+      @include flex-size;
+
+      &__sample {
+        @include text-align;
+        @include font-weight;
+        margin-bottom: 5px;
+      }
+
+      &__mandatory {
+        @include field-design
+      }
+    }
+
+    .item-title input{
+      @include input;
+    }
+
+    .item-explanation {
+      @include flex-size;
+
+      &__sample {
+        @include text-align;
+        margin-bottom: 10px;   
+        @include font-weight;      
+      }
+
+      &__mandatory {
+        @include field-design
+      }        
+    }
+
+    .explanation-text textarea{
+      height: 130px;
+      width: 680px;
+      padding: 10px 10px;
+    }
+  }
+
+  .third-box {
+    background-color: white;
+    height: 450px;     
+    margin-top: 20px;
+    padding: 15px 0 0 30px;         
+    border: ridge;
+    @include border-radius;
+
+    &__title {
+      margin-bottom: 10px;
+      font-size: 18px;
+      @include font-weight;
+    }
+
+    .item-category {
+      @include flex-size;
+
+      &__sample {
+        @include text-align;
+        margin-bottom: 10px;
+        @include font-weight;
+      }
+
+      &__mandatory {
+        @include field-design
+      }       
+    }
+
+    .item-category__select select{
+      @include select;
+    }
+
+    .item-brand {
+      @include flex-size;
+
+      &__sample {          
+        @include text-align;
+        margin-bottom: 10px; 
+        @include font-weight; 
+      }
+
+      &__optional {
+        @include field-designBlue
+      }
+    }
+
+    .brand-title input{
+      @include input;
+    }
+
+    .item-stock {
+      @include flex-size;
+
+      &__sample {
+        @include font-weight;
+        margin-bottom: 10px;
+      }
+
+      &__mandatory {
+        @include field-design;
+      }
+    }
+
+    .item-stock__text input{
+      @include input;
+    }
+
+    .item-status {
+      @include flex-size;
+
+      &__sample {
+        @include text-align;
+        margin-bottom: 10px;
+        @include font-weight;
+      }
+
+      &__mandatory {
+        @include field-design;
+      }
+    }
+
+    .item-status__select select{
+      @include select;
+    }
+  }
+
+  .fourth-box {
+    background-color: white;
+    height: 330px;     
+    margin-top: 20px;
+    padding: 15px 0 0 30px;    
+    border: ridge;
+    @include border-radius;
+
+    &__title {
+      margin-bottom: 10px;
+      font-size: 18px;
+      @include font-weight;
+    }
+
+    .shipping-fee {
+      @include flex-size;
+
+      &__sample {
+        @include text-align;
+        margin-bottom: 10px;
+        @include font-weight;
+      }
+
+      &__mandatory {
+        @include field-design
+      }       
+    }
+
+    .shipping-fee__select select{
+      @include select;
+    }
+
+    .shipping-region {
+      @include flex-size;
+
+      &__sample {
+        @include text-align;
+        margin-bottom: 10px;
+        @include font-weight;
+      }
+
+      &__mandatory {
+        @include field-design
+      }
+    }
+
+    .shipping-region__text select{
+      @include select;
+    }
+
+    .until-shipping {
+      @include flex-size;
+
+      &__sample {
+        @include text-align;
+        margin-bottom: 10px;
+        @include font-weight;
+      }
+
+      &__mandatory {
+        @include field-design
+      }
+    }
+
+    .until-shipping__select select{
+      @include select;
+    }
+  }
+
+  .fifth-box {
+    background-color: white;
+    height: 120px;     
+    margin-top: 20px;
+    padding: 15px 0 0 30px;    
+    border: ridge;
+    @include border-radius;
+
+    .standard-price {
+      font-size: 15px;
+      margin-bottom: 15px;
+      @include font-weight;
+    }
+
+    .price-box {
+      @include display;
+
+      &__sample {
+        @include flex-size;
+
+        &-other {
+          @include text-align;
+          @include font-weight;
+        }
+
+        .price-box__mandatory {
+          background-color: $red;
+          width: 40px;
+          height: 20px;
+          color: white;
+          @include text-align;
+          margin-left: 5px;
+          padding-bottom: 2px;
+          border-radius: 5px;
+        }         
+      }
+
+      &__text input{
+        margin-right: 50px;
+        width: 400px;
+        height: 40px;
+        padding-left: 10px;
+      }
+    }
+  }
+  .btn-box {
+    background-color: white;
+    height: 140px;     
+    margin-top: 20px;
+    @include text-align;
+    padding: 25px 50px 0 50px;
+    @include display;
+    border: ridge; 
+    @include border-radius;   
+
+    .items-submit-btn {
+      @include btn;
+      padding-bottom: 30px;
+      background-color: $skyblue;
+    }
+  }
+  }
+}
+
+
+textarea {
+  width: 600px;
+}
+
+.form-container {
+  width: 100vw;
+  background-color: lightgray;
+  &__contents input[type="text"]{
+    width: 600px;
+    margin: 0 auto;
+  }
+  &__contents {
+    background-color: white;
+    width: 700px;
+    margin: 0 auto;
+    padding: 0 10px;
+    &--menu {
+      padding: 5px 0;
+    }
+    &--btn {
+      display: block;
+      height: 80px;
+      width: 200px;
+      margin: 40px auto;
+      border: none;
+      background-color: $skyblue;
+      color: white;
+      font-size: 36px;
+      cursor: pointer;
+      border-radius: 20px;
+    }
+  }
+}
