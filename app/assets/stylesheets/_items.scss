@@ -225,7 +225,7 @@ $black-color: #000000;
 
   .third-box {
     background-color: white;
-    height: 450px;     
+    height: 350px;     
     margin-top: 20px;
     padding: 15px 0 0 30px;         
     border: ridge;
@@ -237,22 +237,29 @@ $black-color: #000000;
       @include font-weight;
     }
 
-    .item-category {
-      @include flex-size;
-
-      &__sample {
-        @include text-align;
-        color: $black-color;
-        margin-bottom: 10px;
-        @include font-weight;
-      }
-
-      &__mandatory {
-        @include field-design
-      }       
+    .item-detail__category label{
+      @include text-align;
+      color: $black-color;
+      @include font-weight; 
+      font-size: 15px;
     }
 
-    .item-category__select select{
+    span{
+      background-color: $red-color;
+      width: 40px;
+      height: 23px;
+      color: white;
+      text-align: center;
+      margin-left: 5px;
+      padding-bottom: 2px;
+      border-radius: 5px;
+    }
+
+    .item-select-wrapper__box--select {
+      @include select;
+    }
+
+    .item-category-select__box select{
       @include select;
     }
 

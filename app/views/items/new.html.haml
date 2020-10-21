@@ -55,13 +55,12 @@
       .third-box
         .third-box__title
           %p 商品の詳細
-        .item-category
-          .item-category__sample
-            %p カテゴリー
-          .item-category__mandatory
-            %p 必須
-        .item-category__select
-          = f.collection_select :category_id, Category.all, :id, :name, autofocus: true, placeholder: 'カテゴリー'
+        .item-detail__category
+          = f.label 'カテゴリー', class: 'item-default__label'
+          %span.item-default--require 必須
+          .item-select-wrapper
+            .item-select-wrapper__box
+              = f.select :category, @category_parent_array, {}, {class: 'item-select-wrapper__box--select', id: 'parent_category'}
         .item-brand
           .item-brand__sample
             %p ブランド
@@ -76,6 +75,7 @@
             %p 必須
         .item-status__select
           = f.select :item_status, {'新品同様': 1, '多少の傷あり': 2}, required: true
+
       .fourth-box
         .fourth-box__title
           %p 配送について
