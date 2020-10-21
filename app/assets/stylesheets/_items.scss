@@ -76,6 +76,18 @@ $black-color: #000000;
   width: 100vw;
 }
 
+@mixin default--require {
+  background-color: $red-color;
+  width: 40px;
+  height: 23px;
+  color: white;
+  text-align: center;
+  padding-bottom: 2px;
+  border-radius: 5px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
 .new-header {
   padding-top: 50px;
   height: 200px;
@@ -225,7 +237,7 @@ $black-color: #000000;
 
   .third-box {
     background-color: white;
-    height: 350px;     
+    height: 480px;     
     margin-top: 20px;
     padding: 15px 0 0 30px;         
     border: ridge;
@@ -242,17 +254,11 @@ $black-color: #000000;
       color: $black-color;
       @include font-weight; 
       font-size: 15px;
+      display: inline-block;
     }
 
-    span{
-      background-color: $red-color;
-      width: 40px;
-      height: 23px;
-      color: white;
-      text-align: center;
-      margin-left: 5px;
-      padding-bottom: 2px;
-      border-radius: 5px;
+    .item-default--require{
+      @include default--require;
     }
 
     .item-select-wrapper__box--select {
