@@ -38,14 +38,14 @@
           .item-name__mandatory
             %p 必須
         .item-title
-          = f.text_field :name, placeholder: '40字まで'
+          = f.text_field :name, placeholder: '40字まで', required: true
         .item-explanation
           .item-explanation__sample
             %p 商品の説明
           .item-explanation__mandatory
             %p 必須
         .explanation-text
-          = f.text_area :detail, placeholder: '商品の説明'
+          = f.text_area :detail, placeholder: '商品の説明', required: true
 
       .third-box
         .third-box__title
@@ -80,7 +80,7 @@
           .shipping-fee__mandatory
             %p 必須
         .shipping-fee__select
-          = f.select :shipping_fee, {'送料込み(出品者負担)': 1, '着払い(購入者負担)': 2},include_blank: '選択してください', required: true
+          = f.select :shipping_fee, {'送料込み(出品者負担)': 1, '着払い(購入者負担)': 2}, required: true
         .shipping-region
           .shipping-region__sample
             %p 発送元の地域
@@ -106,7 +106,7 @@
             .price-box__mandatory
               %p 必須
           .price-box__text
-            = f.text_field :price, placeholder: '¥300'
+            = f.text_field :price, placeholder: '¥300', required: true
       %br/
       .items-submit-btn
         = f.submit '出品する', class: "form-container__contents--btn"
