@@ -1,6 +1,7 @@
 .new-main 
   .parent-box
     = form_for [@item] do |f|
+      = render 'layouts/error_messages', model: f.object
       .first-box
         .image-box
           .image-box__sample
@@ -24,6 +25,7 @@
             #image-field
               = icon("fa", "camera")
               = f.fields_for :item_images do |i|
+                = render 'layouts/error_messages', model: f.object
                 .js-file_group{ data: {index: i.index} }
                   = i.file_field :url, class: "js-file", data: { index: i.index }
                 - if @item.persisted?
