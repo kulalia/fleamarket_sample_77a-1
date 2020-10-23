@@ -76,12 +76,13 @@
         コメントする
     .show__btn
       - if @item.purchaser_id.present?
-        = '売り切れです'
+        .show__btn__sout
+          = '売り切れです'
       - else
         - if @item.user_id == current_user.id
-          -# = link_to edit_item_path, class:'show__btn__link' do
-          -#   = '商品情報編集'
-          = link_to '商品情報編集', '#', class:'show__btn__link'
+          = link_to edit_item_path, class:'show__btn__link' do
+            = '商品情報編集'
+          -# = link_to '商品情報編集', '#', class:'show__btn__link'
           = link_to '商品情報削除', '#', class:'show__btn__link'
 
         - else

@@ -131,6 +131,11 @@ $whiteColor: #fff;
   .show__btn {
     margin-top: 80px;
 
+    &__sout {
+      color: red;
+      font-size: 20px;
+    }
+
     &__link {
       padding: 20px 60px;
       background: #ea352d;
