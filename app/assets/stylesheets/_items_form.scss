@@ -355,8 +355,9 @@
       }
     }
 
-    .until-shipping__select select{
-      @include select;
+    .until-shipping__select input{
+      @include input;
+
     }
   }
 
@@ -390,7 +391,7 @@
           width: 40px;
           height: 20px;
           color: white;
-          @include text-align;
+          @include field-design;
           margin-left: 5px;
           padding-bottom: 2px;
           border-radius: 5px;
