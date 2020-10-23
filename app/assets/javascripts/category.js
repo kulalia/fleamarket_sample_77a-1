@@ -60,7 +60,6 @@ $(function(){
       $('#size_wrapper').remove();
       $('#brand_wrapper').remove();
     }
-    console.log('ok1');
   });
 
   // 子カテゴリー選択後のイベント
