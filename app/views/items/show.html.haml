@@ -1,21 +1,20 @@
 = render "layouts/header"
-
 .back
   .show-main
     .items__name
       = "#{@item.name}"
-    - @item.item_images.each do |image|
       .items__photo_main
-        = image_tag image.url.url, size: "400x400"
-    .itmes__photo__sub
-      商品画像小
+        = image_tag @item.item_images.first.url.url, size: "400x400"
+      .itmes__photo__sub
+        - @item.item_images.each do |image|
+          .itmes__photo__sub__img
+            = image_tag image.url.url, size: "200x200"
     .items__price
       = "#{@item.price}円"
     .items__price__sub
       (税込)送料込み
     .information
       = "#{@item.detail}"
-
 
     %table{class: 'tbl'}
       %tr
@@ -75,16 +74,19 @@
       %button{type: "submit", class:'cmt__send'}
         %i.fas.fa-comment
         コメントする
-        
     .show__btn
-      - if @item.user_id == current_user.id
-        = link_to '商品情報編集', '#', class:'show__btn__link'
-        = link_to '商品情報削除', '#', class:'show__btn__link'
-
+      - if @item.purchaser_id.present?
+        = '売り切れです'
       - else
-        = link_to buy_confirm_card_path, class:'show__btn__link' do
-          = '購入画面へ'
+        - if @item.user_id == current_user.id
+          -# = link_to edit_item_path, class:'show__btn__link' do
+          -#   = '商品情報編集'
+          = link_to '商品情報編集', '#', class:'show__btn__link'
+          = link_to '商品情報削除', '#', class:'show__btn__link'
 
+        - else
+          = link_to buy_confirm_card_path, class:'show__btn__link' do
+            = '購入画面へ'
   .page
     %ul=link_to '< 前の商品', '#', class:'page__prev'
     %ul=link_to '後ろの商品 >', '#', class:'page__next'
@@ -93,5 +95,4 @@
     %ul=link_to 'ベビー・キッズをもっと見る', '#', class:'more__list'
     .more__img
       画像
-
 = render "layouts/footer"

@@ -20,21 +20,17 @@ $whiteColor: #fff;
     }
   
     .items__photo_main {
-      background-color: $imgColor;
-      height: 400px;
-      width: 400px;
       margin: 30px auto;
       font-weight: bold;
-      font-size: 24px;
     }
   
     .itmes__photo__sub {
-      background-color: $imgColor;
-      height: 200px;
-      width: 200px;
-      margin: 20px auto;
-      font-size: 14px;
+      display: flex;
+      
+      &__img {
+      margin: auto;
     }
+  }
   
     .items__price {
       font-size: 40px;

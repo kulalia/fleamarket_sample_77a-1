@@ -1,5 +1,12 @@
+$white: #fff;
+$gray_white: #f8f8f8;
+$skyblue: #3CCACE;
+$red: rgb(224, 44, 44);
+$black: #272727;
+$orange: #ffa500;
+$shadow: 0 0 5px rgba(0,0,0,0.4);
+
 @import "reset";
-@import "users";
 @import "items";
 @import "font-awesome-sprockets";
 @import "font-awesome";
@@ -7,5 +14,12 @@
 @import "show";
 @import "cards";
 @import "pay";
-
+// @import "header&footer";
+// @import "items_top";
+// @import "items_form";
+@import "devise";
+@import "users";
+@import "cards";
+@import "buy_confirm";
+@import "pay";
 
