@@ -63,6 +63,14 @@ class ItemsController < ApplicationController
   
   def edit
   end
+
+  def destroy
+    if @item.destroy
+      redirect_to root_path
+    else
+      render :show
+    end
+  end
   
   private
   def item_params
@@ -72,5 +80,4 @@ class ItemsController < ApplicationController
   def set_item
     @item = Item.find(params[:id])
   end
-
 end

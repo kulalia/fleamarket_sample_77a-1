@@ -1,3 +1,481 @@
+$white-color: #ffffff;
+$red-color: #ff0000;
+$black-color: #000000;
+
+@mixin field-design {
+  background-color: $red-color;
+  width: 40px;
+  height: 23px;
+  color: white;
+  text-align: center;
+  margin-left: 5px;
+  padding-bottom: 2px;
+  border-radius: 5px;
+}
+
+@mixin field-designBlue {
+  background-color: #99CCFF;
+  width: 40px;
+  height: 23px;
+  color: $black-color;
+  text-align: center;
+  margin-left: 5px;
+  padding-bottom: 2px;
+  border-radius: 5px;
+}
+
+@mixin btn {
+  font-size: 15px;
+  height: 80px;
+  width: 300px;
+  border-radius: 10px;
+}
+
+@mixin flex-size {
+  display: flex;
+  font-size: 15px;
+}
+
+@mixin font-weight {
+  font-weight: bold;
+}
+
+@mixin height-width {
+  height: 100px;
+  width: 100%;
+}
+
+@mixin select {
+  margin-bottom: 25px;
+  width: 600px;
+  height: 40px;
+  padding-left: 10px;
+}
+
+@mixin input {
+  margin-bottom: 25px;
+  width: 587px;
+  height: 40px;
+  padding-left: 10px;
+}
+
+@mixin display {
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin border-radius {
+  border-radius: 10px;
+}
+
+@mixin text-align {
+  text-align: center;
+}
+
+@mixin box-width {
+  width: 100vw;
+}
+
+@mixin default--require {
+  background-color: $red-color;
+  width: 40px;
+  height: 23px;
+  color: white;
+  text-align: center;
+  padding-bottom: 2px;
+  border-radius: 5px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.new-header {
+  padding-top: 50px;
+  height: 200px;
+  width: 100%;
+  &__icon {
+    .header-icon {
+      text-align: center;
+      .header-icon-logo {
+        width: 300px;
+      }
+    }
+  }
+}
+
+.new-main {
+  padding: 0 350px;
+  height: 1900px;
+  @include box-width;
+
+  .parent-box {    
+    background-color: white;
+
+  .first-box {     
+    background-color: white;
+    height: 400px; 
+    padding-top: 15px;    
+    border: ridge;
+    @include border-radius;
+
+    .image-box {
+      @include flex-size;
+    }
+
+    .image-box__sample {
+      @include text-align;
+      color: $black-color;
+      margin:0 0 10px 30px;
+      @include font-weight;
+    }
+
+    .image-box__mandatory {
+      @include field-design
+    }
+         
+
+    .advice-box {
+      height: 100px;
+      padding-left: 30px;
+    }
+
+    #image-box {
+      display: flex;
+    }
+
+    #image-field {
+      background-color: gray;
+      height: 124px;
+      width: 100%;
+      text-align: center;
+      line-height: 124px;
+    }
+
+    $preview-bgc: #3ccace;
+
+    #previews {
+      display: flex;
+    }
+
+    .preview-box {
+      border: 1px solid;
+      border-color: $preview-bgc;
+    }
+
+    .preview-text {
+      display: flex;
+      justify-content: space-between;
+      margin: 0 auto;
+      padding: 0 10px;
+    }     
+    
+    .preview {
+
+      &__edit {
+        color: white;
+        background-color: $preview-bgc;
+      }
+
+      &__delete {
+        color: white;
+        background-color: $preview-bgc;
+      }
+    }
+
+    .none {
+      display: none;
+    }
+  }
+
+  .second-box {
+    background-color: white;
+    height: 300px;     
+    margin-top: 20px;
+    padding: 15px 0 30px 30px;        
+    border: ridge;
+    @include border-radius;
+
+    .item-name {
+      @include flex-size;
+
+      &__sample {
+        @include text-align;
+        @include font-weight;
+        color: $black-color;
+        margin-bottom: 5px;
+      }
+
+      &__mandatory {
+        @include field-design
+      }
+    }
+
+    .item-title input{
+      @include input;
+    }
+
+    .item-explanation {
+      @include flex-size;
+
+      &__sample {
+        @include text-align;
+        color: $black-color;
+        margin-bottom: 10px;   
+        @include font-weight;      
+      }
+
+      &__mandatory {
+        @include field-design
+      }        
+    }
+
+    .explanation-text textarea{
+      height: 130px;
+      width: 680px;
+      padding: 10px 10px;
+    }
+  }
+
+  .third-box {
+    background-color: white;
+    height: 480px;     
+    margin-top: 20px;
+    padding: 15px 0 0 30px;         
+    border: ridge;
+    @include border-radius;
+
+    &__title {
+      margin-bottom: 10px;
+      font-size: 18px;
+      @include font-weight;
+    }
+
+    .item-detail__category label{
+      @include text-align;
+      color: $black-color;
+      @include font-weight; 
+      font-size: 15px;
+      display: inline-block;
+    }
+
+    .item-default--require{
+      @include default--require;
+    }
+
+    .item-select-wrapper__box--select {
+      @include select;
+    }
+
+    .item-category-select__box select{
+      @include select;
+    }
+
+    .item-brand {
+      @include flex-size;
+
+      &__sample {          
+        @include text-align;
+        color: $black-color;
+        margin-bottom: 10px; 
+        @include font-weight; 
+      }
+
+      &__optional {
+        @include field-designBlue
+      }
+    }
+
+    .brand-title input{
+      @include input;
+    }
+
+    .item-stock {
+      @include flex-size;
+
+      &__sample {
+        @include font-weight;
+        margin-bottom: 10px;
+      }
+
+      &__mandatory {
+        @include field-design;
+      }
+    }
+
+    .item-stock__text input{
+      @include input;
+    }
+
+    .item-status {
+      @include flex-size;
+
+      &__sample {
+        @include text-align;
+        color: $black-color;
+        margin-bottom: 10px;
+        @include font-weight;
+      }
+
+      &__mandatory {
+        @include field-design;
+      }
+    }
+
+    .item-status__select select{
+      @include select;
+    }
+  }
+
+  .fourth-box {
+    background-color: white;
+    height: 330px;     
+    margin-top: 20px;
+    padding: 15px 0 0 30px;    
+    border: ridge;
+    @include border-radius;
+
+    &__title {
+      margin-bottom: 10px;
+      font-size: 18px;
+      @include font-weight;
+    }
+
+    .shipping-fee {
+      @include flex-size;
+
+      &__sample {
+        @include text-align;
+        color: $black-color;
+        margin-bottom: 10px;
+        @include font-weight;
+      }
+
+      &__mandatory {
+        @include field-design
+      }       
+    }
+
+    .shipping-fee__select select{
+      @include select;
+    }
+
+    .shipping-region {
+      @include flex-size;
+
+      &__sample {
+        @include text-align;
+        color: $black-color;
+        margin-bottom: 10px;
+        @include font-weight;
+      }
+
+      &__mandatory {
+        @include field-design
+      }
+    }
+
+    .shipping-region__text select{
+      @include select;
+    }
+
+    .until-shipping {
+      @include flex-size;
+
+      &__sample {
+        @include text-align;
+        color: $black-color;
+        margin-bottom: 10px;
+        @include font-weight;
+      }
+
+      &__mandatory {
+        @include field-design
+      }
+    }
+
+    .until-shipping__select select{
+      @include select;
+    }
+  }
+
+  .fifth-box {
+    background-color: white;
+    height: 120px;     
+    margin-top: 20px;
+    padding: 15px 0 0 30px;    
+    border: ridge;
+    @include border-radius;
+
+    .standard-price {
+      font-size: 15px;
+      margin-bottom: 15px;
+      @include font-weight;
+    }
+
+    .price-box {
+      @include display;
+
+      &__sample {
+        @include flex-size;
+
+        &-other {
+          @include text-align;
+          color: $black-color;
+          @include font-weight;
+        }
+
+        .price-box__mandatory {
+          background-color: $red-color;
+          width: 40px;
+          height: 20px;
+          color: white;
+          @include text-align;
+          margin-left: 5px;
+          padding-bottom: 2px;
+          border-radius: 5px;
+        }         
+      }
+
+      &__text input{
+        margin-right: 50px;
+        width: 400px;
+        height: 40px;
+        padding-left: 10px;
+      }
+    }
+  }
+  .btn-box {
+    background-color: white;
+    height: 140px;     
+    margin-top: 20px;
+    @include text-align;
+    padding: 25px 50px 0 50px;
+    @include display;
+    border: ridge; 
+    @include border-radius;   
+
+    .item-sell__btn {
+      @include btn;
+      background-color: $red-color;
+      color: white;
+    }
+
+    .redirect-form__btn {
+      background-color: #005fff; 
+      color: white;
+      @include btn;             
+      border:1px ridge $black-color; 
+      text-decoration: none;
+      line-height: 80px;
+    }
+  } 
+  } 
+}
+.footer {
+  background-color: black;
+  height: 300px;
+  width: 100%;
+}
+
 $margin: 0 auto;
 $padding: 32px 16px;
 $max-width: 375px;
@@ -695,4 +1173,103 @@ $shadow: 0 0 5px rgba(0,0,0,0.4);
 
 .gBadge:hover {
   opacity:  .5;
+}
+
+$pointColor: rgb(224, 44, 44);
+$mainBoxFontColor: #fff;
+
+.must {
+  background-color: $pointColor;
+  color: $mainBoxFontColor;
+  font-size: 12px;
+  margin-left: 3px;
+  padding: 3px;
+  font-weight: normal;
+  border-radius: 2px;
+}
+
+// form部分
+$preview-bgc: #3ccace;
+
+textarea {
+  width: 600px;
+}
+
+.form-container {
+  width: 100vw;
+  background-color: lightgray;
+  &__contents input[type="text"]{
+    width: 600px;
+    margin: 0 auto;
+  }
+  &__contents {
+    background-color: white;
+    width: 700px;
+    margin: 0 auto;
+    padding: 0 10px;
+    &--menu {
+      padding: 5px 0;
+    }
+    &--btn {
+      display: block;
+      height: 100px;
+      width: 200px;
+      margin: 0 auto;
+      border: none;
+      background-color: $preview-bgc;
+      color: white;
+      font-size: 36px;
+      cursor: pointer;
+    }
+  }
+}
+
+
+#image-box {
+  display: flex;
+}
+
+#image-field {
+  background-color: lightgray;
+  height: 124px;
+  width: 100vw;
+  text-align: center;
+  line-height: 124px;
+}
+
+
+
+
+#previews {
+  display: flex;
+}
+
+.preview-box {
+  border: 1px solid;
+  border-color: $preview-bgc;
+}
+.preview-text {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+.preview {
+  &__edit {
+    color: $mainBoxFontColor;
+    background-color: $preview-bgc;
+  }
+  &__delete {
+    color: $mainBoxFontColor;
+    background-color: $preview-bgc;
+  }
+}
+.submit-btn {
+  padding-bottom: 30px;
+}
+
+.none {
+  display: none;
 }

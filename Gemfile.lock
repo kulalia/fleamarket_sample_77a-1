@@ -48,6 +48,8 @@ GEM
       public_suffix (>= 2.0.2, < 5.0)
     airbrussh (1.4.0)
       sshkit (>= 1.6.1, != 1.7.0)
+    ancestry (3.2.1)
+      activerecord (>= 4.2.0)
     archive-zip (0.12.0)
       io-like (~> 0.3.0)
     arel (9.0.0)
@@ -110,6 +112,8 @@ GEM
     dotenv-rails (2.7.6)
       dotenv (= 2.7.6)
       railties (>= 3.2)
+    erb2haml (0.1.5)
+      html2haml
     erubi (1.9.0)
     erubis (2.7.0)
     excon (0.76.0)
@@ -136,6 +140,8 @@ GEM
     fog-xml (0.1.3)
       fog-core
       nokogiri (>= 1.5.11, < 2.0.0)
+    font-awesome-rails (4.7.0.5)
+      railties (>= 3.2, < 6.1)
     font-awesome-sass (5.13.0)
       sassc (>= 1.11)
     formatador (0.2.5)
@@ -344,6 +350,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_hash
+  ancestry
   bootsnap (>= 1.1.0)
   byebug
   capistrano
@@ -357,8 +364,10 @@ DEPENDENCIES
   chromedriver-helper
   devise
   dotenv-rails
+  erb2haml
   factory_bot_rails
   fog-aws
+  font-awesome-rails
   font-awesome-sass
   haml-rails
   jbuilder (~> 2.5)
