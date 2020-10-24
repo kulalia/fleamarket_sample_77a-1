@@ -9,7 +9,7 @@
 |------|----|-------|
 |user|references|null: false, foreign_key: true|
 |name|string|null: false|
-|category_id(active_hash)|integer|null: false|
+|category_id(ancestry)|integer|null: false|
 |detail|string|null: false|
 |brand|string||
 |price|integer|null: false|
@@ -21,9 +21,10 @@
 
 
 ### Association
-- has_many :images, dependent: :destroy
+- has_many :item_images, dependent: :destroy
 - belongs_to :user
 - has_one :purchase_history, dependent: :destroy
+
 
 
 ## item_imagesテーブル
@@ -35,6 +36,7 @@
 
 ### Association
 - belongs_to :item
+
 
 
 ## usersテーブル
@@ -72,18 +74,6 @@
 
 
 
-## cardsテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|user|references|null: false, foreign_key: true|
-|customer_id(token)|string|null: false|
-|card_id(token)|string|null: false|
-
-### Association
-- belongs_to :user
-
-
 ## delivery_addressesテーブル
 
 |Column|Type|Options|
@@ -106,15 +96,14 @@
 
 
 
-## item_purchase_histories
+
+## cardsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|item|references|null: false, foreign_key: true|
-|seller|references|null: false, foreign_key: true|
-|buyer|references|foreign_key: true|
+|user|references|null: false, foreign_key: true|
+|customer_id(token)|string|null: false|
+|card_id(token)|string|null: false|
 
 ### Association
-- belongs_to :seller, class_name: 'User'
-- belongs_to :buyer, class_name: 'User'
-- belongs_to :item
+- belongs_to :user
