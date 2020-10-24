@@ -45,7 +45,7 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to root_path, notice: '出品しました'
     else
-      render :index
+      render :new
     end
   end
 

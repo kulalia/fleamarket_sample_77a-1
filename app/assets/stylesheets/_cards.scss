@@ -1,19 +1,16 @@
-$backgroundColor: #f8f8f8;
-$mainColor: #3CCACE;
-$mainBoxFontColor: #fff;
-$pointColor: rgb(224, 44, 44);
+// クレジットカード登録画面
 
 .card {
   height: 100vh;
   width: calc(100% - 450px);
-  background-color: $backgroundColor;
+  background-color: $gray_white;
   display: flex;
   align-items: center;
 
   &__box {
     height: 600px;
     width: 600px;
-    background-color: $mainBoxFontColor;
+    background-color: $white;
     margin: 0 auto;
     text-align: center;
 
@@ -23,7 +20,7 @@ $pointColor: rgb(224, 44, 44);
       font-weight: bold;
       line-height: 80px;
       border: 2px solid;
-      border-color: $backgroundColor;
+      border-color: $gray_white;
     }
 
     &__form {
@@ -49,8 +46,8 @@ $pointColor: rgb(224, 44, 44);
         font-weight: bold;
 
         .must {
-          background-color: $pointColor;
-          color: $mainBoxFontColor;
+          background-color: $red;
+          color: $white;
           font-size: 12px;
           margin-left: 3px;
           padding: 3px;
@@ -113,9 +110,9 @@ $pointColor: rgb(224, 44, 44);
       .submit-btn {
         height: 40px;
         width: 230px;
-        background-color: $mainColor;
+        background-color: $skyblue;
         border-radius: 100px;
-        color: $mainBoxFontColor;
+        color: $white;
         border: 1px solid;
       }
     }

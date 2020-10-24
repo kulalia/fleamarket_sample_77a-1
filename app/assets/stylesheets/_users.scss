@@ -1,21 +1,17 @@
+// ユーザーマイページ
+
 * {
   box-sizing: border-box;
 }
 
-$white-color: #fff;
-$gray-color: #f8f8f8;
-$blue-color: #3CCACE;
-$lightgray-color: #f8f8f8;
-$red-color: #f36;
-$black-color: #000;
 
 @mixin mypageLists() {
-  border: 1px solid #3CCACE;
+  border: 1px solid $skyblue;
   margin-bottom: 5px;
 }
 
 .mypage-main {
-  background-color: $lightgray-color;
+  background-color: $gray_white;
   display: flex;
   justify-content: space-around;
   min-height: 100vh;
@@ -23,18 +19,18 @@ $black-color: #000;
 
   .left-content {
     width: 450px;
-    color: $red-color;
+    color: #f36;
     font-size: 25px;
     padding: 30px;
 
     .left-data {
-      color: $black-color;
+      color: #000;
       font-size: 18px;
       text-decoration: none;
     }
 
     &__mypage-lists {
-      background-color: $white-color;
+      background-color: $white;
       margin-left: 100px;
       padding: 30px;
 
@@ -48,7 +44,7 @@ $black-color: #000;
       margin-top: 10px;
 
       &-box {
-        background-color: $white-color;
+        background-color: $white;
         padding: 30px;
 
         &__list {
@@ -62,14 +58,14 @@ $black-color: #000;
     width: calc(100% - 450px);
 
     &__user-box {
-      background-color: $white-color;
+      background-color: $white;
       height: 450px;
       margin: 0 auto;
       margin-top: 30px;
       width: 700px;
 
       &--other {
-        background-color: $blue-color;
+        background-color: $skyblue;
         height: 100px;
         width: 700px;
 
@@ -83,7 +79,7 @@ $black-color: #000;
     }
 
     &__buy-box {
-      background-color: $white-color;
+      background-color :$white;
       height: 450px;
       margin: 0 auto;
       margin-top: 55px;
@@ -91,7 +87,7 @@ $black-color: #000;
       margin-bottom: 50px;
 
       .right-content__box {
-        background-color: $blue-color;
+        background-color: $skyblue;
         height: 100px;
         width: 700px;
         

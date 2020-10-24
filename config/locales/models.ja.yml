@@ -4,6 +4,8 @@ ja:
       user:
       user_profile:
       delivery_address:
+      item:
+      item_images: 商品画像
     attributes:
       user:
         nickname: ニックネーム
@@ -47,3 +49,15 @@ ja:
         address: 配送先の番地
         building: マンション・アパート名・部屋番号
         phone_number: 電話番号
+      item: 
+        name: 商品名
+        # category: カテゴリー
+        detail: 商品の説明
+        brand: ブランド
+        price: 価格
+        item_status: 商品の状態
+        prefecture_id: 発送元の地域
+        days_until_shipping: 発送までの日数
+        shipping_fee: 配送料の負担
+        purchaser_id: 購入者
+        item_images: 出品画像
