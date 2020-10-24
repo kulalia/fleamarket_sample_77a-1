@@ -34,21 +34,17 @@ $imgColor: lightblue;
     }
   
     .items__photo_main {
-      background-color: $imgColor;
-      height: 400px;
-      width: 400px;
       margin: 30px auto;
       font-weight: bold;
-      font-size: 24px;
     }
   
     .itmes__photo__sub {
-      background-color: $imgColor;
-      height: 200px;
-      width: 200px;
-      margin: 20px auto;
-      font-size: 14px;
+      display: flex;
+      
+      &__img {
+      margin: auto;
     }
+  }
   
     .items__price {
       font-size: 40px;
@@ -141,9 +137,28 @@ $imgColor: lightblue;
       color: $white;
       width: 60%;
       font-size: 18px;
-      border-radius: 100px;margin-top: 20px;
+      border-radius: 100px;
+      margin-top: 20px;
     }
   }
+
+  .show__btn {
+    margin-top: 80px;
+
+    &__sout {
+      color: red;
+      font-size: 20px;
+    }
+
+    &__link {
+      padding: 20px 60px;
+      background: #ea352d;
+      color: $whiteColor;
+      border-radius: 100px;
+      text-decoration: none;
+    }
+  }
+
   .page {
     display: flex;
     justify-content: space-between;

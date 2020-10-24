@@ -21,7 +21,7 @@ $max-width: 375px;
     height: 800px;
     width: 500px;
     margin: $margin;  
-    
+
     &__title {
       text-align: center;
       font-size: 24px;
@@ -54,7 +54,7 @@ $max-width: 375px;
       text-align: center;
       font-size: 36px;
     }
-    
+
     &__submit {
       height: 130px;
       line-height: 30px;
@@ -70,7 +70,7 @@ $max-width: 375px;
         background-color: #3ccace;
         width: 100%;
         cursor: pointer;
-  
+
         .buy-submit {
           display: inline-block;
           height: 50px;
@@ -80,9 +80,8 @@ $max-width: 375px;
           color: white;
           font-size: 24px;
         }
-  
+
       }
     }
   }
 }
-
