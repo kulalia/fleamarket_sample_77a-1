@@ -1,9 +1,5 @@
 = render "layouts/header"
 .back
-  .edit-item
-    - if user_signed_in? && current_user.id == @item.user_id
-      = link_to '編集', edit_item_path, class: "edit-item__btn"
-      = link_to '削除', item_path(@item), method: :delete, class: "edit-item__btn"
   .show-main
     .items__name
       = "#{@item.name}"
@@ -30,11 +26,11 @@
         %th{class: 'tbl__left'}
           カテゴリー
         %td{class: 'tbl__right'}
+          = link_to "#{@item.category.parent.parent.name}", '#', class:'tbl__link'
+          %br/
+          = link_to "#{@item.category.parent.name}", '#', class:'tbl__link'
+          %br/
           = link_to "#{@item.category.name}", '#', class:'tbl__link'
-          %br/
-          = link_to 'ベビー服(男の子用) ~95cm', '#', class:'tbl__link'
-          %br/
-          = link_to 'アウター', '#', class:'tbl__link'
       %tr
         %th{class: 'tbl__left'}
           ブランド
@@ -49,7 +45,7 @@
         %th{class: 'tbl__left'}
           送料
         %td{class: 'tbl__right'}
-          送料込（出品者負担）
+          = "#{@item.shipping_fee}"
       %tr
         %th{class: 'tbl__left'}
           発送元の地域
@@ -59,7 +55,7 @@
         %th{class: 'tbl__left'}
           発送日の目安
         %td{class: 'tbl__right'}
-          1-2日で発送
+          = "#{@item.days_until_shipping}"
 
     .option
       %ul= link_to '★ お気に入り 0', '#', class:'favorite'
@@ -84,9 +80,10 @@
           = '売り切れです'
       - else
         - if @item.user_id == current_user.id
-          = link_to edit_item_path, class:'show__btn__link' do
+          = link_to edit_item_path(@item), class:'show__btn__link' do
             = '商品情報編集'
-          = link_to '商品情報削除', '#', class:'show__btn__link'
+          = link_to item_path(@item), method: :delete, class:'show__btn__link' do
+            = '商品情報削除'
 
         - else
           = link_to buy_confirm_card_path, class:'show__btn__link' do

@@ -74,6 +74,21 @@
   width: 100vw;
 }
 
+@mixin default--require {
+  background-color: $red;
+  width: 40px;
+  height: 23px;
+  color: white;
+  text-align: center;
+  padding-bottom: 2px;
+  border-radius: 5px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+
+
+
 .new-main {
   padding: 100px 350px;
   min-height: 2100px;
@@ -219,21 +234,22 @@
       @include font-weight;
     }
 
-    .item-category {
-      @include flex-size;
-
-      &__sample {
-        @include text-align;
-        margin-bottom: 10px;
-        @include font-weight;
-      }
-
-      &__mandatory {
-        @include field-design
-      }       
+    .item-detail__category label{
+      @include text-align;
+      @include font-weight; 
+      font-size: 15px;
+      display: inline-block;
     }
 
-    .item-category__select select{
+    .item-default--require{
+      @include default--require;
+    }
+
+    .item-select-wrapper__box--select {
+      @include select;
+    }
+
+    .item-category-select__box select{
       @include select;
     }
 

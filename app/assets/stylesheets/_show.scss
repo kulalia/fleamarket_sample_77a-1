@@ -7,19 +7,6 @@ $imgColor: lightblue;
 .back {
   background: $gray_white;
   padding: 40px;
-  .edit-item {
-    width: 700px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    &__btn {
-      text-decoration: none;
-      padding: 10px;
-      margin-right: 10px;
-      color: $white;
-      background-color: purple;
-    }
-  }
   
   .show-main {
     background-color: $white;
