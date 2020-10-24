@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  before_action :move_to_signin, except: [:index]
   before_action :set_item, except: [:index, :new, :create, :get_category_children, :get_category_grandchildren]
 
   def index
@@ -13,6 +14,7 @@ class ItemsController < ApplicationController
   end
 
   def new
+
     @item = Item.new
     @item.item_images.build
 
@@ -38,6 +40,7 @@ class ItemsController < ApplicationController
   end
   
   def create
+
     @item = Item.new(item_params)
     items = Item.includes(:item_images).where(purchaser_id: nil)
     @items = items.order('created_at DESC').limit(5)
@@ -53,15 +56,16 @@ class ItemsController < ApplicationController
     @item = Item.includes(:item_images).find(params[:id])
   end
 
+    
+  def edit
+  end
+
   def update
     if @item.update(item_params)
       redirect_to root_path
     else
       render :edit
     end
-  end
-  
-  def edit
   end
 
   def destroy
@@ -80,4 +84,10 @@ class ItemsController < ApplicationController
   def set_item
     @item = Item.find(params[:id])
   end
+
+  def move_to_signin
+    redirect_to new_user_session_path unless user_signed_in?
+  end
+
+
 end
