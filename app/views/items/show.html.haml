@@ -55,7 +55,7 @@
         %th{class: 'tbl__left'}
           発送日の目安
         %td{class: 'tbl__right'}
-          = "#{@item.days_until_shipping}"
+          = "#{@item.days_until_shipping}日以内に発送"
 
     .option
       %ul= link_to '★ お気に入り 0', '#', class:'favorite'
