@@ -74,8 +74,7 @@
           .item-status__mandatory
             %p 必須
         .item-status__select
-          = f.select :item_status, {'新品同様': 1, '多少の傷あり': 2}, required: true
-
+          = f.select :item_status, {'新品同様': '新品同様', '多少の傷あり': '多少の傷あり'}, required: true
       .fourth-box
         .fourth-box__title
           %p 配送について

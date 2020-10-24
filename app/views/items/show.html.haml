@@ -7,9 +7,12 @@
   .show-main
     .items__name
       = "#{@item.name}"
-    - @item.item_images.each do |image|
       .items__photo_main
-        = image_tag image.url.url, size: "200x200"
+        = image_tag @item.item_images.first.url.url, size: "400x400"
+      .itmes__photo__sub
+        - @item.item_images.each do |image|
+          .itmes__photo__sub__img
+            = image_tag image.url.url, size: "200x200"
     .items__price
       = "#{@item.price}円"
     .items__price__sub
@@ -37,10 +40,6 @@
           ブランド
         %td{class: 'tbl__right'}
           = "#{@item.brand}"
-      %tr
-        %th{class: 'tbl__left'}
-          商品のサイズ
-        %td{class: 'tbl__right'}
       %tr
         %th{class: 'tbl__left'}
           商品の状態
@@ -79,8 +78,19 @@
       %button{type: "submit", class:'cmt__send'}
         %i.fas.fa-comment
         コメントする
-    = link_to buy_confirm_card_path do
-      = "購入画面へ"
+    .show__btn
+      - if @item.purchaser_id.present?
+        .show__btn__sout
+          = '売り切れです'
+      - else
+        - if @item.user_id == current_user.id
+          = link_to edit_item_path, class:'show__btn__link' do
+            = '商品情報編集'
+          = link_to '商品情報削除', '#', class:'show__btn__link'
+
+        - else
+          = link_to buy_confirm_card_path, class:'show__btn__link' do
+            = '購入画面へ'
   .page
     %ul=link_to '< 前の商品', '#', class:'page__prev'
     %ul=link_to '後ろの商品 >', '#', class:'page__next'

@@ -42,7 +42,7 @@ class ItemsController < ApplicationController
     items = Item.includes(:item_images).where(purchaser_id: nil)
     @items = items.order('created_at DESC').limit(5)
     @items_by_random = items.sample(5)
-    if @item.save!
+    if @item.save
       redirect_to root_path, notice: '出品しました'
     else
       render :index
@@ -80,6 +80,4 @@ class ItemsController < ApplicationController
   def set_item
     @item = Item.find(params[:id])
   end
-
 end
-

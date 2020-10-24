@@ -14,7 +14,6 @@
  *= require_self
  */
 @import "reset";
-@import "users";
 @import "items";
 @import "font-awesome-sprockets";
 @import "font-awesome";
@@ -22,5 +21,12 @@
 @import "show";
 @import "cards";
 @import "pay";
-
+@import "header&footer";
+@import "items_top";
+@import "items_form";
+@import "devise";
+@import "users";
+@import "cards";
+@import "buy_confirm";
+@import "pay";
 

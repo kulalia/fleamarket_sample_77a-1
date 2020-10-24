@@ -40,7 +40,7 @@
         %span.must
           必須
         %br/
-        = f.select :item_status, {'新品同様': 1, '多少の傷あり': 2},include_blank: '選択してください', required: true
+        = f.select :item_status, {'新品同様': '新品同様', '多少の傷あり': '多少の傷あり'},include_blank: '選択してください', required: true
         %br/
       .form-container__contents--menu
         都道府県
