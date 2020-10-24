@@ -7,11 +7,24 @@ $imgColor: lightblue;
 .back {
   background: $gray_white;
   padding: 40px;
-
+  .edit-item {
+    width: 700px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    &__btn {
+      text-decoration: none;
+      padding: 10px;
+      margin-right: 10px;
+      color: $whiteColor;
+      background-color: $textColor;
+    }
+  }
+  
   .show-main {
     background-color: $white;
     width: 700px;
-    margin: 0 auto;
+    margin: 10px auto;
     text-align: center;
     padding: 24px 40px 40px;
   

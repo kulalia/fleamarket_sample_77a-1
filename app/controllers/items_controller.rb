@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, except: [:index, :new, :create]
+  before_action :set_item, except: [:index, :new, :create, :get_category_children, :get_category_grandchildren]
 
   def index
     # 購入者がいない商品を取得
@@ -15,11 +15,34 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.item_images.build
+
+    #セレクトボックスの初期値設定
+    @category_parent_array = ["---"]
+    #データベースから、親カテゴリーのみ抽出し、配列化
+    Category.where(ancestry: nil).each do |parent|
+      @category_parent_array << parent.name
+    end
+  end
+
+  # 以下全て、formatはjsonのみ
+  # 親カテゴリーが選択された後に動くアクション
+  def get_category_children
+    #選択された親カテゴリーに紐付く子カテゴリーの配列を取得
+    @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
+  end
+
+  # 子カテゴリーが選択された後に動くアクション
+  def get_category_grandchildren
+    #選択された子カテゴリーに紐付く孫カテゴリーの配列を取得
+    @category_grandchildren = Category.find("#{params[:child_id]}").children
   end
   
   def create
     @item = Item.new(item_params)
-    if @item.save
+    items = Item.includes(:item_images).where(purchaser_id: nil)
+    @items = items.order('created_at DESC').limit(5)
+    @items_by_random = items.sample(5)
+    if @item.save!
       redirect_to root_path, notice: '出品しました'
     else
       render :new
@@ -39,6 +62,14 @@ class ItemsController < ApplicationController
   end
   
   def edit
+  end
+
+  def destroy
+    if @item.destroy
+      redirect_to root_path
+    else
+      render :show
+    end
   end
   
   private
