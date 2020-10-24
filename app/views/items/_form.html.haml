@@ -25,7 +25,6 @@
             #image-field
               = icon("fa", "camera")
               = f.fields_for :item_images do |i|
-                = render 'layouts/error_messages', model: f.object
                 .js-file_group{ data: {index: i.index} }
                   = i.file_field :url, class: "js-file", data: { index: i.index }
                 - if @item.persisted?
@@ -40,14 +39,14 @@
           .item-name__mandatory
             %p 必須
         .item-title
-          = f.text_field :name, placeholder: '40字まで', required: true
+          = f.text_field :name, placeholder: '40字まで'
         .item-explanation
           .item-explanation__sample
             %p 商品の説明
           .item-explanation__mandatory
             %p 必須
         .explanation-text
-          = f.text_area :detail, placeholder: '商品の説明', required: true
+          = f.text_area :detail, placeholder: '商品の説明'
 
       .third-box
         .third-box__title
@@ -72,7 +71,7 @@
           .item-status__mandatory
             %p 必須
         .item-status__select
-          = f.select :item_status, {'新品同様': 1, '多少の傷あり': 2}, required: true
+          = f.select :item_status, {'新品同様': "新品同様", '多少の傷あり': "新品同様"}, include_blank: "選択してください"
       .fourth-box
         .fourth-box__title
           %p 配送について
@@ -82,25 +81,25 @@
           .shipping-fee__mandatory
             %p 必須
         .shipping-fee__select
-          = f.select :shipping_fee, {'送料込み(出品者負担)': 1, '着払い(購入者負担)': 2}, required: true
+          = f.select :shipping_fee, {'送料込み(出品者負担)': '送料込み(出品者負担)', '着払い(購入者負担)': '送料込み(出品者負担)'}, include_blank: "選択してください"
         .shipping-region
           .shipping-region__sample
             %p 発送元の地域
           .shipping-region__mandatory
             %p 必須
         .shipping-region__text       
-          = f.collection_select :prefecture_id, Prefecture.all, :id, :name, autofocus: true, autocomplete: 'address-level1'
+          = f.collection_select :prefecture_id, Prefecture.all, :id, :name, autofocus: true, autocomplete: 'address-level1', include_blank: "選択してください"
         .until-shipping
           .until-shipping__sample
             %p 発送までの日数
           .until-shipping__mandatory
             %p 必須
         .until-shipping__select
-          = f.text_field :days_until_shipping, placeholder: '(例)1日 ~ 2日で発送', required: true
+          = f.text_field :days_until_shipping, placeholder: '(例)1日 ~ 2日で発送'
 
       .fifth-box
         .standard-price
-          %p 価格(¥300 ~ ¥9,999,999)
+          %p 価格(300 ~ 9,999,999円)
         .price-box
           .price-box__sample
             .price-box__sample-other
@@ -108,7 +107,7 @@
             .price-box__mandatory
               %p 必須
           .price-box__text
-            = f.text_field :price, placeholder: '¥300', required: true
+            = f.text_field :price, placeholder: '300円'
       %br/
       .items-submit-btn
         = f.submit '出品する', class: "form-container__contents--btn"

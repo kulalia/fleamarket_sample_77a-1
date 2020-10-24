@@ -76,7 +76,7 @@
 
 .new-main {
   padding: 100px 350px;
-  height: 2100px;
+  min-height: 2100px;
   @include box-width;
 
   .parent-box {    

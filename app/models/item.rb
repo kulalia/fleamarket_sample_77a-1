@@ -10,5 +10,5 @@ class Item < ApplicationRecord
     belongs_to_active_hash :prefecture
 
   validates :user_id, :name, :category_id, :detail, :price, :item_status, :prefecture_id, :days_until_shipping, :shipping_fee, presence: true
-  validates_associated :item_images
+  validates :item_images, presence: true
 end
