@@ -51,7 +51,7 @@ ja:
         phone_number: 電話番号
       item: 
         name: 商品名
-        # category: カテゴリー
+        category_id: カテゴリー
         detail: 商品の説明
         brand: ブランド
         price: 価格
