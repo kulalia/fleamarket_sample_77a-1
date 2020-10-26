@@ -29,7 +29,6 @@ class ItemsController < ApplicationController
   def create
 
     @item = Item.new(item_params)
-    @item.item_images.build
 
     if @item.save
       redirect_to root_path, notice: '出品しました'
@@ -75,6 +74,8 @@ class ItemsController < ApplicationController
     if @item.update(item_params)
       redirect_to root_path
     else
+      @item = Item.find(params[:id])
+      @item.update(item_params)
 
       category_grandchild = @item.category
       category_child = category_grandchild.parent
@@ -137,10 +138,3 @@ class ItemsController < ApplicationController
 
 
 end
-
-
-
-
-
-# 「孫カテゴリがあるかどうか？」といった条件分岐でどこまでフォームを表示させるかを変える
-# ・editのビューに必要なインスタンス変数をupdateアクションの中に書く

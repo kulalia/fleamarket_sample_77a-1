@@ -56,6 +56,7 @@
         .item-detail__category
           = f.label 'カテゴリー', class: 'item-default__label'
           .item-default--require 必須
+          -# # 「孫カテゴリがあるかどうか？」といった条件分岐でどこまでフォームを表示させるかを変える
           .item-select-wrapper
             .item-select-wrapper__box
               = f.select :category_id, @category_parent_array, {selected:@item.category.parent.parent.name}, {class: 'item-select-wrapper__box--select', id: 'parent_category'}
