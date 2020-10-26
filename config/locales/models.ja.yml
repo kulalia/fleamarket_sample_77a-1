@@ -5,7 +5,8 @@ ja:
       user_profile:
       delivery_address:
       item:
-      item_images: 商品画像
+      item_images: 出品画像
+      category: カテゴリー
     attributes:
       user:
         nickname: ニックネーム
@@ -51,7 +52,7 @@ ja:
         phone_number: 電話番号
       item: 
         name: 商品名
-        category_id: カテゴリー
+        category: カテゴリー
         detail: 商品の説明
         brand: ブランド
         price: 価格

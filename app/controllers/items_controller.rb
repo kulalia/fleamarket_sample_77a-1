@@ -29,13 +29,11 @@ class ItemsController < ApplicationController
   def create
 
     @item = Item.new(item_params)
-    items = Item.includes(:item_images).where(purchaser_id: nil)
-    @items = items.order('created_at DESC').limit(5)
-    @items_by_random = items.sample(5)
+    @item.item_images.build
+
     if @item.save
       redirect_to root_path, notice: '出品しました'
     else
-      @item.item_images.build
       #セレクトボックスの初期値設定
       @category_parent_array = ["---"]
       #データベースから、親カテゴリーのみ抽出し、配列化
