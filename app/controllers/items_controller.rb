@@ -29,13 +29,14 @@ class ItemsController < ApplicationController
   def create
 
     @item = Item.new(item_params)
-    items = Item.includes(:item_images).where(purchaser_id: nil)
-    @items = items.order('created_at DESC').limit(5)
-    @items_by_random = items.sample(5)
+
+    # renderの際にfile_fieldが消失するため、以下の記述が必要
+    # しかし、この記述をすると、画像を選択してもitem_imagesのデータが存在しないことになり、mysqlにてエラーが出る
+    @item.item_images.build
+
     if @item.save
       redirect_to root_path, notice: '出品しました'
     else
-      @item.item_images.build
       #セレクトボックスの初期値設定
       @category_parent_array = ["---"]
       #データベースから、親カテゴリーのみ抽出し、配列化
@@ -77,6 +78,8 @@ class ItemsController < ApplicationController
     if @item.update(item_params)
       redirect_to root_path
     else
+      @item = Item.find(params[:id])
+      @item.update(item_params)
 
       category_grandchild = @item.category
       category_child = category_grandchild.parent
@@ -139,10 +142,3 @@ class ItemsController < ApplicationController
 
 
 end
-
-
-
-
-
-# 「孫カテゴリがあるかどうか？」といった条件分岐でどこまでフォームを表示させるかを変える
-# ・editのビューに必要なインスタンス変数をupdateアクションの中に書く

@@ -31,6 +31,15 @@
                   = i.file_field :url, class: "js-file", data:{ index: i.index }
                 - if @item.persisted?
                   = i.check_box :_destroy, data:{ index: i.index }, class: 'hidden-destroy'
+
+              -# 編集ページにて、renderで遷移後に画像を選択するとindexの数字がかぶってしまう
+              -# 原因
+              -# countで、DBに保存されている画像の枚数の数字でindexを作ってしまう
+              -# その結果、元々ある画像のindex(HTMLで指定している)と数字かぶってしまう
+              -# 解決したいこと
+              -# 上記以外に、indexの数字の増やし方がないか？
+              -# 30,31行目のi.indexの次の番号から生成する方法がないか？
+
               - if @item.persisted?
                 .js-file_group{ data: { index: @item.item_images.count }}
                   = file_field_tag :url, name: "item[item_images_attributes][#{@item.item_images.count}][url]", class: 'js-file'                        
@@ -56,6 +65,7 @@
         .item-detail__category
           = f.label 'カテゴリー', class: 'item-default__label'
           .item-default--require 必須
+          -# # 「孫カテゴリがあるかどうか？」といった条件分岐でどこまでフォームを表示させるかを変える
           .item-select-wrapper
             .item-select-wrapper__box
               = f.select :category_id, @category_parent_array, {selected:@item.category.parent.parent.name}, {class: 'item-select-wrapper__box--select', id: 'parent_category'}
