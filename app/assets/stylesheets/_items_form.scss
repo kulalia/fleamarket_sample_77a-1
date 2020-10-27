@@ -369,11 +369,26 @@
       &__mandatory {
         @include field-design
       }
-    }
 
-    .until-shipping__select input{
-      @include input;
-
+      &__select {
+        display: flex;
+  
+        .select input{
+          margin-bottom: 25px;
+          height: 40px;
+          padding-left: 10px;
+          width: 300px;
+          display: flex;
+        }
+  
+        .text {
+          height: 40px;
+          margin-right: 250px;
+          line-height: 40px;
+          padding-left: 20px;
+        }
+  
+      }
     }
   }
 
@@ -415,10 +430,16 @@
       }
 
       &__text input{
-        margin-right: 50px;
-        width: 400px;
+        // margin-right:px;
+        width: 300px;
         height: 40px;
         padding-left: 10px;
+      }
+
+      .yen {
+        height: 40px;
+        margin-right: 250px;
+        line-height: 40px;
       }
     }
   }

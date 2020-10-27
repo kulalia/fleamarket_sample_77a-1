@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
-  def index  
+  def index
+    move_to_signin
   end
 
 end

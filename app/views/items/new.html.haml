@@ -3,7 +3,6 @@
 .new-main 
   .parent-box
     = form_for [@item] do |f|
-      = render 'layouts/error_messages', model: f.object
       .first-box
         .image-box
           .image-box__sample
@@ -29,11 +28,6 @@
               = f.fields_for :item_images do |i|
                 .js-file_group{ data: { index: i.index }}
                   = i.file_field :url, class: "js-file", data:{ index: i.index }
-                -# - if @item.persisted?
-                -#   = i.check_box :_destroy, data:{ index: i.index }, class: 'hidden-destroy'
-              -# - if @item.persisted?
-              -#   .js-file_group{ data: { index: @item.item_images.count }}
-              -#     = file_field_tag :url, name: "item[item_images_attributes][#{@item.item_images.count}][url]", class: 'js-file'                        
       .second-box 
         .item-name
           .item-name__sample
@@ -93,11 +87,14 @@
           = f.collection_select :prefecture_id, Prefecture.all, :id, :name, autofocus: true, autocomplete: 'address-level1'
         .until-shipping
           .until-shipping__sample
-            %p 発送までの日数
+            %p 発送までの日数 (例)3日以内に発送
           .until-shipping__mandatory
             %p 必須
         .until-shipping__select
-          = f.text_field :days_until_shipping, placeholder: '(例)3日以内に発送'
+          .select
+            = f.text_field :days_until_shipping, placeholder: '半角整数1桁'
+          .text
+            = "日以内に発送"
 
       .fifth-box
         .standard-price
@@ -109,7 +106,9 @@
             .price-box__mandatory
               %p 必須
           .price-box__text
-            = f.text_field :price, placeholder: '300円'
+            = f.text_field :price, placeholder: '半角数字'
+          .yen
+            = "円"
       %br/
       .items-submit-btn
         = f.submit '出品する', class: "form-container__contents--btn"
