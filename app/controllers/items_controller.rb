@@ -30,13 +30,10 @@ class ItemsController < ApplicationController
 
     @item = Item.new(item_params)
 
-    # renderの際にfile_fieldが消失するため、以下の記述が必要
-    # しかし、この記述をすると、画像を選択してもitem_imagesのデータが存在しないことになり、mysqlにてエラーが出る
-    @item.item_images.build
-
     if @item.save
       redirect_to root_path, notice: '出品しました'
     else
+      @item.item_images.build
       #セレクトボックスの初期値設定
       @category_parent_array = ["---"]
       #データベースから、親カテゴリーのみ抽出し、配列化
