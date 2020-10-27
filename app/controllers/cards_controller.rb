@@ -1,4 +1,5 @@
 class CardsController < ApplicationController
+  before_action :move_to_signin
   before_action :get_card_information, only: [:index, :destroy, :buy_confirm, :purchase]
   before_action :refer_to_payjp, only: [:create, :destroy, :purchase]
   before_action :get_item_information, only: [:buy_confirm, :purchase]

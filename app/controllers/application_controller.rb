@@ -7,6 +7,11 @@ class ApplicationController < ActionController::Base
     @current_user = User.find_by(id: session[:user_id])
   end
 
+  # ログインしていなければログインページに遷移
+  def move_to_signin
+    redirect_to new_user_session_path unless user_signed_in?
+  end
+
   protected
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname, user_profile_attributes: [:first_name, :first_name_kana, :family_name, :family_name_kana, :birthday], delivery_addresses_attributes: [:first_name, :first_name_kana, :family_name, :family_name_kana, :postal_code, :prefecture_id, :city, :address, :building, :phone_number]] )

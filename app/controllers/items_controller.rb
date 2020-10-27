@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :move_to_signin, except: [:index]
+  before_action :move_to_signin, except: [:index, :show]
   before_action :set_item, except: [:index, :new, :create, :get_category_children, :get_category_grandchildren]
 
   def index
@@ -102,10 +102,6 @@ class ItemsController < ApplicationController
 
   def set_item
     @item = Item.find(params[:id])
-  end
-
-  def move_to_signin
-    redirect_to new_user_session_path unless user_signed_in?
   end
 
 
