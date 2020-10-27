@@ -29,11 +29,11 @@
               = f.fields_for :item_images do |i|
                 .js-file_group{ data: { index: i.index }}
                   = i.file_field :url, class: "js-file", data:{ index: i.index }
-                - if @item.persisted?
-                  = i.check_box :_destroy, data:{ index: i.index }, class: 'hidden-destroy'
-              - if @item.persisted?
-                .js-file_group{ data: { index: @item.item_images.count }}
-                  = file_field_tag :url, name: "item[item_images_attributes][#{@item.item_images.count}][url]", class: 'js-file'                        
+                -# - if @item.persisted?
+                -#   = i.check_box :_destroy, data:{ index: i.index }, class: 'hidden-destroy'
+              -# - if @item.persisted?
+              -#   .js-file_group{ data: { index: @item.item_images.count }}
+              -#     = file_field_tag :url, name: "item[item_images_attributes][#{@item.item_images.count}][url]", class: 'js-file'                        
       .second-box 
         .item-name
           .item-name__sample
