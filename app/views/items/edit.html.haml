@@ -103,7 +103,7 @@
             %p 必須
         .until-shipping__select
           .select
-            = f.text_field :days_until_shipping, placeholder: '整数1桁'
+            = f.text_field :days_until_shipping, placeholder: '半角整数1桁'
           .text
             = "日以内に発送"
 
@@ -117,7 +117,7 @@
             .price-box__mandatory
               %p 必須
           .price-box__text
-            = f.text_field :price, placeholder: '300'
+            = f.text_field :price, placeholder: '半角数字'
           .yen
             = "円"
       %br/
