@@ -58,7 +58,10 @@
           .item-default--require 必須
           .item-select-wrapper
             .item-select-wrapper__box
-              = f.select :category_id, @category_parent_array, {}, {class: 'item-select-wrapper__box--select', id: 'parent_category'}
+              = f.select :category_id, @category_parent_array, {selected: @item.category}, {class: 'item-select-wrapper__box--select', id: 'parent_category'}
+            - if  @item.category.present?
+              = f.select :category_id, @item.category.parent.siblings, {selected: @item.category.parent.id}, {class: 'item-select-wrapper__box--select', id: 'parent_category'}
+              = f.select :category_id, @item.category.siblings, {selected: @item.category.id}, {class: 'item-select-wrapper__box--select', id: 'parent_category'}
         .item-brand
           .item-brand__sample
             %p ブランド

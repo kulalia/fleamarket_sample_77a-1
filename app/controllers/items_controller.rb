@@ -25,7 +25,7 @@ class ItemsController < ApplicationController
       @category_parent_array << parent.name
     end
   end
-  
+
   def create
 
     @item = Item.new(item_params)
@@ -39,11 +39,12 @@ class ItemsController < ApplicationController
     else
       #セレクトボックスの初期値設定
       @category_parent_array = ["---"]
+
       #データベースから、親カテゴリーのみ抽出し、配列化
       Category.where(ancestry: nil).each do |parent|
         @category_parent_array << parent.name
       end
-      render :new
+      render :new 
     end
   end
 
