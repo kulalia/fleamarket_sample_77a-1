@@ -33,14 +33,7 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to root_path, notice: '出品しました'
     else
-      @item.item_images.build
-      #セレクトボックスの初期値設定
-      @category_parent_array = ["---"]
-      #データベースから、親カテゴリーのみ抽出し、配列化
-      Category.where(ancestry: nil).each do |parent|
-        @category_parent_array << parent.name
-      end
-      render :new
+      redirect_to new_item_path, alert: '出品できませんでした'
     end
   end
 
@@ -73,31 +66,9 @@ class ItemsController < ApplicationController
 
   def update
     if @item.update(item_params)
-      redirect_to root_path
+      redirect_to root_path, notice: '出品情報を更新しました'
     else
-      @item = Item.find(params[:id])
-      @item.update(item_params)
-
-      category_grandchild = @item.category
-      category_child = category_grandchild.parent
-
-
-      @category_parent_array = []
-      Category.where(ancestry: nil).each do |parent|
-        @category_parent_array << parent.name
-      end
-
-      @category_children_array = []
-      Category.where(ancestry: category_child.ancestry).each do |children|
-        @category_children_array << children
-      end
-
-      @category_grandchildren_array = []
-      Category.where(ancestry: category_grandchild.ancestry).each do |grandchildren|
-        @category_grandchildren_array << grandchildren
-      end
-
-      render :edit
+      redirect_to edit_item_path, alert: '更新できませんでした'
     end
   end
 

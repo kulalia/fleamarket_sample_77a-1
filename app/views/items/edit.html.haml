@@ -3,7 +3,6 @@
 .new-main 
   .parent-box
     = form_for [@item] do |f|
-      = render 'layouts/error_messages', model: f.object
       .first-box
         .image-box
           .image-box__sample
@@ -41,7 +40,7 @@
               -# 30,31行目のi.indexの次の番号から生成する方法がないか？
 
               - if @item.persisted?
-                .js-file_group{ data: { index: @item.item_images.count }}
+                .js-file_group{ data: { index: @item.item_images.length }}
                   = file_field_tag :url, name: "item[item_images_attributes][#{@item.item_images.count}][url]", class: 'js-file'                        
       .second-box 
         .item-name
