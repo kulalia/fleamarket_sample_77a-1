@@ -2,13 +2,13 @@
 .back
   .show-main
     .items__name
-      = "#{@item.name}"
+      = truncate("#{@item.name}", length:30)
       .items__photo_main
         = image_tag @item.item_images.first.url.url, size: "400x400"
       .itmes__photo__sub
         - @item.item_images.each do |image|
           .itmes__photo__sub__img
-            = image_tag image.url.url, size: "200x200"
+            = image_tag image.url.url, size: "100x100"
     .items__price
       = "#{@item.price}円"
     .items__price__sub
