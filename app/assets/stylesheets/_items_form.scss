@@ -209,7 +209,7 @@
       }
 
       &__mandatory {
-        @include field-design
+        @include field-design;
       }        
     }
 
@@ -217,6 +217,7 @@
       height: 130px;
       width: 680px;
       padding: 10px 10px;
+      resize: none;
     }
   }
 
@@ -430,7 +431,6 @@
       }
 
       &__text input{
-        // margin-right:px;
         width: 300px;
         height: 40px;
         padding-left: 10px;
