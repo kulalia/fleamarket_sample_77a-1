@@ -33,7 +33,6 @@ $(function(){
 
   $('#image-box').on('click', '.preview__edit', function() {
     const targetIndex = $(this).data('index');
-    console.log(targetIndex)
     $(`input[data-index="${targetIndex}"].js-file`).on('click', function(e){
       e.stopPropagation();
     });
@@ -46,8 +45,6 @@ $(function(){
       if (img = $(`img[data-index="${targetIndex}"]`)[0]) {
         img.setAttribute('src', blobUrl);
       } else {
-        $('#previews').append(buildImg(targetIndex, blobUrl));
-        $('#image-field').append(buildFileField(fileIndex[0]));
         fileIndex.shift();
         fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
       }
@@ -55,9 +52,7 @@ $(function(){
   });
 
   $('#image-field').on('click', function(){
-    console.log("test1")
     $(".js-file_group:last").on('click', function(e){
-      console.log("test2")
       e.stopPropagation();
     });
 

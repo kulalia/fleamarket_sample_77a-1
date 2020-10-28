@@ -32,7 +32,7 @@
                   = i.check_box :_destroy, data:{ index: i.index }, class: 'hidden-destroy'
               - if @item.persisted?
                 .js-file_group{ data: { index: @item.item_images.length }}
-                  = file_field_tag :url, name: "item[item_images_attributes][#{@item.item_images.count}][url]", class: 'js-file'                        
+                  = file_field_tag :url, name: "item[item_images_attributes][#{@item.item_images.length}][url]", class: 'js-file'                        
       .second-box 
         .item-name
           .item-name__sample
