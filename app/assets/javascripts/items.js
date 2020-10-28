@@ -30,7 +30,7 @@ $(function(){
   fileIndex.splice(0, lastIndex);
   $('.hidden-destroy').hide();
   $('.js-file').hide();
-
+  if ($('.preview-box').length == 5) $('#image-field').hide();
   $('#image-box').on('click', '.preview__edit', function() {
     const targetIndex = $(this).data('index');
     $(`input[data-index="${targetIndex}"].js-file`).on('click', function(e){
