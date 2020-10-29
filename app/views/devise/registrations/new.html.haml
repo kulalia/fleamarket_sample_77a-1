@@ -81,14 +81,14 @@
               = f.text_field :family_name, autofocus: true, autocomplete: "family-name", placeholder: "例）田中", class: "input-text name"
             .field
               %br/
-              = f.text_field :first_name, autofocus: true, autocomplete: "given-name", placeholder: "例）たなか", class: "input-text name"
+              = f.text_field :first_name, autofocus: true, autocomplete: "given-name", placeholder: "例）太郎", class: "input-text name"
           .field-name
             .field
               = f.label :family_name_kana, "お名前(かな)"
               %span{ :class => "must" }
                 = "必須"
               %br/
-              = f.text_field :family_name_kana, autofocus: true, autocomplete: "family-name", placeholder: "例）太郎", class: "input-text name"
+              = f.text_field :family_name_kana, autofocus: true, autocomplete: "family-name", placeholder: "例）たなか", class: "input-text name"
             .field
               %br/
               = f.text_field :first_name_kana, autofocus: true, autocomplete: "given-name", placeholder: "例）たろう", class: "input-text name"
